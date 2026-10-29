@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SUNAO すなお｜地方競馬の正直な勝率</title>
+<meta name="description" content="地方競馬の全レースに、正直な勝率と期待値。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800&family=DM+Mono:wght@400;500&family=Outfit:wght@700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&text=%E7%A8%8D&display=swap">
+<script id="thm">try{if(localStorage.getItem('sunao_theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+<style>
+:root{--ink:#111;--mute:#666;--soft:#999;--bg:#fff;--bg2:#fcfbf8;--line:#e3e3df;--ac:#6b4f2a;--ac2:#f1ebe2;--ac3:#e9e0d2;--y:#fdf6e1;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--bg2)}
+body{background:var(--bg2);color:var(--ink);font-family:'M PLUS Rounded 1c','Zen Maru Gothic','Hiragino Maru Gothic ProN',Meiryo,sans-serif;font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.mono{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-variant-numeric:tabular-nums}
+button{font-family:inherit;color:inherit;background:none;border:none;cursor:pointer}
+a{color:inherit}
+svg.ic{width:100%;height:100%;fill:none;stroke:#111;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;display:block}
+.wrap{max-width:520px;margin:0 auto;padding:12px 14px 110px;min-height:100vh}
+/* header */
+.hd{display:flex;align-items:center;justify-content:space-between;min-height:40px}
+.hd .wm{display:flex;align-items:center;gap:8px;line-height:1}
+.hd .wm>div{text-align:center}
+.hd .wm .kana{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:800;letter-spacing:.08em;font-size:24px;color:var(--ac)}
+.hd .wm small.en{display:block;font-family:'Outfit',sans-serif;letter-spacing:.3em;font-weight:700;font-size:9.5px;color:var(--mute);margin-top:4px;white-space:nowrap;text-align:center}
+.hd .dt{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11px;color:var(--mute);text-align:right;line-height:1.4}
+.hd .dt b{display:block;color:var(--ink);font-size:13px;font-weight:400}
+.hdr{display:flex;align-items:center;gap:10px}
+.thm{flex:none;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;padding:0;background:transparent}.thm svg{width:16px;height:16px;fill:none;stroke:var(--ink);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.lead{font-size:11.5px;color:var(--mute);margin-top:2px;line-height:1.6;word-break:auto-phrase}
+section{display:none}section.on{display:block}
+h2{font-size:22px;font-weight:800;letter-spacing:.02em;margin-top:14px;display:flex;align-items:center;gap:8px}
+h2 i{width:24px;height:24px;display:block}
+h3{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:10px;letter-spacing:.24em;color:var(--mute);font-weight:400;margin:16px 0 8px;display:flex;align-items:center;gap:8px}
+.seg{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;background:#fff}
+.seg button{flex:1;padding:8px 0;font-size:12.5px;font-weight:700;color:var(--mute);white-space:nowrap}
+.seg button.on{background:var(--ink);color:#fff}
+.seg.sm button{padding:6px 0;font-size:11.5px}
+.seg.dsel{margin:10px 0 0}
+.note{font-size:10.5px;color:var(--soft);line-height:1.8;margin-top:8px;letter-spacing:.04em;word-break:auto-phrase}
+.foot{font-size:10px;color:var(--soft);line-height:1.7;margin-top:24px;text-align:center}
+.box{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff;margin-top:12px}
+.box p{font-size:12px;color:var(--mute);line-height:1.7;word-break:auto-phrase}
+.box b{font-size:13px}
+/* 枠の丸 */
+.cap{display:inline-flex;width:22px;height:22px;border-radius:50%;align-items:center;justify-content:center;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:400;font-size:11.5px;box-shadow:inset 0 0 0 1px #111;letter-spacing:0;line-height:1;text-indent:0}
+/* レース目次 案13: タイムライン＋大きな数字、塗りなし */
+.lxh{display:flex;align-items:baseline;justify-content:space-between;margin:16px 2px 6px}
+.lxh b{font-size:12px;font-weight:800;letter-spacing:.04em}
+.lxh span{font-size:10px;color:var(--mute)}
+.lxt{display:grid;column-gap:8px;row-gap:0;align-items:stretch;margin-top:2px}
+.lxt-vh{position:relative;font-size:11.5px;font-weight:800;text-align:left;padding:0 0 0 15px;margin-bottom:9px;display:flex;gap:5px;align-items:baseline;white-space:nowrap;overflow:hidden}
+.lxt-vh span{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:9.5px;color:var(--mute);font-weight:400}
+.lxt-vh::after{content:"";position:absolute;left:15px;right:0;bottom:-5px;height:1.5px;border-radius:1px;background:var(--ac)}
+.lxt-q{position:relative;display:block;width:100%;text-align:left;border:none;background:none;border-radius:0;padding:3px 2px 6px 15px;min-width:0;color:#333}
+.lxt-q.empty{padding:0}
+.lxt-q::before{content:"";position:absolute;left:3.5px;top:0;bottom:0;width:1.5px;background:#d6d5cf}
+.lxt-q.first::before{top:11px}
+.lxt-q.last::before{bottom:auto;height:11px}
+.lxt-q.empty::before,.lxt-q.empty::after{display:none}
+.lxt-q::after{content:"";position:absolute;left:.5px;top:7.5px;width:7px;height:7px;border-radius:50%;background:#fff;border:1.5px solid #9a9a96}
+.lxt-q.fin::after{background:#9a9a96}
+.lxt-q.dis::after{border-color:#c4c4c0}
+.lxt-q.nx::after{border-color:var(--ac);background:var(--ac);box-shadow:0 0 0 1.5px #fff,0 0 0 3px var(--ac)}
+.lxt-q .h{display:flex;align-items:baseline;gap:4px;white-space:nowrap}
+.lxt-q .h b{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:17px;font-weight:400;line-height:1;letter-spacing:-.02em}
+.lxt-q .h i{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:8.5px;color:var(--mute)}
+.lxt-q .h em{font-style:normal;font-size:8.5px;font-weight:800;color:#aaa}
+.lxt-q .n{display:block;font-size:9px;font-weight:700;color:#777;line-height:1.25;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lxt-q .w{display:block;font-size:8px;line-height:1.3;color:var(--ac);font-weight:800}
+.lxt-q.fin{color:#b5b5b0}
+.lxt-q.fin .h b{color:#c4c4c0}
+.lxt-q.fin .n{color:#b5b5b0}
+.lxt-q.fin .h em{color:#ccc}
+.lxt-q.dis{color:#c4c4c0;cursor:default}
+.lxt-q.dis .n{color:#c4c4c0}
+.lxt-q.nx .h b{color:var(--ac);font-weight:500}
+.lxt-q.nx .n{color:var(--ac);font-weight:800}
+.lxt-q .g{position:absolute;right:2px;top:9px;width:6px;height:6px;border-radius:50%;background:#c9a227}
+.lxt-lg{display:flex;gap:12px;font-size:9.5px;color:var(--mute);margin-top:10px;align-items:center;white-space:nowrap}
+.lxt-lg i{display:inline-block;vertical-align:-1px;margin-right:4px}
+.lxt-lg i.d{width:7px;height:7px;border-radius:50%;border:1.5px solid #9a9a96;background:#9a9a96}
+.lxt-lg i.d.x{border-color:var(--ac);background:var(--ac);box-shadow:0 0 0 1.5px #fff,0 0 0 3px var(--ac);margin-left:3px;margin-right:7px}
+.lxt-lg i.g{width:6px;height:6px;border-radius:50%;background:#c9a227}
+/* レース上部の切替（貼り付き） */
+#rsel{display:block;position:sticky;top:0;z-index:21;background:var(--bg2);margin:4px -14px 0;padding:6px 14px 8px}
+#rsel.stuck{box-shadow:0 1px 0 var(--line)}
+/* レース見出し */
+.rh2{text-align:left;margin-top:12px}
+.rh2 .rh-n{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:800;line-height:1.35;letter-spacing:.02em;color:#111;font-size:17px;word-break:auto-phrase}
+.rh2 .rh-n em{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11px;font-weight:500;color:#fff;background:var(--ac);border-radius:4px;padding:1px 6px;margin-right:8px;vertical-align:3px}
+.rh2 .rh-m{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;align-items:center}
+.rh2 .rh-m span{display:inline-block;margin:0;font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11.5px;font-weight:700;color:#444;background:#f3f3ef;border-radius:999px;padding:3px 11px;white-space:nowrap}
+.rh2 .rh-m span.sf{background:var(--ac2);color:var(--ac)}
+.rh2 .rh-m span.yoso{background:#fff;box-shadow:inset 0 0 0 1px #d9b85a;color:#5a4000}
+.fxl{display:flex;align-items:flex-start;gap:6px;margin-top:8px;font-size:10.5px;line-height:1.55;color:var(--mute);letter-spacing:.02em;word-break:auto-phrase}
+/* 出馬表 */
+.tt{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:8px}
+.tt b{font-size:13px;font-weight:800}
+.seg.srt{width:132px;flex:none}
+.t{width:100%;border-collapse:collapse;font-size:12.5px;background:#fff;margin-top:8px}
+.t th{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:9.5px;color:var(--mute);font-weight:400;text-align:right;padding:6px 4px;border-bottom:1.5px solid var(--ink);white-space:nowrap;letter-spacing:.06em}
+.t td{padding:7px 4px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap;vertical-align:middle}
+.t th.l,.t td.l{text-align:left}
+.t td.c{text-align:center;padding-left:0;padding-right:2px;width:26px}
+.t td.nm{font-weight:700;line-height:1.15;max-width:0;width:44%;overflow:hidden;text-overflow:ellipsis;padding-left:2px}
+.t td.nm .hn{display:flex;align-items:center;gap:4px;min-width:0}
+.t td.nm .hn span{overflow:hidden;text-overflow:ellipsis;min-width:0}
+.t td.nm small{display:block;margin:2px 0 0;color:var(--soft);font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:9.5px;font-weight:400;overflow:hidden;text-overflow:ellipsis}
+.t td.nm small b{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:500;color:var(--mute)}
+.t tr.e2 td{background:#f5e19e}
+.t tr.e2 td.ev{font-weight:700;color:#3a2a00}
+.t tr.e1 td.ev{font-weight:700;color:#b39a52}
+.t tr.scr td{opacity:.45}
+.t tr.scr td.nm .hn span{text-decoration:line-through}
+.t tr[data-h]{cursor:pointer}
+.t tr.hit td{background:#e1f5ee}
+.t tr.e2.hit td{background:#dff0d0}
+.t td.ev{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:13px}
+.t td.p{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
+.t td.od,.t td.pp{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;color:#444}
+.sw{display:inline-flex;align-items:center;justify-content:center;flex:none;width:14px;height:14px;border-radius:50%;background:var(--ac2);color:var(--ac);font-size:8px;font-weight:800;line-height:1}
+.al{display:inline-flex;align-items:center;flex:none;font-size:8.5px;font-weight:800;line-height:1;padding:2px 5px;border-radius:999px;background:#fff;color:#8a5a00;box-shadow:inset 0 0 0 1px #d9b85a;white-space:nowrap}
+.al.a2{background:#f3d9a6;color:#5a3a00;box-shadow:none}
+/* 近5走・注意の開き */
+.hcard{display:none}
+.hcard td{padding:0 0 10px;text-align:left;white-space:normal;background:#fff}
+.hc{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#fcfbf8}
+.hc h4{font-size:10.5px;font-weight:800;color:var(--ac);letter-spacing:.06em;margin:4px 0 4px}
+.pt{width:100%;border-collapse:collapse;font-size:10.5px}
+.pt th{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:8.5px;color:var(--mute);font-weight:400;text-align:right;padding:2px 3px;border-bottom:1px solid var(--line);white-space:nowrap}
+.pt td{padding:4px 3px;text-align:right;white-space:nowrap;border-bottom:1px solid #f0efe9;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:10.5px}
+.pt th.l,.pt td.l{text-align:left}
+.pt td.l{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
+.pt td b{font-weight:500}
+.pt td.w1{color:#8a5a00;font-weight:700}
+.fv{display:grid;gap:5px;margin-top:4px}
+.fv div{display:grid;grid-template-columns:52px 1fr;gap:8px;align-items:center;font-size:11px}
+.fv div b{font-size:10.5px;font-weight:700;color:var(--mute)}
+.fv div span{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11px}
+.fv div span em{font-style:normal;color:#8a5a00;font-weight:700}
+.fv div span.ok em{color:#1f7a4d}
+.fv p{font-size:10.5px;color:var(--mute);margin-top:6px;line-height:1.6;word-break:auto-phrase}
+/* 結果 */
+.res{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff;margin-top:12px}
+.res .ro{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.res .ro div{display:flex;align-items:center;gap:5px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.res .ro div i{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:10px;color:var(--mute);font-weight:400}
+.res .ro div small{font-size:9.5px;color:var(--soft);font-weight:400}
+.pay{width:100%;border-collapse:collapse;margin-top:8px;font-size:11.5px}
+.pay td{padding:4px 2px;border-bottom:1px solid #f0efe9;white-space:nowrap}
+.pay td:first-child{color:var(--mute);font-size:10.5px;width:44px}
+.pay td:nth-child(2){font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
+.pay td:last-child{text-align:right;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:500}
+.pay td:last-child small{color:var(--soft);font-weight:400;margin-left:4px}
+.pay tr.g td:last-child{color:#8a5a00;font-weight:700}
+/* 使い方 */
+.hto .qs{display:grid;gap:8px;margin-top:12px}.hto .qs div{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:12px;background:var(--ac);color:#fff}.hto .qs b{flex:none;width:22px;height:22px;border-radius:50%;background:#f5e19e;color:var(--ac);font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:1px}.hto .qs span{font-size:12px;line-height:1.6;letter-spacing:.02em;word-break:auto-phrase}.hto .qs em{font-style:normal;color:#f5e19e;font-weight:700}
+.hto .hs{margin-top:22px}.hto .hs>div:first-child{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--line)}.hto .hs>div:first-child i{width:22px;height:22px;flex:none;color:var(--ac)}.hto .hs>div:first-child b{font-size:14.5px;font-weight:700;letter-spacing:.04em}
+.hto ul{list-style:none;margin:8px 0 0;padding:0}.hto li{position:relative;padding:6px 0 6px 14px;font-size:12px;line-height:1.7;color:var(--ink);letter-spacing:.02em;word-break:auto-phrase}.hto li:before{content:'';position:absolute;left:2px;top:14px;width:5px;height:5px;border-radius:50%;background:#c9a227}
+.hto li b{font-weight:700}.hto .k{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:999px;margin:0 2px;letter-spacing:.02em;white-space:nowrap}.hto .k.g{background:#f5e19e;color:#3a2a00}.hto .k.g2{background:#fefaf0;color:#5a4000;box-shadow:inset 0 0 0 1px #d9b85a}.hto .k.n{background:var(--ac);color:#fff}
+/* 下のカプセル（2段） */
+.nav{position:fixed;left:0;right:0;bottom:14px;margin:0 auto;width:min(calc(100% - 24px),440px);background:#fff;border-radius:20px;box-shadow:0 2px 6px rgba(60,45,20,.10),0 10px 26px rgba(60,45,20,.20);z-index:30;transition:transform .28s ease,opacity .28s ease}
+.nav.hid{transform:translateY(calc(100% + 30px));opacity:0;pointer-events:none}
+.nav .in{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 4px;padding:4px}
+.nav button{display:flex;flex-direction:column;align-items:center;gap:1px;font-size:8.5px;font-weight:700;color:rgba(107,79,42,.6);min-width:0;padding:4px 0 3px;border-radius:14px;white-space:nowrap;line-height:1.3}
+.nav button i{width:20px;height:20px;display:block}
+.nav button svg{stroke:rgba(107,79,42,.6)}
+.nav button.on{background:var(--ac2);color:var(--ac)}
+.nav button.on svg{stroke:var(--ac);stroke-width:1.9}
+.nav button[data-k="record"] svg{stroke-width:3}.nav button.on[data-k="record"] svg{stroke-width:3.5}
+.nav .nup,.nav .nls{display:none}
+.nav.rc .in{grid-template-columns:repeat(2,minmax(0,1fr)) 54px 54px}
+.nav.rc .nls{display:flex;grid-column:3;grid-row:1 / span 2;justify-content:center}
+.nav.rc .nup{display:flex;grid-column:4;grid-row:1 / span 2;justify-content:center}
+.pend{font-size:12px;color:var(--mute);padding:20px 0;text-align:center}
+
+/* レース切替（UMAMI の帯と同じ部品。2026-10-30） */
+.rs-a{display:flex;align-items:center;gap:8px;min-width:0}
+.rs-v{display:flex;border:1.5px solid #9a9a9a;border-radius:999px;overflow:hidden;flex:none;background:#fff}
+#rsel .rs-v button{padding:4px 10px;font-size:11.5px;font-weight:700;color:#555;white-space:nowrap;line-height:1.35}
+#rsel .rs-v button+button{border-left:1px solid #e2e2dc}
+#rsel .rs-v button.vo{background:var(--ac);color:#fff}#rsel .rs-v button.cur:not(.vo){color:var(--ac)}
+.rs-n{flex:1;min-width:0;display:flex;align-items:baseline;justify-content:flex-end;gap:5px}
+.rs-n b{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:800;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.rs-n i{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:10px;color:var(--mute);flex:none}
+#rsel .rs-r{display:flex;gap:0;overflow:hidden;border:1.5px solid #9a9a9a;border-radius:13px;background:#fff;padding:2px;margin-top:7px;position:relative}
+#rsel .rs-r button{flex:1 1 0;min-width:0;height:38px;position:relative;border-radius:0;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:0 0 4px;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;color:#444;line-height:1}
+#rsel .rs-r button+button{border-left:1px solid #ecece6}
+#rsel .rs-r button b{font-size:12px;font-weight:400}
+#rsel .rs-r button small{font-size:7.5px;color:#8a8a86;letter-spacing:-.02em;white-space:nowrap}
+#rsel .rs-r button::after{content:"";position:absolute;left:28%;right:28%;bottom:3px;height:2px;border-radius:1px;background:#e8cc78}
+#rsel .rs-r button.turf::after{background:#cfd3e2}
+#rsel .rs-r button.gone b,#rsel .rs-r button.gone small{color:#b0b0ac}
+#rsel .rs-r button:disabled b,#rsel .rs-r button:disabled small{color:#d0d0cc}#rsel .rs-r button:disabled::after{display:none}
+#rsel .rs-r button.nx{box-shadow:inset 0 0 0 1.5px var(--ac)}
+#rsel .rs-r button.ro{background:var(--ac);color:#fff;font-weight:500;box-shadow:none;border-radius:10px}#rsel .rs-r button.ro b,#rsel .rs-r button.ro small{color:#fff}#rsel .rs-r button.ro::after{background:#fff}
+#rsel .rs-r button .ck{position:absolute;right:2px;top:2px;width:7px;height:7px;display:block}#rsel .rs-r button .ck svg{width:100%;height:100%;display:block;fill:none;stroke:#9a9a96;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}#rsel .rs-r button.ro .ck svg{stroke:#fff}
+#rsel .rs-v,#rsel .rs-r{border:none;box-shadow:0 1px 2px rgba(60,45,20,.06),0 4px 14px rgba(60,45,20,.07)}
+@media (max-width:340px){#rsel .rs-r button small{font-size:6.5px;letter-spacing:-.04em}}
+html[data-theme=dark] .rs-v{border:1.5px solid #54575f;background:#1a1c21}
+html[data-theme=dark] #rsel .rs-v button{color:#bebebe}html[data-theme=dark] #rsel .rs-v button+button{border-left:1px solid #363632}
+html[data-theme=dark] #rsel .rs-v button.vo{background:var(--ac);color:#16181c}
+html[data-theme=dark] #rsel .rs-r{border:1.5px solid #54575f;background:#1a1c21}
+html[data-theme=dark] #rsel .rs-r button{background:#1a1c21;color:#bebebe}html[data-theme=dark] #rsel .rs-r button+button{border-left:1px solid #363632}
+html[data-theme=dark] #rsel .rs-r button small{color:#bebeba}html[data-theme=dark] #rsel .rs-r button.gone b,html[data-theme=dark] #rsel .rs-r button.gone small{color:#8a8a86}
+html[data-theme=dark] #rsel .rs-r button.ro{background:var(--ac);box-shadow:none}html[data-theme=dark] #rsel .rs-r button.ro b,html[data-theme=dark] #rsel .rs-r button.ro small{color:#14161b}html[data-theme=dark] #rsel .rs-r button.ro::after{background:#14161b}
+html[data-theme=dark] #rsel .rs-r button .ck svg{stroke:#6d6f75}html[data-theme=dark] #rsel .rs-r button.ro .ck svg{stroke:#14161b}
+
+/* 記録（2026-10-30） */
+.rcs{display:flex;gap:8px;margin-top:10px}.rc{flex:1;border-radius:12px;padding:10px 10px 8px;background:var(--bg2)}.rc b{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 8px;border-radius:999px}.rc.g b{background:#f5e19e;color:#3a2a00}.rc.g2 b{background:#fff;color:#5a4000;box-shadow:inset 0 0 0 1px #d9b85a}
+.rc-n{display:flex;justify-content:space-between;margin-top:8px;font-size:10px;color:var(--mute)}.rc-n em{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:15px;color:var(--ink);margin-right:1px}
+html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{background:#1a1c21}
+</style>
+<style id="dk">
+html[data-theme=dark]{color-scheme:dark}html[data-theme=dark] body{background:#0f1013}
+html[data-theme=dark]{--ink:#ececea;--mute:#a7aab0;--soft:#8d9097;--bg:#1a1c21;--bg2:#1b1b19;--line:#30333a;--ac:#836640;--ac2:#24201b;--ac3:#2a241c;--y:#2e2817}
+html[data-theme=dark]{background:var(--bg2)}
+html[data-theme=dark] body{background:var(--bg2);color:var(--ink)}
+html[data-theme=dark] button{color:inherit;background:none;border:none}
+html[data-theme=dark] a{color:inherit}
+html[data-theme=dark] svg.ic{fill:none;stroke:#b9bcc2}
+html[data-theme=dark] .hd .wm .kana{color:var(--ac)}
+html[data-theme=dark] .hd .wm small.en{color:var(--mute)}
+html[data-theme=dark] .hd .dt{color:var(--mute)}
+html[data-theme=dark] .hd .dt b{color:var(--ink)}
+html[data-theme=dark] .thm{border:1.5px solid var(--ink);background:transparent}
+html[data-theme=dark] .thm svg{fill:none;stroke:var(--ink)}
+html[data-theme=dark] .lead{color:var(--mute)}
+html[data-theme=dark] h3{color:var(--mute)}
+html[data-theme=dark] .seg{border:1.5px solid var(--ink);background:#1a1c21}
+html[data-theme=dark] .seg button{color:var(--mute)}
+html[data-theme=dark] .seg button.on{background:var(--ink);color:#16181c}
+html[data-theme=dark] .note{color:var(--soft)}
+html[data-theme=dark] .foot{color:var(--soft)}
+html[data-theme=dark] .box{border:1px solid var(--line);background:#1a1c21}
+html[data-theme=dark] .box p{color:var(--mute)}
+html[data-theme=dark] .cap{box-shadow:inset 0 0 0 1px #b9bcc2}
+html[data-theme=dark] .lxh span{color:var(--mute)}
+html[data-theme=dark] .lxt-vh span{color:var(--mute)}
+html[data-theme=dark] .lxt-vh::after{background:var(--ac)}
+html[data-theme=dark] .lxt-q{border:none;background:none;color:#d5d5d3}
+html[data-theme=dark] .lxt-q::before{background:#2b2a27}
+html[data-theme=dark] .lxt-q::after{background:#1a1c21;border:1.5px solid #989894}
+html[data-theme=dark] .lxt-q.fin::after{background:#72726e}
+html[data-theme=dark] .lxt-q.dis::after{border-color:#4a4d55}
+html[data-theme=dark] .lxt-q.nx::after{border-color:var(--ac);background:var(--ac);box-shadow:0 0 0 1.5px #1a1c21,0 0 0 3px var(--ac)}
+html[data-theme=dark] .lxt-q .h i{color:var(--mute)}
+html[data-theme=dark] .lxt-q .h em{color:#bebebe}
+html[data-theme=dark] .lxt-q .n{color:#a7aab0}
+html[data-theme=dark] .lxt-q .w{color:var(--ac)}
+html[data-theme=dark] .lxt-q.fin{color:#8d9097}
+html[data-theme=dark] .lxt-q.fin .h b{color:#ececea}
+html[data-theme=dark] .lxt-q.fin .n{color:#8d9097}
+html[data-theme=dark] .lxt-q.fin .h em{color:#8d9097}
+html[data-theme=dark] .lxt-q.dis{color:#ececea}
+html[data-theme=dark] .lxt-q.dis .n{color:#ececea}
+html[data-theme=dark] .lxt-q.nx .h b{color:var(--ac)}
+html[data-theme=dark] .lxt-q.nx .n{color:var(--ac)}
+html[data-theme=dark] .lxt-q .g{background:#916b00}
+html[data-theme=dark] .lxt-lg{color:var(--mute)}
+html[data-theme=dark] .lxt-lg i.d{border:1.5px solid #989894;background:#72726e}
+html[data-theme=dark] .lxt-lg i.d.x{border-color:var(--ac);background:var(--ac);box-shadow:0 0 0 1.5px #1a1c21,0 0 0 3px var(--ac)}
+html[data-theme=dark] .lxt-lg i.g{background:#916b00}
+html[data-theme=dark] #rsel{background:var(--bg2)}
+html[data-theme=dark] #rsel.stuck{box-shadow:0 1px 0 var(--line)}
+html[data-theme=dark] .rh2 .rh-n{color:#ececea}
+html[data-theme=dark] .rh2 .rh-n em{color:#16181c;background:var(--ac)}
+html[data-theme=dark] .rh2 .rh-m span{color:#bebebe;background:#1e1e1c}
+html[data-theme=dark] .rh2 .rh-m span.sf{background:var(--ac2);color:var(--ac)}
+html[data-theme=dark] .rh2 .rh-m span.yoso{background:#1a1c21;box-shadow:inset 0 0 0 1px #b0964a;color:#f2d27a}
+html[data-theme=dark] .fxl{color:var(--mute)}
+html[data-theme=dark] .t{background:#1a1c21}
+html[data-theme=dark] .t th{color:var(--mute);border-bottom:1.5px solid var(--ink)}
+html[data-theme=dark] .t td{border-bottom:1px solid var(--line)}
+html[data-theme=dark] .t td.nm small{color:var(--soft)}
+html[data-theme=dark] .t td.nm small b{color:var(--mute)}
+html[data-theme=dark] .t tr.e2 td{background:#4a3d14}
+html[data-theme=dark] .t tr.e2 td.ev{color:#cfbc91}
+html[data-theme=dark] .t tr.e1 td.ev{color:#d5bc73}
+html[data-theme=dark] .t tr.scr td.nm .hn span{text-decoration:line-through}
+html[data-theme=dark] .t tr.hit td{background:#16221e}
+html[data-theme=dark] .t tr.e2.hit td{background:#1c2612}
+html[data-theme=dark] .t td.od,html[data-theme=dark] .t td.pp{color:#bebebe}
+html[data-theme=dark] .sw{background:var(--ac2);color:var(--ac)}
+html[data-theme=dark] .al{background:#1a1c21;color:#e8b36c;box-shadow:inset 0 0 0 1px #b0964a}
+html[data-theme=dark] .al.a2{background:#32250a;color:#ddb784;box-shadow:none}
+html[data-theme=dark] .hcard td{background:#1a1c21}
+html[data-theme=dark] .hc{border:1px solid var(--line);background:#1b1b19}
+html[data-theme=dark] .hc h4{color:var(--ac)}
+html[data-theme=dark] .pt th{color:var(--mute);border-bottom:1px solid var(--line)}
+html[data-theme=dark] .pt td{border-bottom:1px solid #363532}
+html[data-theme=dark] .pt td.w1{color:#e8b36c}
+html[data-theme=dark] .fv div b{color:var(--mute)}
+html[data-theme=dark] .fv div span em{color:#e8b36c}
+html[data-theme=dark] .fv div span.ok em{color:#5cc597}
+html[data-theme=dark] .fv p{color:var(--mute)}
+html[data-theme=dark] .res{border:1px solid var(--line);background:#1a1c21}
+html[data-theme=dark] .res .ro div i{color:var(--mute)}
+html[data-theme=dark] .res .ro div small{color:var(--soft)}
+html[data-theme=dark] .pay td{border-bottom:1px solid #363532}
+html[data-theme=dark] .pay td:first-child{color:var(--mute)}
+html[data-theme=dark] .pay td:last-child small{color:var(--soft)}
+html[data-theme=dark] .pay tr.g td:last-child{color:#e8b36c}
+html[data-theme=dark] .hto .qs div{background:var(--ac);color:#16181c}
+html[data-theme=dark] .hto .qs b{background:#4a3d14;color:var(--ac)}
+html[data-theme=dark] .hto .qs em{color:#f2d27a}
+html[data-theme=dark] .hto .hs>div:first-child{border-bottom:1px solid var(--line)}
+html[data-theme=dark] .hto .hs>div:first-child i{color:var(--ac)}
+html[data-theme=dark] .hto li{color:var(--ink)}
+html[data-theme=dark] .hto li:before{background:#916b00}
+html[data-theme=dark] .hto .k.g{background:#4a3d14;color:#cfbc91}
+html[data-theme=dark] .hto .k.g2{background:#25231c;color:#f2d27a;box-shadow:inset 0 0 0 1px #b0964a}
+html[data-theme=dark] .hto .k.n{background:var(--ac);color:#16181c}
+html[data-theme=dark] .nav{background:#1a1c21;box-shadow:0 2px 6px rgba(60,45,20,.10),0 10px 26px rgba(60,45,20,.20)}
+html[data-theme=dark] .nav button{color:rgba(107,79,42,.6)}
+html[data-theme=dark] .nav button svg{stroke:rgba(107,79,42,.6)}
+html[data-theme=dark] .nav button.on{background:var(--ac2);color:var(--ac)}
+html[data-theme=dark] .nav button.on svg{stroke:var(--ac)}
+html[data-theme=dark] .pend{color:var(--mute)}
+html[data-theme=dark] .rs-v{border:1.5px solid #54575f;background:#1a1c21}
+html[data-theme=dark] #rsel .rs-v button{color:#bebebe}
+html[data-theme=dark] #rsel .rs-v button+button{border-left:1px solid #363632}
+html[data-theme=dark] #rsel .rs-v button.vo{background:var(--ac);color:#16181c}
+html[data-theme=dark] #rsel .rs-v button.cur:not(.vo){color:var(--ac)}
+html[data-theme=dark] .rs-n i{color:var(--mute)}
+html[data-theme=dark] #rsel .rs-r{border:1.5px solid #54575f;background:#1a1c21}
+html[data-theme=dark] #rsel .rs-r button{background:#1a1c21;color:#bebebe}
+html[data-theme=dark] #rsel .rs-r button+button{border-left:1px solid #363632}
+html[data-theme=dark] #rsel .rs-r button small{color:#bebeba}
+html[data-theme=dark] #rsel .rs-r button::after{background:#352c10}
+html[data-theme=dark] #rsel .rs-r button.turf::after{background:#282a33}
+html[data-theme=dark] #rsel .rs-r button.gone b,html[data-theme=dark] #rsel .rs-r button.gone small{color:#bebeba}
+html[data-theme=dark] #rsel .rs-r button:disabled b,html[data-theme=dark] #rsel .rs-r button:disabled small{color:#bebeba}
+html[data-theme=dark] #rsel .rs-r button.nx{box-shadow:inset 0 0 0 1.5px var(--ac)}
+html[data-theme=dark] #rsel .rs-r button.ro{background:var(--ac);color:#16181c;box-shadow:none}
+html[data-theme=dark] #rsel .rs-r button.ro b,html[data-theme=dark] #rsel .rs-r button.ro small{color:#16181c}
+html[data-theme=dark] #rsel .rs-r button.ro::after{background:#1a1c21}
+html[data-theme=dark] #rsel .rs-r button .ck svg{fill:none;stroke:#989894}
+html[data-theme=dark] #rsel .rs-r button.ro .ck svg{stroke:#1a1c21}
+html[data-theme=dark] #rsel .rs-v,html[data-theme=dark] #rsel .rs-r{border:none;box-shadow:0 1px 2px rgba(60,45,20,.06),0 4px 14px rgba(60,45,20,.07)}
+html[data-theme=dark][data-theme=dark] .rs-v{border:1.5px solid #9598a1;background:#505258}
+html[data-theme=dark][data-theme=dark] #rsel .rs-v button{color:#bebebe}
+html[data-theme=dark][data-theme=dark] #rsel .rs-v button+button{border-left:1px solid #999994}
+html[data-theme=dark][data-theme=dark] #rsel .rs-v button.vo{background:var(--ac);color:#bbbec3}
+html[data-theme=dark][data-theme=dark] #rsel .rs-r{border:1.5px solid #9598a1;background:#505258}
+html[data-theme=dark][data-theme=dark] #rsel .rs-r button{background:#505258;color:#bebebe}
+html[data-theme=dark][data-theme=dark] #rsel .rs-r button+button{border-left:1px solid #999994}
+html[data-theme=dark][data-theme=dark] #rsel .rs-r button small{color:#bebeba}
+html[data-theme=dark][data-theme=dark] #rsel .rs-r button.gone b,html[data-theme=dark][data-theme=dark] #rsel .rs-r button.gone small{color:#bebeba}
+html[data-theme=dark][data-theme=dark] #rsel .rs-r button.ro{background:var(--ac);box-shadow:none}
+html[data-theme=dark][data-theme=dark] #rsel .rs-r button.ro b,html[data-theme=dark][data-theme=dark] #rsel .rs-r button.ro small{color:#bbbec5}
+html[data-theme=dark][data-theme=dark] #rsel .rs-r button.ro::after{background:#505259}
+html[data-theme=dark][data-theme=dark] #rsel .rs-r button .ck svg{stroke:#96989e}
+html[data-theme=dark][data-theme=dark] #rsel .rs-r button.ro .ck svg{stroke:#95989f}
+html[data-theme=dark] .rc{background:var(--bg2)}
+html[data-theme=dark] .rc.g b{background:#4a3d14;color:#cfbc91}
+html[data-theme=dark] .rc.g2 b{background:#1a1c21;color:#f2d27a;box-shadow:inset 0 0 0 1px #b0964a}
+html[data-theme=dark] .rc-n{color:var(--mute)}
+html[data-theme=dark] .rc-n em{color:var(--ink)}
+html[data-theme=dark][data-theme=dark] .rc{background:#525254}
+html[data-theme=dark][data-theme=dark] .rc.g2 b{background:#505258}
+html[data-theme=dark] :not(text)[fill="#111"]{fill:#e6e6e3}
+html[data-theme=dark] [stroke="#111"]{stroke:#d6d6d3}
+html[data-theme=dark] :not(text)[fill="#fff"]{fill:#1a1c21}
+html[data-theme=dark] [stroke="#fff"]{stroke:#1a1c21}
+html[data-theme=dark] [fill="#666"]{fill:#a7aab0}
+html[data-theme=dark] [fill="#777"]{fill:#a7aab0}
+html[data-theme=dark] [stroke="#777"]{stroke:#8d9097}
+html[data-theme=dark] [fill="#9a9a9a"]{fill:#8d9097}
+html[data-theme=dark] [fill="#999"]{fill:#8d9097}
+html[data-theme=dark] [stroke="#999"]{stroke:#6c7078}
+html[data-theme=dark] [stroke="#9a9a9a"]{stroke:#6c7078}
+html[data-theme=dark] [fill="#e8f3e3"]{fill:#1f2d22}
+html[data-theme=dark] [fill="#e9f2e5"]{fill:#223024}
+html[data-theme=dark] [fill="#f1f1ed"]{fill:#26282d}
+html[data-theme=dark] [stroke="#e3e3df"]{stroke:#30333a}
+html[data-theme=dark] [fill="#f7e9bb"]{fill:#463a17}
+html[data-theme=dark] [stroke="#1d3c84"]{stroke:#8fb0f5}
+html[data-theme=dark] [fill="#1d3c84"]{fill:#8fb0f5}
+html[data-theme=dark] [fill="#ddd"]{fill:#3a3d45}
+html[data-theme=dark] [fill="#eaf0fa"]{fill:#1b2333}
+html[data-theme=dark] [style*="color:#666"]{color:#a7aab0!important}
+html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0v9a5 5 0 0 1 -7 0a5 5 0 0 0 -7 0v-9" /><path d="M5 21v-7" /></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h7a2 2 0 0 1 2 2v14a1.5 1.5 0 0 0-1.5-1.5H4z"/><path d="M20 4h-7a2 2 0 0 0-2 2v14a1.5 1.5 0 0 1 1.5-1.5H20z"/></symbol>
+<symbol id="i-chart" viewBox="0 0 48 48"><path d="M8 40 L40 40"/><path d="M12 40 L12 28 M20 40 L20 20 M28 40 L28 30 M36 40 L36 14"/><path d="M12 24 L20 16 L28 26 L36 10"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M5 20 Q12 13 19 20"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.6A7.6 7.6 0 1 1 9.4 4.5a6.2 6.2 0 0 0 10.1 10.1z"/></symbol>
+<symbol id="i-up2" viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></symbol>
+<symbol id="i-coin" viewBox="0 0 48 48"><ellipse cx="24" cy="14" rx="12" ry="5"/><path d="M12 14 L12 22 Q12 27 24 27 Q36 27 36 22 L36 14"/><path d="M12 22 L12 30 Q12 35 24 35 Q36 35 36 30 L36 22"/><path d="M20 12 L28 12"/></symbol>
+<symbol id="i-horse" viewBox="0 0 48 48"><path d="M10 40 L10 26 Q10 18 18 16 L26 12 L30 6 L34 12 L36 20 Q34 26 28 26 L26 32 L26 40"/><path d="M14 40 L14 32"/><path d="M22 40 L22 34"/><circle cx="31" cy="15" r="1" fill="#111"/><path d="M28 10 L30 8"/></symbol>
+<symbol id="i-clock" viewBox="0 0 48 48"><circle cx="24" cy="26" r="13"/><path d="M24 17 L24 26 L30 30"/><path d="M14 10 L18 13 M34 10 L30 13"/></symbol>
+<symbol id="i-check" viewBox="0 0 12 12"><path d="M2.5 6.5 L5 9 L9.5 3.5"/></symbol>
+</defs></svg>
+<div class="wrap">
+  <div class="hd" id="hd"></div>
+  <section id="s-races"></section>
+  <section id="s-race"></section>
+  <section id="s-record"></section>
+  <section id="s-howto"></section>
+  <section id="s-mem"></section>
+  <div class="foot">正式な情報は各主催者の公式発表でご確認ください。</div>
+</div>
+<div class="nav"><div class="in">
+  <button data-k="races"><i><svg class="ic"><use href="#i-flag"/></svg></i>レース</button>
+  <button data-k="record"><i><svg class="ic"><use href="#i-chart"/></svg></i>記録</button>
+  <button data-k="howto"><i><svg class="ic"><use href="#i-book"/></svg></i>使い方</button>
+  <button data-k="mem"><i><svg class="ic"><use href="#i-user"/></svg></i>会員</button>
+  <button data-k="list" class="nls" type="button" aria-label="一覧へ"><i><svg class="ic"><use href="#i-grid"/></svg></i>一覧へ</button>
+  <button data-k="up" class="nup" type="button" aria-label="いちばん上へ"><i><svg class="ic"><use href="#i-up2"/></svg></i>上へ</button>
+</div></div>
+<script>
+const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
+const BUILT='2026-10-30T0051';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ico=(n,cls)=>`<i class="${cls||''}"><svg class="ic"><use href="#i-${n}"/></svg></i>`;
+const ls={get:(k,d)=>{try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
+const WBG={1:'#ffffff',2:'#2b2b2b',3:'#e5342b',4:'#2f6fd0',5:'#f2cf1b',6:'#38a05a',7:'#f0870f',8:'#f0a2bd'};
+const WFG={1:'#111',2:'#fff',3:'#fff',4:'#fff',5:'#111',6:'#fff',7:'#fff',8:'#111'};
+const cap=h=>`<span class="cap" style="background:${WBG[h.waku]||'#ddd'};color:${WFG[h.waku]||'#111'}">${h.uno}</span>`;
+const WDJ='日月火水木金土', dayLab=d=>`${+d.slice(4,6)}/${+d.slice(6,8)}（${WDJ[new Date(+d.slice(0,4),+d.slice(4,6)-1,+d.slice(6,8)).getDay()]}）`;
+function ymd(d){ return `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`; }
+function isDark(){ return document.documentElement.getAttribute('data-theme')==='dark'; }
+function thmBtn(){ return `<button class="thm" type="button" onclick="toggleTheme()" aria-label="${isDark()?'明るい画面にする':'暗い画面にする'}"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-${isDark()?'sun':'moon'}"/></svg></button>`; }
+function toggleTheme(){ const dk=!isDark(); if(dk) document.documentElement.setAttribute('data-theme','dark'); else document.documentElement.removeAttribute('data-theme'); try{localStorage.setItem('sunao_theme',dk?'dark':'light');}catch(e){} renderHeader(); }
+let DAY=null, DATA=null, byRid={}, VENUES=[], cur={race:null}, tab='races', SORT='uno';
+const CACHE={};
+function pickDay(){ const q=new URLSearchParams(location.search).get('d'); if(q&&DAYS.includes(q)) return q; const t=ymd(new Date()); if(DAYS.includes(t)) return t; const fut=DAYS.filter(d=>d>t).sort(); return fut[0]||DAYS[0]; }
+async function loadDay(d){ if(CACHE[d]) return CACHE[d]; const r=await fetch(`data/${d}.json?v=${BUILT}`); const j=await r.json(); CACHE[d]=j; return j; }
+async function setDay(d){ DAY=d; DATA=await loadDay(d); byRid={}; (DATA.races||[]).forEach(r=>{ byRid[r.rid]=r; (r.runners||[]).forEach(h=>h._rid=r.rid); });
+  VENUES=[...new Set((DATA.races||[]).map(r=>r.venue_name))]; }
+const PR=h=>h.scr?0:(h.p==null?null:h.p);
+function renderHeader(){ const d=DAY||'', ds=d?`${d.slice(0,4)}.${d.slice(4,6)}.${d.slice(6,8)}`:'';
+  $('#hd').innerHTML=`<div class="wm"><div><span class="kana">すなお</span><small class="en">SUNAO</small></div></div><div class="hdr"><div class="dt">${ds}<b>${DATA&&DATA.built?'更新 '+esc(DATA.built.slice(11)):''}</b></div>${thmBtn()}</div>`; }
+function showTab(k){ if(!document.getElementById('s-'+k)) k='races'; tab=k; document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id==='s-'+k));
+  document.querySelectorAll('.nav button[data-k]').forEach(b=>b.classList.toggle('on',b.dataset.k===(k==='race'?'races':k))); $('.nav').classList.toggle('rc',k==='race'); if(k!=='race') ls.set('sunao_tab',k); window.scrollTo(0,0); }
+/* ===== 目次 ===== */
+const lxMin=r=>{ const m=(r.time||'').match(/(\d+):(\d+)/); return m?(+m[1]*60+ +m[2]):9999; };
+const lxOk=r=>r.runners&&r.runners.length>=2;
+const lxFin=r=>!!(r.result&&r.result.order&&r.result.order.length);
+function lxDay(){ const now=new Date(), t=ymd(now); return {today:DAY===t, past:DAY<t, hm:now.getHours()*60+now.getMinutes()}; }
+function lxGone(r,X){ return lxFin(r)||(X.today&&lxMin(r)<X.hm)||X.past; }
+function hasGold(r){ return (r.runners||[]).some(h=>!h.scr&&h.ev!=null&&h.ev>=1.0); }
+function renderRaces(){ const el=$('#s-races'); const X=lxDay();
+  const dsel= DAYS.length<2 ? '' : `<div class="seg dsel sm">${DAYS.slice().sort().slice(-4).map(d=>`<button data-d="${d}" class="${d===DAY?'on':''}">${dayLab(d)}</button>`).join('')}</div>`;
+  const byV=VENUES.map(v=>(DATA.races||[]).filter(r=>r.venue_name===v).sort((a,b)=>a.R-b.R));
+  const nxs=X.past?[]:byV.map(rs=>rs.find(r=>lxOk(r)&&!lxGone(r,X))).filter(Boolean); const NX=new Set(nxs.map(r=>r.rid));
+  const maxR=Math.max(0,...byV.map(rs=>rs.length));
+  const cell=(r,rs)=>{ if(!r) return '<div class="lxt-q empty"></div>';
+    const ok=lxOk(r), f=lxFin(r), w=!f&&lxGone(r,X), isn=NX.has(r.rid);
+    const c=['lxt-q',!ok?'dis':f?'fin':w?'wait':'up',isn?'nx':'',r===rs[0]?'first':'',r===rs[rs.length-1]?'last':''].filter(Boolean).join(' ');
+    return `<button type="button" class="${c}" data-rid="${r.rid}"${ok?'':' disabled'}><span class="h"><b>${r.R}</b><i>${esc(r.time||'')}</i><em>${r.surface==='芝'?'芝':'ダ'}</em></span><span class="n">${esc(r.name)}</span>${ok&&w?'<span class="w">結果待ち</span>':''}${ok&&!f&&!w&&hasGold(r)?'<span class="g"></span>':''}</button>`; };
+  let rows=''; for(let i=0;i<maxR;i++) rows+=byV.map(rs=>cell(rs[i],rs)).join('');
+  const heads=VENUES.map((v,i)=>{ const rs=byV[i], fin=rs.filter(r=>lxFin(r)).length; return `<div class="lxt-vh">${esc(v)}<span>${X.past?'終了':`${fin}/${rs.length}`}</span></div>`; }).join('');
+  const map=VENUES.length?`<div class="lxh"><b>${X.today?'きょうのレース':X.past?'全レース（終了）':'全レース'}</b><span>押すとそのレースへ</span></div><div class="lxt" style="grid-template-columns:repeat(${VENUES.length},minmax(0,1fr))">${heads}${rows}</div><div class="lxt-lg"><span><i class="d f"></i>終了</span><span><i class="d x"></i>次のレース</span><span><i class="g"></i>金の馬あり</span></div>`:'<div class="pend">この日のレースはまだありません</div>';
+  el.innerHTML=`<h2>${ico('flag')}レース</h2>${dsel}${map}`;
+  el.querySelectorAll('.dsel button').forEach(b=>b.onclick=async()=>{ await setDay(b.dataset.d); ls.set('sunao_day',DAY); renderAll(); showTab('races'); });
+  el.querySelectorAll('[data-rid]').forEach(b=>{ if(b.disabled) return; b.onclick=()=>openRace(b.dataset.rid); });
+}
+/* ===== レース ===== */
+function openRace(rid){ cur.race=rid; const r=byRid[rid]; if(!r) return; renderRacePage(r); showTab('race'); }
+const evCls=h=>h.scr||h.ev==null?'':h.ev>=1.0?'e2':h.ev>=0.9?'e1':'';
+const pct=p=>p==null?'—':(p*100).toFixed(1);
+const fmtWt=h=>h.weight?`${h.weight}${h.wdiff!=null?`(${h.wdiff>0?'+':''}${h.wdiff})`:''}`:'';
+function favRows(h){ const f=h.fav||{}; const L={j:'騎手',t:'厩舎',c:'組み合わせ'}; const rows=Object.keys(L).filter(k=>f[k]&&f[k][0]).map(k=>{ const [n,e,a]=f[k]; const ok=a>=e; return `<div><b>${L[k]}</b><span class="${ok?'ok':''}">100回中 見込み${Math.round(e)}→実際<em>${Math.round(a)}</em>（${n}回）</span></div>`; });
+  if(!rows.length) return ''; return `<h4>人気馬だったときの実績</h4><div class="fv">${rows.join('')}<p>単勝5倍以下で乗ったときに、同じ人気の馬が普通どれだけ勝つかと比べたもの。回数が少ないうちは幅があります。</p></div>`; }
+function pastRows(h){ const P=h.past||[]; if(!P.length) return '<h4>近走</h4><p class="note" style="margin-top:0">まだ記録がありません。</p>';
+  return `<h4>近5走</h4><table class="pt"><tr><th class="l">日付</th><th class="l">場</th><th>距離</th><th>着</th><th>人気</th><th>上り</th><th class="l">通過</th><th class="l">騎手</th><th>体重</th></tr>${P.map(p=>`<tr><td class="l">${esc(p.d||'')}</td><td class="l">${esc(p.v||'')}</td><td>${esc(p.surf||'')}${p.dist||''}</td><td class="${p.fin===1?'w1':''}"><b>${p.fin==null?'—':p.fin}</b>/${p.n||''}</td><td>${p.pop||'—'}</td><td>${p.l3||'—'}</td><td class="l">${esc(p.pos||'')}</td><td class="l">${esc(p.j||'')}</td><td>${p.wt||''}</td></tr>`).join('')}</table>`; }
+
+/* 帯の会場タブとレース番号タブ（UMAMI と同じ部品。会場を押すとその会場の番号に入れ替わり、番号を押すとそのレースへ） */
+function rselBody(r,v){ const X=lxDay(); const rs=(DATA.races||[]).filter(x=>x.venue_name===v).sort((a,b)=>a.R-b.R);
+  const nx=X.past?null:(rs.find(x=>lxOk(x)&&!lxGone(x,X))||{}).rid;
+  return `<div class="rs-a"><div class="rs-v">${VENUES.map(p=>`<button type="button" data-v="${p}" class="${p===v?'vo':''}${p===r.venue_name?' cur':''}">${esc(p)}</button>`).join('')}</div><div class="rs-n"><b>${esc(r.name)}</b><i>${esc(r.surface||'')}${r.dist||''}m</i></div></div>
+    <div class="rs-r">${rs.map(x=>{ const ok=lxOk(x); const c=[x.surface==='芝'?'turf':'',x.rid===r.rid?'ro':'',x.rid===nx&&x.rid!==r.rid?'nx':'',ok&&!X.past&&lxGone(x,X)?'gone':''].filter(Boolean).join(' ');
+      return `<button type="button" class="${c}" data-rid="${x.rid}"${ok?'':' disabled'}><b>${x.R}</b><small>${esc(x.time||'')}</small>${ok&&lxFin(x)?'<i class="ck"><svg viewBox="0 0 10 10"><path d="M2 5.2l2 2 4-4.4"/></svg></i>':''}</button>`; }).join('')}</div>`; }
+function bindRsel(el,r){ const box=el.querySelector('#rsel'); if(!box) return;
+  box.onclick=e=>{ const vb=e.target.closest('.rs-v button'); if(vb){ box.innerHTML=rselBody(r,vb.dataset.v); return; }
+    const rb=e.target.closest('.rs-r button'); if(rb&&!rb.disabled&&rb.dataset.rid!==r.rid) openRace(rb.dataset.rid); }; }
+function renderRacePage(r){ const el=$('#s-race'); const X=lxDay(); const rs=(DATA.races||[]).filter(x=>x.venue_name===r.venue_name).sort((a,b)=>a.R-b.R);
+  const sel=`<div id="rsel">${rselBody(r,r.venue_name)}</div>`;
+  const live=(r.runners||[]).filter(h=>!h.scr); const yoso=r.odds_status==='yoso';
+  const head=`<div class="rh2"><div class="rh-n"><em>${esc(r.venue_name)} ${r.R}R</em>${esc(r.name)}</div><div class="rh-m"><span>${esc(r.time||'')} 発走</span><span class="sf">${esc(r.surface||'')}${r.dist||''}m${r.turn?'・'+esc(r.turn):''}</span><span>${live.length}頭</span>${r.going?`<span>馬場 ${esc(r.going)}</span>`:''}${r.odds_at?`<span class="${yoso?'yoso':''}">${yoso?'発売前の想定':'オッズ '+esc(r.odds_at)}</span>`:''}</div></div>`;
+  const fin=lxFin(r); const order=fin?r.result.order:[]; const winU=fin?+order[0].uma:null; const top3=new Set(order.slice(0,3).map(o=>+o.uma));
+  const hs=(r.runners||[]).slice().sort((a,b)=>SORT==='p'?((PR(b)||0)-(PR(a)||0)||a.uno-b.uno):a.uno-b.uno);
+  const rows=hs.map(h=>{ const c=[evCls(h),h.scr?'scr':'',fin&&!h.scr&&h.uno===winU&&evCls(h)?'hit':''].filter(Boolean).join(' ');
+    const al=h.alert?`<span class="al${h.alert>=2?' a2':''}">${h.alert>=2?'人気の割に':'やや'}</span>`:'';
+    return `<tr data-h="${h.uno}" class="${c}"><td class="c">${cap(h)}</td><td class="nm l"><div class="hn"><span>${esc(h.name)}</span>${h.jchg?'<span class="sw" title="乗り替わり">替</span>':''}${al}</div><small><b>${esc(h.jockey||'')}</b> ${h.kinryo||''}${fmtWt(h)?' '+fmtWt(h):''}</small></td><td class="od">${h.scr?'取消':(h.odds==null?'—':h.odds.toFixed(1))}</td><td class="pp">${h.scr?'':(h.pop==null?'—':h.pop)}</td><td class="p">${h.scr?'':pct(PR(h))}</td><td class="ev">${h.scr||h.ev==null?'':h.ev.toFixed(2)}</td></tr>
+      <tr class="hcard" data-hc="${h.uno}"><td colspan="6"><div class="hc">${pastRows(h)}${favRows(h)}</div></td></tr>`; }).join('');
+  const table=`<div class="tt"><b>出馬表</b><div class="seg sm srt"><button data-s="uno" class="${SORT==='uno'?'on':''}">馬番</button><button data-s="p" class="${SORT==='p'?'on':''}">勝率</button></div></div>
+    <table class="t"><tr><th></th><th class="l">馬</th><th>単勝</th><th>人気</th><th>勝率%</th><th>期待値</th></tr>${rows}</table>
+    <div class="note">期待値＝勝率×単勝オッズ。<span class="k g" style="background:#f5e19e;color:#3a2a00;padding:0 6px;border-radius:999px">1.00以上</span> と <span style="color:#b39a52;font-weight:700">0.90以上</span> の2段。馬を押すと近5走が開きます。</div>`;
+  const PAYS=['単勝','複勝','馬連','馬単','3連複','3連単'];
+  const res=fin?`<div class="res"><div class="ro">${order.slice(0,3).map(o=>{ const h=(r.runners||[]).find(x=>+x.uno===+o.uma)||{uno:o.uma,waku:0,name:''}; return `<div><i>${o.fin}着</i>${cap(h)}${esc(h.name)}<small>${o.pop?o.pop+'人気':''}</small></div>`; }).join('')}</div>
+    <table class="pay">${PAYS.filter(k=>r.result.pays&&r.result.pays[k]).map(k=>{ const p=r.result.pays[k]; const gold=k==='単勝'&&(r.runners||[]).some(h=>+h.uno===winU&&evCls(h)); return `<tr class="${gold?'g':''}"><td>${k}</td><td>${p.uma.map(u=>esc(u).replace(/\s+/g,'-')).join('／')}</td><td>${p.yen.map(y=>y.toLocaleString()+'円').join(' / ')}</td></tr>`; }).join('')}</table></div>`:'';
+  el.innerHTML=sel+head+res+table;
+  bindRsel(el, r);
+  el.querySelectorAll('.srt button').forEach(b=>b.onclick=()=>{ SORT=b.dataset.s; renderRacePage(r); });
+  el.querySelectorAll('tr[data-h]').forEach(tr=>tr.onclick=()=>{ const hc=el.querySelector(`tr[data-hc="${tr.dataset.h}"]`); if(hc) hc.style.display=hc.style.display==='table-row'?'none':'table-row'; });
+
+}
+/* ===== 記録・使い方・会員 ===== */
+async function renderRecord(){ const el=$('#s-record'); el.innerHTML=`<h2>${ico('chart')}記録</h2>`;
+  let R=null; try{ const r=await fetch(`data/record.json?v=${BUILT}`,{cache:'no-store'}); if(r.ok) R=await r.json(); }catch(e){}
+  if(!R||!R.days||!R.days.length){ el.innerHTML+=`<div class="box"><b>まだ記録がありません</b><p>最初の開催日から、出した勝率がどれだけ当たっていたか、期待値が金だった馬の成績を日ごとにここに積んでいきます。</p></div>`; return; }
+  const md=(d,l)=>`${+d.slice(4,6)}/${+d.slice(6)}${l?'（'+'日月火水木金土'[new Date(+d.slice(0,4),+d.slice(4,6)-1,+d.slice(6)).getDay()]+'）':''}`;
+  const roi=g=>g.n?Math.round(100*g.ret/(g.n*100)):null;
+  const gbox=(t,g,cls)=>`<div class="rc ${cls}"><b>${t}</b><div class="rc-n"><span><em>${g.n}</em>頭</span><span>的中<em>${g.hit}</em></span><span>回収<em>${roi(g)==null?'—':roi(g)+'%'}</em></span></div></div>`;
+  const T=R.total;
+  const bands=T.bands.filter(b=>b.n>0).map(b=>`<tr><td class="l">${Math.round(b.lo*100)}〜${Math.round(b.hi*100)>100?100:Math.round(b.hi*100)}%</td><td>${b.n}</td><td>${(100*b.exp/b.n).toFixed(1)}</td><td><b>${(100*b.act/b.n).toFixed(1)}</b></td></tr>`).join('');
+  const days=R.days.map(d=>`<tr><td class="l">${md(d.d,true)}</td><td>${d.races}</td><td>${d.gold.n}</td><td>${d.gold.hit}</td><td><b>${roi(d.gold)==null?'—':roi(d.gold)+'%'}</b></td><td>${d.pale.n}</td><td>${d.pale.hit}</td><td><b>${roi(d.pale)==null?'—':roi(d.pale)+'%'}</b></td></tr>`).join('');
+  el.innerHTML+=`<div class="box"><b>期待値が金だった馬を単勝100円ずつ買ったら</b><p>${md(R.days[R.days.length-1].d)}〜${md(R.days[0].d)}・${T.races}レース。判定は発走1分前までの最後の勝率とオッズ、払い戻しは確定の値。</p>
+    <div class="rcs">${gbox('1.00以上',T.gold,'g')}${gbox('0.90以上',T.pale,'g2')}</div></div>
+    <div class="box"><b>出した勝率は当たっていたか</b><p>勝率の帯ごとに、100頭あたりの見込みと実際の勝ち。近いほど正直。</p>
+    <table class="pt"><tr><th class="l">出した勝率</th><th>頭数</th><th>見込み</th><th>実際</th></tr>${bands}</table></div>
+    <div class="box"><b>日ごと</b><table class="pt"><tr><th class="l">日</th><th>R</th><th>金</th><th>的中</th><th>回収</th><th>淡金</th><th>的中</th><th>回収</th></tr>${days}</table></div>`; }
+function renderMem(){ $('#s-mem').innerHTML=`<h2>${ico('user')}会員</h2><div class="box"><b>1日券は準備中</b><p>いまは全部のレースをそのまま見られます。</p></div>`; }
+function renderHowto(){ $('#s-howto').innerHTML=`<h2>${ico('book')}使い方</h2><div class="hto">
+  <div class="lead">すなおは、地方競馬の全レースに「正直な勝率」と「期待値」を付けるサービスです。</div>
+  <div class="qs"><div><b>1</b><span>目次でレースを押す。<em>金の点</em>がある列は、期待値が金の馬がいるレースです。</span></div><div><b>2</b><span>出馬表の<em>期待値</em>を見る。1.00以上は濃い金、0.90以上は淡い金。</span></div><div><b>3</b><span>馬を押すと近5走が開く。人気馬に小さな札があれば、その中身も見られます。</span></div></div>
+  <div class="hs"><div>${ico('horse')}<b>勝率はどう決めている？</b></div><ul>
+    <li><b>人気を出発点にして</b>、人気のわりに来る・来ないのずれだけを、過去の地方の全レースから学んでいます。だから<b>人気そのものとは少しだけ違う</b>、正直な勝率になります。</li>
+    <li>たとえば、すなおが「50%」と出した馬は、100頭いれば50頭ほど勝ちます。「10%」なら10頭ほど。見込みどおりに来るように作ってあります。</li>
+    <li>材料は、近走の速さ・着順・位置取り、騎手と厩舎の実績、乗り替わり、馬体重など。</li>
+  </ul></div>
+  <div class="hs"><div>${ico('coin')}<b>期待値の読み方</b></div><ul>
+    <li><b>期待値＝勝率×単勝オッズ</b>。100円の単勝を買ったとき、平均していくら戻るかの倍率です。</li>
+    <li><span class="k g">1.00以上</span> は、長く買い続けると元が取れる見込みの馬。<span class="k g2">0.90以上</span> は惜しい馬。</li>
+    <li>全部の馬を買うと、100円あたり70円ほどしか戻りません。期待値が高い馬だけに絞るのが、すなおの使い方です。</li>
+  </ul></div>
+  <div class="hs"><div>${ico('clock')}<b>オッズは動く</b></div><ul>
+    <li>期待値はオッズで変わります。<b>発売前は「想定」</b>のオッズなので目安。発走が近づくほど本当の値に近づきます。</li>
+    <li>オッズと勝率は10分ごとに取り直しています。ページの上に更新した時刻が出ます。</li>
+    <li>取消になった馬は薄く表示し、残りの馬で勝率を配り直します。</li>
+  </ul></div>
+  <div class="hs"><div>${ico('flag')}<b>人気馬の小さな札</b></div><ul>
+    <li>単勝5倍以下の人気馬で、騎手・厩舎・その組み合わせが過去に人気馬だったとき、<b>見込みより来ていない</b>場合に出ます。</li>
+    <li>「100回中 見込み48→実際40」のように、同じ人気の馬が普通どれだけ勝つかと並べて見せます。回数が少ないうちは偶然の幅があります。</li>
+  </ul></div>
+  <div class="note">すなおは予想を売るサービスではなく、判断の材料を出すサービスです。馬券の購入は自己責任でお願いします。</div>
+</div>`; }
+function renderAll(){ renderHeader(); renderRaces(); renderRecord(); renderMem(); renderHowto(); if(cur.race&&byRid[cur.race]) renderRacePage(byRid[cur.race]); }
+async function main(){ if(!DAYS.length){ $('#hd').innerHTML='<div class="wm"><div><span class="kana">すなお</span><small class="en">SUNAO</small></div></div>'; $('#s-races').innerHTML='<div class="pend">データがまだありません</div>'; showTab('races'); return; }
+  await setDay(pickDay()); renderAll();
+  const q=new URLSearchParams(location.search).get('r'); let k=ls.get('sunao_tab','races'); if(q&&byRid[q]){ openRace(q); } else { if(k==='race') k='races'; showTab(k); }
+  document.querySelectorAll('.nav button[data-k]').forEach(b=>b.onclick=()=>{ const k=b.dataset.k; if(k==='up'){ window.scrollTo({top:0,behavior:'smooth'}); return; } if(k==='list'){ showTab('races'); return; } showTab(k); });
+  let lastY=window.scrollY; window.addEventListener('scroll',()=>{ const y=window.scrollY; const nv=$('.nav'); if(tab==='race'){ nv.classList.toggle('hid',y>lastY+6&&y>120); if(y<lastY-6) nv.classList.remove('hid'); } else nv.classList.remove('hid'); lastY=y; const rs=$('#rsel'); if(rs) rs.classList.toggle('stuck',y>40); },{passive:true});
+  setInterval(async()=>{ try{ const r=await fetch(`data/${DAY}.json?t=${Date.now()}`,{cache:'no-store'}); const j=await r.json(); if(j.built!==DATA.built){ CACHE[DAY]=j; await setDay(DAY); const y=window.scrollY; renderAll(); window.scrollTo(0,y); } }catch(e){} },300000);   /* 5分ごとに新しいデータがあれば描き直す */
+}
+main();
+</script>
+</body>
+</html>
