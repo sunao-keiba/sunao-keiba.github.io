@@ -235,6 +235,122 @@ html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{back
 .oupdg em{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:400;font-size:10.5px;opacity:.75;margin-left:4px;letter-spacing:0}
 .oupdg:disabled{opacity:.6;cursor:default}
 .oupd-n{font-size:10.5px;color:var(--mute);text-align:right;margin-top:4px;min-height:14px;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
+
+/* ===== v2 章立て（2026-10-30） ===== */
+.sec{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 12px 13px;margin-top:12px}
+.sh{display:flex;align-items:center;gap:8px;row-gap:6px;flex-wrap:wrap;margin-bottom:8px;min-height:26px}
+.sh .shic{position:relative;flex:none;width:26px;height:26px;border-radius:50%;background:var(--ac2);display:flex;align-items:center;justify-content:center}
+.sh .shic svg{width:14px;height:14px;stroke:var(--ac);stroke-width:1.8}
+.sh .shic em{position:absolute;right:-5px;top:-5px;width:14px;height:14px;border-radius:50%;background:var(--ac);color:#fff;font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:8.5px;line-height:1;display:flex;align-items:center;justify-content:center}
+.sh b{font-size:14px;font-weight:800;letter-spacing:.02em;white-space:nowrap}
+.sh .shr{margin-left:auto;display:flex;align-items:center;gap:6px;min-width:0}
+.sh .shr small{font-size:10px;color:var(--mute);white-space:nowrap}
+/* コースと馬場 */
+.crs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.crs div{background:var(--bg2);border-radius:10px;padding:7px 8px 6px;min-width:0}
+.crs i{display:block;font-style:normal;font-size:9px;color:var(--mute);letter-spacing:.06em;white-space:nowrap}
+.crs b{display:block;font-size:13px;font-weight:700;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.crs b.mono{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:500}
+.crs b.na{color:var(--soft);font-weight:500}
+/* レースのラベル */
+.rlab{display:inline-flex;align-items:center;font-size:10.5px;font-weight:800;padding:2px 9px;border-radius:999px;white-space:nowrap;line-height:1.4}
+.rlab.u-main{background:#f5e19e;color:#3a2a00;box-shadow:inset 0 0 0 1px #c9a227}
+.rlab.u-mid{background:#fff;color:#5a4000;box-shadow:inset 0 0 0 1px #c9a227}
+.rlab.u-ana{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px #9a9a9a}
+.rlab.u-none{background:var(--bg2);color:var(--mute)}
+/* 見立て */
+.seg.vw{width:132px;flex:none}
+.mit{display:grid;gap:5px;margin-top:8px}
+.mit .mr{display:grid;grid-template-columns:24px minmax(0,1fr) 58px 46px;gap:7px;align-items:center;padding:6px 8px;border-radius:10px;background:var(--bg2)}
+.mit .mr.e2{background:#f5e19e}.mit .mr.e1{box-shadow:inset 0 0 0 1px #d9b85a;background:#fff}
+.mit .mr.scr{opacity:.45}
+.mit .nm{font-weight:700;font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.2}
+.mit .nm small{display:block;font-size:9.5px;color:var(--mute);font-weight:400;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;margin-top:1px}
+.mit .pv{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:12px;text-align:right;line-height:1.2}
+.mit .pv small{display:block;font-size:8.5px;color:var(--mute)}
+.mit .ev{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:14px;font-weight:700;text-align:right}
+.mit .mr.e2 .ev{color:#3a2a00}.mit .mr.e1 .ev{color:#b39a52}
+.mit .mr .ev:empty::before{content:'—';color:var(--soft);font-weight:400}
+.mit-h{display:grid;grid-template-columns:24px minmax(0,1fr) 58px 46px;gap:7px;padding:0 8px;margin-top:8px;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:8.5px;color:var(--mute);letter-spacing:.06em}
+.mit-h span{text-align:right}.mit-h span.l{text-align:left}
+/* 人気馬の注意 */
+.alc{display:grid;gap:8px}
+.alc .a{border-radius:12px;padding:9px 10px;background:var(--bg2);border-left:4px solid #d9b85a}
+.alc .a.a2{border-left-color:#c9872a;background:#fbf3e4}
+.alc .ah{display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-width:0}
+.alc .ah b{font-size:13px;font-weight:800;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.alc .ah .od{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11px;color:var(--mute);white-space:nowrap}
+.alc .ap{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11.5px;margin-top:5px;color:var(--ink)}
+.alc .ap em{font-style:normal;color:#8a5a00;font-weight:700}
+.alc .ap small{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:10px;color:var(--mute);margin-left:4px}
+.alc .fv{margin-top:6px}.alc .fv p{display:none}
+.alc .fv div{grid-template-columns:58px 1fr}
+.alc-none{font-size:12px;color:var(--mute);padding:4px 0 2px}
+/* 脚質と要素の札 */
+.rn{display:inline-flex;align-items:center;flex:none;font-size:8.5px;font-weight:800;padding:1.5px 5px;border-radius:4px;white-space:nowrap;line-height:1.2;letter-spacing:.02em}
+.rn.r1{background:#1f7a4d;color:#fff}.rn.r2{background:#d9efe3;color:#1f5f3f}.rn.r3{background:#dfe3ea;color:#3f4a5e}.rn.r4{background:#55617a;color:#fff}
+.chs{display:flex;flex-wrap:nowrap;gap:3px;margin-top:3px;overflow:hidden;min-width:0}
+.ch{flex:none;font-size:8.5px;font-weight:700;color:var(--mute);background:var(--bg2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;white-space:nowrap;line-height:1.3}
+.ch.up{color:#1f7a4d;border-color:#b9dcc8;background:#f1faf5}.ch.dn{color:#a0522d;border-color:#e6c6b6;background:#fbf4f0}.ch.sp{color:#8a5a00;border-color:#d9b85a;background:#fdf6e1}
+.t td.nm .hn .rn{margin-left:2px}
+/* 各馬カード */
+.l3b{display:inline-flex;align-items:center;justify-content:center;min-width:15px;height:13px;border-radius:3px;font-size:8.5px;font-weight:700;margin-left:3px;padding:0 3px;vertical-align:1px;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
+.l3b.k1{background:#f5e19e;color:#3a2a00}.l3b.k2{background:#2f3b63;color:#fff}.l3b.k3{background:#d6d5cf;color:#333}
+.pt td.nmr{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;text-align:left;max-width:72px;overflow:hidden;text-overflow:ellipsis;color:var(--mute);font-size:9.5px}
+.ptw{overflow-x:auto;margin:0 -10px;padding:0 10px;-webkit-overflow-scrolling:touch}
+.hcard td{max-width:0;overflow:hidden}
+.ptw .pt{width:auto;min-width:540px}
+.hc{overflow:hidden}
+.jtl{display:grid;gap:3px;margin-top:4px}
+.jtl div{display:grid;grid-template-columns:52px 1fr;gap:8px;align-items:center;font-size:11px}
+.jtl div b{font-size:10.5px;font-weight:700;color:var(--mute)}
+.jtl div span{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11px}
+.jtl div span small{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;color:var(--mute);font-size:10px;margin-left:3px}
+.hc .chs{flex-wrap:wrap;overflow:visible;margin:2px 0 6px}
+/* 目次: ラベルと注意 */
+.lxt-q .lb{position:absolute;right:2px;top:8px;width:8px;height:8px;border-radius:50%}
+.lxt-q .lb.u-main{background:#e2bf4f}.lxt-q .lb.u-mid{background:#fff;box-shadow:inset 0 0 0 1.5px #c9a227}.lxt-q .lb.u-ana{background:#fff;box-shadow:inset 0 0 0 1.5px #9a9a9a}
+.lxt-q .ac{position:absolute;right:1px;bottom:6px;min-width:11px;height:11px;border-radius:999px;background:#fbf3e4;color:#8a5a00;font-size:7.5px;font-weight:800;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;display:flex;align-items:center;justify-content:center;padding:0 2px;box-shadow:inset 0 0 0 1px #d9b85a;line-height:1}
+.lxt-lg i.lb{width:8px;height:8px;border-radius:50%}
+.lxt-lg i.lb.u-main{background:#e2bf4f}.lxt-lg i.lb.u-mid{background:#fff;box-shadow:inset 0 0 0 1.5px #c9a227}.lxt-lg i.lb.u-ana{background:#fff;box-shadow:inset 0 0 0 1.5px #9a9a9a}
+.lxt-lg i.ac{width:11px;height:11px;border-radius:999px;background:#fbf3e4;box-shadow:inset 0 0 0 1px #d9b85a;vertical-align:-2px}
+.lxt-lg{flex-wrap:wrap;row-gap:4px}
+.lxt-vh .wx{font-size:8.5px;color:var(--mute);font-weight:400;font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
+/* 使い方 v2 */
+.hto .hs{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;margin-top:12px}
+.hto .hs>div:first-child{padding-bottom:6px;border-bottom:none}
+.hto .hs .num{position:relative;flex:none;width:26px;height:26px;border-radius:50%;background:var(--ac2);display:flex;align-items:center;justify-content:center}
+.hto .hs .num svg{width:14px;height:14px;stroke:var(--ac);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.hto .hs .num em{position:absolute;right:-5px;top:-5px;width:14px;height:14px;border-radius:50%;background:var(--ac);color:#fff;font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:8.5px;display:flex;align-items:center;justify-content:center}
+.hto .pt-box{background:var(--bg2);border-radius:10px;padding:8px 10px;font-size:12px;line-height:1.7;margin-top:4px;word-break:auto-phrase}
+.hto .pt-box b{color:var(--ac)}
+.hto details{margin-top:6px}
+.hto summary{font-size:11.5px;color:var(--ac);font-weight:700;cursor:pointer;list-style:none;display:flex;align-items:center;gap:5px;padding:4px 0}
+.hto summary::-webkit-details-marker{display:none}
+.hto summary::before{content:'';width:0;height:0;border:4px solid transparent;border-left:5px solid var(--ac);display:inline-block;transition:transform .15s;margin-left:2px}
+.hto details[open] summary::before{transform:rotate(90deg)}
+.hto details ul{margin-top:0}
+.hto .k.rn{vertical-align:1px}
+/* 風 */
+.wnd{margin-top:8px;font-size:11.5px;color:var(--ink);display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-weight:700}
+.wnd i{width:16px;height:16px;display:block;flex:none}.wnd i svg{stroke:var(--ac)}
+.wnd small{font-size:10px;color:var(--mute);font-weight:400}
+.wnd .mono{font-weight:500}
+/* 買い目 */
+.bin{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
+.bin label{font-size:10px;color:var(--mute);display:flex;flex-direction:column;gap:3px;letter-spacing:.04em}
+.bin input,.bin select{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:13px;padding:7px 9px;border:1.5px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);width:120px;line-height:1.2}
+.bin select{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;width:128px}
+.bt{width:100%;border-collapse:collapse;margin-top:10px;font-size:12px}
+.bt th{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:8.5px;color:var(--mute);font-weight:400;text-align:right;padding:4px 3px;border-bottom:1.5px solid var(--ink);white-space:nowrap;letter-spacing:.06em}
+.bt td{padding:6px 3px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line);font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;vertical-align:middle}
+.bt th.l,.bt td.l{text-align:left}
+.bt td.c{text-align:center;padding-left:0;padding-right:2px;width:26px}
+.bt td.nm{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:700;max-width:0;width:34%;overflow:hidden;text-overflow:ellipsis;text-align:left;padding-left:2px}
+.bt td.yen{font-weight:700}
+.bt tr.e2 td.ev{color:#3a2a00;font-weight:700}.bt tr.e1 td.ev{color:#b39a52;font-weight:700}
+.bt tr.tot td{border-bottom:none;border-top:1.5px solid var(--ink);font-weight:700;padding-top:7px}
+.bt tr.tot td.l{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
 </style>
 <style id="dk">
 html[data-theme=dark]{color-scheme:dark}html[data-theme=dark] body{background:#0f1013}
@@ -397,6 +513,76 @@ html[data-theme=dark] .mem-open span{background:var(--ac2);color:var(--ac)}
 html[data-theme=dark] .oupdg{background:var(--ac);color:#16181c;border:none}
 html[data-theme=dark] .oupdg svg{fill:none;stroke:currentColor}
 html[data-theme=dark] .oupd-n{color:var(--mute)}
+html[data-theme=dark] .sec{background:#1a1c21;border:1px solid var(--line)}
+html[data-theme=dark] .sh .shic{background:var(--ac2)}
+html[data-theme=dark] .sh .shic svg{stroke:var(--ac)}
+html[data-theme=dark] .sh .shic em{background:var(--ac);color:#16181c}
+html[data-theme=dark] .sh .shr small{color:var(--mute)}
+html[data-theme=dark] .crs div{background:var(--bg2)}
+html[data-theme=dark] .crs i{color:var(--mute)}
+html[data-theme=dark] .crs b.na{color:var(--soft)}
+html[data-theme=dark] .rlab.u-main{background:#4a3d14;color:#cfbc91;box-shadow:inset 0 0 0 1px #b0954a}
+html[data-theme=dark] .rlab.u-mid{background:#1a1c21;color:#f2d27a;box-shadow:inset 0 0 0 1px #b0954a}
+html[data-theme=dark] .rlab.u-ana{background:#1a1c21;color:var(--ink);box-shadow:inset 0 0 0 1px #54575f}
+html[data-theme=dark] .rlab.u-none{background:var(--bg2);color:var(--mute)}
+html[data-theme=dark] .mit .mr{background:var(--bg2)}
+html[data-theme=dark] .mit .mr.e2{background:#4a3d14}
+html[data-theme=dark] .mit .mr.e1{box-shadow:inset 0 0 0 1px #b0964a;background:#1a1c21}
+html[data-theme=dark] .mit .nm small{color:var(--mute)}
+html[data-theme=dark] .mit .pv small{color:var(--mute)}
+html[data-theme=dark] .mit .mr.e2 .ev{color:#cfbc91}
+html[data-theme=dark] .mit .mr.e1 .ev{color:#d5bc73}
+html[data-theme=dark] .mit .mr .ev:empty::before{color:var(--soft)}
+html[data-theme=dark] .mit-h{color:var(--mute)}
+html[data-theme=dark] .alc .a{background:var(--bg2);border-left:4px solid #b0964a}
+html[data-theme=dark] .alc .a.a2{border-left-color:#bf8d4f;background:#221d14}
+html[data-theme=dark] .alc .ah .od{color:var(--mute)}
+html[data-theme=dark] .alc .ap{color:var(--ink)}
+html[data-theme=dark] .alc .ap em{color:#e8b36c}
+html[data-theme=dark] .alc .ap small{color:var(--mute)}
+html[data-theme=dark] .alc-none{color:var(--mute)}
+html[data-theme=dark] .rn.r1{background:#2c8457;color:#f4f6fb}
+html[data-theme=dark] .rn.r2{background:#18261f;color:#8fcfa9}
+html[data-theme=dark] .rn.r3{background:#222529;color:#b1bed6}
+html[data-theme=dark] .rn.r4{background:#65728b;color:#f4f6fb}
+html[data-theme=dark] .ch{color:var(--mute);background:var(--bg2);border:1px solid var(--line)}
+html[data-theme=dark] .ch.up{color:#5cc597;border-color:#243b2f;background:#191e1b}
+html[data-theme=dark] .ch.dn{color:#f9a782;border-color:#443026;background:#201c1a}
+html[data-theme=dark] .ch.sp{color:#e8b36c;border-color:#b0964a;background:#2e2817}
+html[data-theme=dark] .l3b.k1{background:#4a3d14;color:#cfbc91}
+html[data-theme=dark] .l3b.k2{background:#44517b;color:#f4f6fb}
+html[data-theme=dark] .l3b.k3{background:#2b2a27;color:#d5d5d3}
+html[data-theme=dark] .pt td.nmr{color:var(--mute)}
+html[data-theme=dark] .jtl div b{color:var(--mute)}
+html[data-theme=dark] .jtl div span small{color:var(--mute)}
+html[data-theme=dark] .lxt-q .lb.u-main{background:#3a3115}
+html[data-theme=dark] .lxt-q .lb.u-mid{background:#1a1c21;box-shadow:inset 0 0 0 1.5px #b0954a}
+html[data-theme=dark] .lxt-q .lb.u-ana{background:#1a1c21;box-shadow:inset 0 0 0 1.5px #54575f}
+html[data-theme=dark] .lxt-q .ac{background:#221d14;color:#e8b36c;box-shadow:inset 0 0 0 1px #b0964a}
+html[data-theme=dark] .lxt-lg i.lb.u-main{background:#3a3115}
+html[data-theme=dark] .lxt-lg i.lb.u-mid{background:#1a1c21;box-shadow:inset 0 0 0 1.5px #b0954a}
+html[data-theme=dark] .lxt-lg i.lb.u-ana{background:#1a1c21;box-shadow:inset 0 0 0 1.5px #54575f}
+html[data-theme=dark] .lxt-lg i.ac{background:#221d14;box-shadow:inset 0 0 0 1px #b0964a}
+html[data-theme=dark] .lxt-vh .wx{color:var(--mute)}
+html[data-theme=dark] .hto .hs{background:#1a1c21;border:1px solid var(--line)}
+html[data-theme=dark] .hto .hs>div:first-child{border-bottom:none}
+html[data-theme=dark] .hto .hs .num{background:var(--ac2)}
+html[data-theme=dark] .hto .hs .num svg{stroke:var(--ac);fill:none}
+html[data-theme=dark] .hto .hs .num em{background:var(--ac);color:#16181c}
+html[data-theme=dark] .hto .pt-box{background:var(--bg2)}
+html[data-theme=dark] .hto .pt-box b{color:var(--ac)}
+html[data-theme=dark] .hto summary{color:var(--ac)}
+html[data-theme=dark] .hto summary::before{border:4px solid transparent;border-left:5px solid var(--ac)}
+html[data-theme=dark] .wnd{color:var(--ink)}
+html[data-theme=dark] .wnd i svg{stroke:var(--ac)}
+html[data-theme=dark] .wnd small{color:var(--mute)}
+html[data-theme=dark] .bin label{color:var(--mute)}
+html[data-theme=dark] .bin input,html[data-theme=dark] .bin select{border:1.5px solid var(--line);background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] .bt th{color:var(--mute);border-bottom:1.5px solid var(--ink)}
+html[data-theme=dark] .bt td{border-bottom:1px solid var(--line)}
+html[data-theme=dark] .bt tr.e2 td.ev{color:#cfbc91}
+html[data-theme=dark] .bt tr.e1 td.ev{color:#d5bc73}
+html[data-theme=dark] .bt tr.tot td{border-bottom:none;border-top:1.5px solid var(--ink)}
 html[data-theme=dark] :not(text)[fill="#111"]{fill:#e6e6e3}
 html[data-theme=dark] [stroke="#111"]{stroke:#d6d6d3}
 html[data-theme=dark] :not(text)[fill="#fff"]{fill:#1a1c21}
@@ -435,6 +621,14 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 <symbol id="i-horse" viewBox="0 0 48 48"><path d="M10 40 L10 26 Q10 18 18 16 L26 12 L30 6 L34 12 L36 20 Q34 26 28 26 L26 32 L26 40"/><path d="M14 40 L14 32"/><path d="M22 40 L22 34"/><circle cx="31" cy="15" r="1" fill="#111"/><path d="M28 10 L30 8"/></symbol>
 <symbol id="i-clock" viewBox="0 0 48 48"><circle cx="24" cy="26" r="13"/><path d="M24 17 L24 26 L30 30"/><path d="M14 10 L18 13 M34 10 L30 13"/></symbol>
 <symbol id="i-check" viewBox="0 0 12 12"><path d="M2.5 6.5 L5 9 L9.5 3.5"/></symbol>
+<symbol id="i-track" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="6"/><rect x="7.5" y="9.5" width="9" height="5" rx="2.5"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 L21 19 H3 Z"/><path d="M12 10v4"/><circle cx="12" cy="16.6" r=".6" fill="#111"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M8 7h12M8 12h12M8 17h12"/><circle cx="4.5" cy="7" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="17" r="1"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3"/><path d="M12 14v4M8 20h8"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M15 12v2"/></symbol>
+<symbol id="i-run" viewBox="0 0 24 24"><path d="M4 18h16M6 14l4-6 3 4 2-3 3 5"/></symbol>
+<symbol id="i-wind" viewBox="0 0 24 24"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 13h15a3 3 0 1 1-3 3"/><path d="M3 18h7"/></symbol>
+<symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 7h16v3a2 2 0 0 0 0 4v3H4v-3a2 2 0 0 0 0-4z"/><path d="M14 7v10" stroke-dasharray="2 2"/></symbol>
 <symbol id="i-lock" viewBox="0 0 14 14"><rect x="2.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M4.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></symbol>
 </defs></svg>
 <div class="wrap">
@@ -456,7 +650,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </div></div>
 <script>
 const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
-const BUILT='2026-10-30T0156';
+const BUILT='2026-10-30T0157';
 const GATED=true;        /* 合い言葉あり（1日券） */
 const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
 const $=s=>document.querySelector(s);
@@ -547,7 +741,13 @@ const lxFin=r=>!!(r.result&&r.result.order&&r.result.order.length);
 function lxDay(){ const now=new Date(), t=ymd(now); return {today:DAY===t, past:DAY<t, hm:now.getHours()*60+now.getMinutes()}; }
 function lxGone(r,X){ return lxFin(r)||(X.today&&lxMin(r)<X.hm)||X.past; }
 function hasGold(r){ return (r.runners||[]).some(h=>!h.scr&&h.ev!=null&&h.ev>=1.0); }
-function renderRaces(){ const el=$('#s-races'); const X=lxDay();
+/* レースのラベル（UMAMI と同じ決め方）: 期待値0.9以上の馬の勝率の合計 → 0.25以上=本線、0.10以上=相手、それ未満=穴、該当なし=なし */
+function raceLabel(r){ const hs=(r.runners||[]).filter(h=>!h.scr&&h.odds>0&&h.p>0); if(!hs.length) return null;
+  let sum=0,n1=0,n9=0; hs.forEach(h=>{ const v=h.ev!=null?h.ev:Math.round(h.p*h.odds*100)/100; if(v>=0.9){ sum+=h.p; if(v>=1) n1++; else n9++; } });
+  return {k:(n1+n9)===0?'none':(sum>=0.25?'main':(sum>=0.10?'mid':'ana')), sum, n1, n9}; }
+const ULAB={main:'本線',mid:'相手',ana:'穴',none:'なし'};
+const alertN=r=>(r.runners||[]).filter(h=>!h.scr&&h.alert>=1).length;
+function renderRaces(){ const el=$('#s-races'); const X=lxDay(); const LK=locked(DAY);
   const dsel= DAYS.length<2 ? '' : `<div class="seg dsel sm">${DAYS.slice().sort().slice(-4).map(d=>`<button data-d="${d}" class="${d===DAY?'on':''}">${dayLab(d)}</button>`).join('')}</div>`;
   const byV=VENUES.map(v=>(DATA.races||[]).filter(r=>r.venue_name===v).sort((a,b)=>a.R-b.R));
   const nxs=X.past?[]:byV.map(rs=>rs.find(r=>lxOk(r)&&!lxGone(r,X))).filter(Boolean); const NX=new Set(nxs.map(r=>r.rid));
@@ -555,10 +755,13 @@ function renderRaces(){ const el=$('#s-races'); const X=lxDay();
   const cell=(r,rs)=>{ if(!r) return '<div class="lxt-q empty"></div>';
     const ok=lxOk(r), f=lxFin(r), w=!f&&lxGone(r,X), isn=NX.has(r.rid);
     const c=['lxt-q',!ok?'dis':f?'fin':w?'wait':'up',isn?'nx':'',r===rs[0]?'first':'',r===rs[rs.length-1]?'last':''].filter(Boolean).join(' ');
-    return `<button type="button" class="${c}" data-rid="${r.rid}"${ok?'':' disabled'}><span class="h"><b>${r.R}</b><i>${esc(r.time||'')}</i><em>${r.surface==='芝'?'芝':'ダ'}</em></span><span class="n">${esc(r.name)}</span>${ok&&w?'<span class="w">結果待ち</span>':''}${ok&&!f&&!w&&hasGold(r)?'<span class="g"></span>':''}</button>`; };
+    let mk=''; if(ok&&!f&&!w&&!LK){ const L=raceLabel(r); if(L&&L.k!=='none') mk+=`<span class="lb u-${L.k}"></span>`; const a=alertN(r); if(a) mk+=`<span class="ac">${a}</span>`; }
+    return `<button type="button" class="${c}" data-rid="${r.rid}"${ok?'':' disabled'}><span class="h"><b>${r.R}</b><i>${esc(r.time||'')}</i><em>${r.surface==='芝'?'芝':'ダ'}</em></span><span class="n">${esc(r.name)}</span>${ok&&w?'<span class="w">結果待ち</span>':''}${mk}</button>`; };
   let rows=''; for(let i=0;i<maxR;i++) rows+=byV.map(rs=>cell(rs[i],rs)).join('');
-  const heads=VENUES.map((v,i)=>{ const rs=byV[i], fin=rs.filter(r=>lxFin(r)).length; return `<div class="lxt-vh">${esc(v)}<span>${X.past?'終了':`${fin}/${rs.length}`}</span></div>`; }).join('');
-  const map=VENUES.length?`<div class="lxh"><b>${X.today?'きょうのレース':X.past?'全レース（終了）':'全レース'}</b><span>押すとそのレースへ</span></div><div class="lxt" style="grid-template-columns:repeat(${VENUES.length},minmax(0,1fr))">${heads}${rows}</div><div class="lxt-lg"><span><i class="d f"></i>終了</span><span><i class="d x"></i>次のレース</span><span><i class="g"></i>金の馬あり</span></div>`:'<div class="pend">この日のレースはまだありません</div>';
+  const heads=VENUES.map((v,i)=>{ const rs=byV[i], fin=rs.filter(r=>lxFin(r)).length; const r0=rs.find(r=>r.weather||r.going)||{}; const wx=[r0.weather,r0.going].filter(Boolean).join('・');
+    return `<div class="lxt-vh">${esc(v)}<span>${X.past?'終了':`${fin}/${rs.length}`}</span>${wx?`<span class="wx">${esc(wx)}</span>`:''}</div>`; }).join('');
+  const lg=`<div class="lxt-lg"><span><i class="d f"></i>終了</span><span><i class="d x"></i>次のレース</span>${LK?'':`<span><i class="lb u-main"></i>本線</span><span><i class="lb u-mid"></i>相手</span><span><i class="lb u-ana"></i>穴</span><span><i class="ac"></i>人気馬の注意</span>`}</div>`;
+  const map=VENUES.length?`<div class="lxh"><b>${X.today?'きょうのレース':X.past?'全レース（終了）':'全レース'}</b><span>押すとそのレースへ</span></div><div class="lxt" style="grid-template-columns:repeat(${VENUES.length},minmax(0,1fr))">${heads}${rows}</div>${lg}`:'<div class="pend">この日のレースはまだありません</div>';
   el.innerHTML=`<h2>${ico('flag')}レース</h2>${dsel}${map}`;
   el.querySelectorAll('.dsel button').forEach(b=>b.onclick=async()=>{ await setDay(b.dataset.d); ls.set('sunao_day',DAY); renderAll(); showTab('races'); });
   el.querySelectorAll('[data-rid]').forEach(b=>{ if(b.disabled) return; b.onclick=()=>openRace(b.dataset.rid); });
@@ -570,8 +773,17 @@ const pct=p=>p==null?'—':(p*100).toFixed(1);
 const fmtWt=h=>h.weight?`${h.weight}${h.wdiff!=null?`(${h.wdiff>0?'+':''}${h.wdiff})`:''}`:'';
 function favRows(h){ const f=h.fav||{}; const L={j:'騎手',t:'厩舎',c:'組み合わせ'}; const rows=Object.keys(L).filter(k=>f[k]&&f[k][0]).map(k=>{ const [n,e,a]=f[k]; const ok=a>=e; return `<div><b>${L[k]}</b><span class="${ok?'ok':''}">100回中 見込み${Math.round(e)}→実際<em>${Math.round(a)}</em>（${n}回）</span></div>`; });
   if(!rows.length) return ''; return `<h4>人気馬だったときの実績</h4><div class="fv">${rows.join('')}<p>単勝5倍以下で乗ったときに、同じ人気の馬が普通どれだけ勝つかと比べたもの。回数が少ないうちは幅があります。</p></div>`; }
+const RUNC={'逃げ':'r1','先行':'r2','差し':'r3','追込':'r4'};
+const runChip=h=>h.run&&RUNC[h.run]?`<span class="rn ${RUNC[h.run]}">${h.run}</span>`:'';
+const CHC=c=>/↑|前走勝ち|速さ/.test(c)?(/速さ/.test(c)?'sp':'up'):/↓|降級|大幅減|休み明け/.test(c)?'dn':'';
+function chips(h,max){ const C=(h.chips||[]).filter(Boolean); if(!C.length) return ''; const m=max||C.length; const vis=C.slice(0,m), rest=C.length-vis.length;
+  return `<div class="chs">${vis.map(c=>`<span class="ch ${CHC(c)}">${esc(c)}</span>`).join('')}${rest>0?`<span class="ch">+${rest}</span>`:''}</div>`; }
+function jtRows(h){ const j=h.jt||{}; const f=(a,lab)=>a&&a[2]?`<div><b>${lab}</b><span>勝率${a[0]==null?'—':a[0].toFixed(0)}% 3着内${a[1]==null?'—':a[1].toFixed(0)}%<small>（${(a[2]||0).toLocaleString()}回）</small></span></div>`:'';
+  const rows=f(j.j,'騎手')+f(j.t,'調教師'); return rows?`<h4>騎手と調教師のこれまで</h4><div class="jtl">${rows}</div>`:''; }
 function pastRows(h){ const P=h.past||[]; if(!P.length) return '<h4>近走</h4><p class="note" style="margin-top:0">まだ記録がありません。</p>';
-  return `<h4>近5走</h4><table class="pt"><tr><th class="l">日付</th><th class="l">場</th><th>距離</th><th>着</th><th>人気</th><th>上り</th><th class="l">通過</th><th class="l">騎手</th><th>体重</th></tr>${P.map(p=>`<tr><td class="l">${esc(p.d||'')}</td><td class="l">${esc(p.v||'')}</td><td>${esc(p.surf||'')}${p.dist||''}</td><td class="${p.fin===1?'w1':''}"><b>${p.fin==null?'—':p.fin}</b>/${p.n||''}</td><td>${p.pop||'—'}</td><td>${p.l3||'—'}</td><td class="l">${esc(p.pos||'')}</td><td class="l">${esc(p.j||'')}</td><td>${p.wt||''}</td></tr>`).join('')}</table>`; }
+  const l3=p=>`${p.l3!=null?p.l3:'—'}${p.l3r>=1&&p.l3r<=3?`<span class="l3b k${p.l3r}">${p.l3r}</span>`:''}`;
+  return `<h4>近5走</h4><div class="ptw"><table class="pt"><tr><th class="l">日付</th><th class="l">場</th><th>距離</th><th>着</th><th>人気</th><th>速さ</th><th>上り</th><th class="l">通過</th><th class="l">騎手</th><th>体重</th><th class="l">レース</th></tr>${P.map(p=>`<tr><td class="l">${esc(p.d||'')}</td><td class="l">${esc(p.v||'')}</td><td>${esc(p.surf||'')}${p.dist||''}${p.go?'<small style="color:var(--mute)">'+esc(p.go)+'</small>':''}</td><td class="${p.fin===1?'w1':''}"><b>${p.fin==null?'—':p.fin}</b>/${p.n||''}</td><td>${p.pop||'—'}</td><td>${p.sp!=null?p.sp.toFixed(0):'—'}</td><td>${l3(p)}</td><td class="l">${esc(p.pos||'')}</td><td class="l">${esc(p.j||'')}</td><td>${p.wt||''}</td><td class="nmr">${esc(p.nm||'')}</td></tr>`).join('')}</table></div>`; }
+function horseCard(h){ return `<div class="hc">${(h.run||(h.chips||[]).length)?`<div class="chs">${runChip(h)}${(h.chips||[]).map(c=>`<span class="ch ${CHC(c)}">${esc(c)}</span>`).join('')}</div>`:''}${pastRows(h)}${jtRows(h)}${favRows(h)}</div>`; }
 
 /* 帯の会場タブとレース番号タブ（UMAMI と同じ部品。会場を押すとその会場の番号に入れ替わり、番号を押すとそのレースへ） */
 function rselBody(r,v){ const X=lxDay(); const rs=(DATA.races||[]).filter(x=>x.venue_name===v).sort((a,b)=>a.R-b.R);
@@ -582,28 +794,72 @@ function rselBody(r,v){ const X=lxDay(); const rs=(DATA.races||[]).filter(x=>x.v
 function bindRsel(el,r){ const box=el.querySelector('#rsel'); if(!box) return;
   box.onclick=e=>{ const vb=e.target.closest('.rs-v button'); if(vb){ box.innerHTML=rselBody(r,vb.dataset.v); return; }
     const rb=e.target.closest('.rs-r button'); if(rb&&!rb.disabled&&rb.dataset.rid!==r.rid) openRace(rb.dataset.rid); }; }
-function renderRacePage(r){ const el=$('#s-race'); const X=lxDay(); const rs=(DATA.races||[]).filter(x=>x.venue_name===r.venue_name).sort((a,b)=>a.R-b.R);
-  const sel=`<div id="rsel">${rselBody(r,r.venue_name)}</div>`;
-  const live=(r.runners||[]).filter(h=>!h.scr); const yoso=r.odds_status==='yoso';
-  const head=`<div class="rh2"><div class="rh-n"><em>${esc(r.venue_name)} ${r.R}R</em>${esc(r.name)}</div><div class="rh-m"><span>${esc(r.time||'')} 発走</span><span class="sf">${esc(r.surface||'')}${r.dist||''}m${r.turn?'・'+esc(r.turn):''}</span><span>${live.length}頭</span>${r.going?`<span>馬場 ${esc(r.going)}</span>`:''}${r.odds_at?`<span class="${yoso?'yoso':''}">${yoso?'発売前の想定':'オッズ '+esc(r.odds_at)}</span>`:''}</div></div>`;
-  const fin=lxFin(r); const order=fin?r.result.order:[]; const winU=fin?+order[0].uma:null; const top3=new Set(order.slice(0,3).map(o=>+o.uma));
-  const LK=locked(DAY); if(LK) SORT='uno';
+let VIEW='mitate';
+const sh=(n,icon,title,right)=>`<div class="sh"><i class="shic"><svg class="ic"><use href="#i-${icon}"/></svg><em>${n}</em></i><b>${title}</b>${right?`<div class="shr">${right}</div>`:''}</div>`;
+function courseSec(r,n){ const live=(r.runners||[]).filter(h=>!h.scr).length; const na='<b class="na">発表前</b>';
+  const it=[['会場',`<b>${esc(r.venue_name||'')}</b>`],['距離',`<b class="mono">${esc(r.surface||'')}${r.dist||''}m${r.turn?'<small style="font-size:9px;color:var(--mute)"> '+esc(r.turn)+'</small>':''}</b>`],['直線（目安）',r.straight?`<b class="mono">${r.straight}m</b>`:'<b class="na">—</b>'],
+    ['頭数',`<b class="mono">${live}頭${(r.runners||[]).length>live?'<small style="font-size:9px;color:var(--mute)">（取消'+((r.runners||[]).length-live)+'）</small>':''}</b>`],['クラス',`<b>${esc(r.cond||'—')}</b>`],['1着賞金',r.prize1?`<b class="mono">${r.prize1}万円</b>`:'<b class="na">—</b>'],
+    ['天候',r.weather?`<b>${esc(r.weather)}</b>`:na],['馬場',r.going?`<b>${esc(r.going)}</b>`:na],['発走',`<b class="mono">${esc(r.time||'—')}</b>`]];
+  const w=r.wind; const wl=w&&w.spd!=null?`<div class="wnd">${ico('wind')}<span>風 ${esc(w.dir||'')} <span class="mono">${w.spd} m/s</span><small>（発走時刻の予報）</small></span>${w.now&&w.now.spd!=null?`<span>いま ${esc(w.now.dir||'')} <span class="mono">${w.now.spd} m/s</span>${w.now.at?`<small>（${esc(w.now.at)}）</small>`:''}</span>`:''}</div>`:'';
+  return `<div class="sec">${sh(n,'track','コースと馬場')}<div class="crs">${it.map(([k,v])=>`<div><i>${k}</i>${v}</div>`).join('')}</div>${wl}</div>`; }
+/* 買い目（UMAMI の買い目リストの形）: 期待値0.90以上の馬の単勝に、予算を100円単位で配分 */
+let BET=Object.assign({budget:10000,mode:'prob'},ls.get('sunao_bet',{})||{});
+function betAlloc(hs,budget,mode){ const w=hs.map(h=>mode==='even'?1:h.p); const S=w.reduce((a,b)=>a+b,0)||1; const units=Math.round(budget/100);
+  const raw=w.map(x=>units*x/S); const fl=raw.map(x=>Math.floor(x)); let left=units-fl.reduce((a,b)=>a+b,0);
+  const ord=raw.map((x,i)=>[x-fl[i],i]).sort((a,b)=>b[0]-a[0]); for(let k=0;k<ord.length&&left>0;k++,left--) fl[ord[k][1]]++;
+  return fl.map(u=>u*100); }
+function betSec(r,n){ const hs=(r.runners||[]).filter(h=>!h.scr&&h.p>0&&h.odds>0&&h.ev!=null&&h.ev>=0.9).sort((a,b)=>b.p-a.p);
+  const ctl=`<div class="bin"><label>予算（円）<input id="bbud" type="number" min="1000" step="1000" value="${BET.budget}"></label><label>配分<select id="bmode"><option value="prob"${BET.mode!=='even'?' selected':''}>勝率に比例</option><option value="even"${BET.mode==='even'?' selected':''}>均等</option></select></label></div>`;
+  let body;
+  if(!hs.length) body='<div class="alc-none" style="margin-top:8px">このレースは見送り（期待値0.90以上の馬がいません）。</div>';
+  else{ const am=betAlloc(hs,BET.budget,BET.mode); const tot=am.reduce((a,b)=>a+b,0);
+    body=`<table class="bt"><tr><th></th><th class="l">馬</th><th>単勝</th><th>勝率</th><th>期待値</th><th>金額</th><th>的中時</th></tr>${hs.map((h,i)=>`<tr class="${evCls(h)}"><td class="c">${cap(h)}</td><td class="nm">${esc(h.name)}</td><td>${h.odds.toFixed(1)}</td><td>${pct(h.p)}%</td><td class="ev">${h.ev.toFixed(2)}</td><td class="yen">${am[i].toLocaleString()}</td><td>${Math.floor(am[i]*h.odds).toLocaleString()}</td></tr>`).join('')}<tr class="tot"><td></td><td class="l">合計</td><td colspan="3"></td><td class="yen">${tot.toLocaleString()}</td><td></td></tr></table>
+      <div class="note">単勝100円単位。「的中時」はその馬が勝ったときに戻る額（いまのオッズで）。オッズを更新すると配分も出し直します。</div>`; }
+  return `<div class="sec">${sh(n,'ticket','買い目')}${ctl}${body}</div>`; }
+function evSec(r,n,LK,fin){ const L=LK?null:raceLabel(r); const hasP=(r.runners||[]).some(h=>h.p!=null);
+  const lab=L?`<span class="rlab u-${L.k}">${ULAB[L.k]}</span>`:'';
+  let body='';
+  if(LK) body=lockBox(DAY);
+  else if(!hasP) body='<div class="alc-none">このレースの勝率は出ていません。</div>';
+  else{ const all=(r.runners||[]).filter(h=>!h.scr&&h.p!=null).sort((a,b)=>b.p-a.p);
+    const pick=all.filter(h=>h.ev!=null&&h.ev>=0.9); const list=VIEW==='all'?all:(pick.length?pick:all.slice(0,3));
+    const winU=fin?+r.result.order[0].uma:null;
+    body=`<div class="mit-h"><span class="l"></span><span class="l">馬</span><span>勝率 / 人気</span><span>期待値</span></div><div class="mit">${list.map(h=>`<div class="mr ${evCls(h)}${fin&&h.uno===winU?' hit':''}">${cap(h)}<div class="nm">${esc(h.name)}<small>${esc(h.jockey||'')}　単勝 ${h.odds!=null?h.odds.toFixed(1):'—'}${h.pop?'（'+h.pop+'人気）':''}</small></div><div class="pv">${pct(h.p)}%<small>人気 ${pct(h.mkt)}%</small></div><div class="ev">${h.ev!=null?h.ev.toFixed(2):''}</div></div>`).join('')}</div>
+      ${VIEW!=='all'&&!pick.length?'<div class="note" style="margin-top:6px">期待値が0.90以上の馬がいないので、勝率の上位3頭を出しています。</div>':''}
+      <div class="note">勝率はオッズに合わせて動きます。期待値＝勝率×単勝オッズ。<span style="background:#f5e19e;color:#3a2a00;padding:0 6px;border-radius:999px;font-weight:700">1.00以上</span> と <span style="color:#b39a52;font-weight:700">0.90以上</span> の2段。</div>`; }
+  const right=LK?'':`${lab}<div class="seg sm vw"><button data-v="mitate" class="${VIEW==='mitate'?'on':''}">見立て</button><button data-v="all" class="${VIEW==='all'?'on':''}">全頭</button></div>`;
+  return `<div class="sec" id="sec-ev">${sh(n,'coin','勝率と期待値',right)}${body}${oddsBtn(r)}</div>`; }
+function alertSec(r,n,LK){ let body;
+  if(LK) body='<div class="alc-none">合い言葉で開くと、人気馬の注意がここに出ます。</div>';
+  else{ const A=(r.runners||[]).filter(h=>!h.scr&&h.alert>=1).sort((a,b)=>(b.alert-a.alert)||(a.odds-b.odds));
+    body=A.length?`<div class="alc">${A.map(h=>`<div class="a${h.alert>=2?' a2':''}"><div class="ah">${cap(h)}<b>${esc(h.name)}</b><span class="al${h.alert>=2?' a2':''}">${h.alert>=2?'人気の割に':'やや'}</span><span class="od">単勝 ${h.odds!=null?h.odds.toFixed(1):'—'}${h.pop?'・'+h.pop+'人気':''}</span></div><div class="ap">人気 ${pct(h.mkt)}% → すなお <em>${pct(h.p)}%</em><small>${esc(h.jockey||'')}／${esc(h.trainer||'')}</small></div>${favRows(h).replace('<h4>人気馬だったときの実績</h4>','')}</div>`).join('')}</div>
+      <div class="note">単勝5倍以下の人気馬のうち、すなおの勝率が人気を下回るか、騎手・厩舎・その組み合わせが人気馬だったときに見込みより来ていない馬。「100回中 見込み24→実際15」は、同じ人気の馬が普通どれだけ勝つかとの比べ。回数が少ないうちは幅があります。</div>`:'<div class="alc-none">今回は該当なし。</div>'; }
+  return `<div class="sec">${sh(n,'alert','人気馬の注意')}${body}</div>`; }
+function tableSec(r,n,LK,fin){ const order=fin?r.result.order:[]; const winU=fin?+order[0].uma:null;
   const hs=(r.runners||[]).slice().sort((a,b)=>SORT==='p'?((PR(b)||0)-(PR(a)||0)||a.uno-b.uno):a.uno-b.uno);
   const rows=hs.map(h=>{ const c=[evCls(h),h.scr?'scr':'',fin&&!h.scr&&h.uno===winU&&evCls(h)?'hit':''].filter(Boolean).join(' ');
-    const al=h.alert?`<span class="al${h.alert>=2?' a2':''}">${h.alert>=2?'人気の割に':'やや'}</span>`:'';
-    return `<tr data-h="${h.uno}" class="${c}"><td class="c">${cap(h)}</td><td class="nm l"><div class="hn"><span>${esc(h.name)}</span>${h.jchg?'<span class="sw" title="乗り替わり">替</span>':''}${al}</div><small><b>${esc(h.jockey||'')}</b> ${h.kinryo||''}${fmtWt(h)?' '+fmtWt(h):''}</small></td><td class="od">${h.scr?'取消':(h.odds==null?'—':h.odds.toFixed(1))}</td><td class="pp">${h.scr?'':(h.pop==null?'—':h.pop)}</td>${LK&&!h.scr?`<td class="lk">${ico('lock')}</td><td class="lk">${ico('lock')}</td>`:`<td class="p">${h.scr?'':pct(PR(h))}</td><td class="ev">${h.scr||h.ev==null?'':h.ev.toFixed(2)}</td>`}</tr>
-      <tr class="hcard" data-hc="${h.uno}"><td colspan="6"><div class="hc">${pastRows(h)}${favRows(h)}</div></td></tr>`; }).join('');
-  const table=`${LK?lockBox(DAY):''}${oddsBtn(r)}<div class="tt"><b>出馬表</b>${LK?'':`<div class="seg sm srt"><button data-s="uno" class="${SORT==='uno'?'on':''}">馬番</button><button data-s="p" class="${SORT==='p'?'on':''}">勝率</button></div>`}</div>
-    <table class="t"><tr><th></th><th class="l">馬</th><th>単勝</th><th>人気</th><th>勝率%</th><th>期待値</th></tr>${rows}</table>
-    <div class="note">期待値＝勝率×単勝オッズ。<span class="k g" style="background:#f5e19e;color:#3a2a00;padding:0 6px;border-radius:999px">1.00以上</span> と <span style="color:#b39a52;font-weight:700">0.90以上</span> の2段。馬を押すと近5走が開きます。</div>`;
-  const PAYS=['単勝','複勝','馬連','馬単','3連複','3連単'];
-  const res=fin?`<div class="res"><div class="ro">${order.slice(0,3).map(o=>{ const h=(r.runners||[]).find(x=>+x.uno===+o.uma)||{uno:o.uma,waku:0,name:''}; return `<div><i>${o.fin}着</i>${cap(h)}${esc(h.name)}<small>${o.pop?o.pop+'人気':''}</small></div>`; }).join('')}</div>
-    <table class="pay">${PAYS.filter(k=>r.result.pays&&r.result.pays[k]).map(k=>{ const p=r.result.pays[k]; const gold=k==='単勝'&&(r.runners||[]).some(h=>+h.uno===winU&&evCls(h)); return `<tr class="${gold?'g':''}"><td>${k}</td><td>${p.uma.map(u=>esc(u).replace(/\s+/g,'-')).join('／')}</td><td>${p.yen.map(y=>y.toLocaleString()+'円').join(' / ')}</td></tr>`; }).join('')}</table></div>`:'';
-  el.innerHTML=sel+head+res+table;
+    const al=!LK&&h.alert?`<span class="al${h.alert>=2?' a2':''}">${h.alert>=2?'人気の割に':'やや'}</span>`:'';
+    return `<tr data-h="${h.uno}" class="${c}"><td class="c">${cap(h)}</td><td class="nm l"><div class="hn"><span>${esc(h.name)}</span>${runChip(h)}${al}</div><small><b>${esc(h.jockey||'')}</b> ${h.kinryo||''}${fmtWt(h)?' '+fmtWt(h):''}</small>${chips(h,3)}</td><td class="od">${h.scr?'取消':(h.odds==null?'—':h.odds.toFixed(1))}</td><td class="pp">${h.scr?'':(h.pop==null?'—':h.pop)}</td>${LK&&!h.scr?`<td class="lk">${ico('lock')}</td><td class="lk">${ico('lock')}</td>`:`<td class="p">${h.scr?'':pct(PR(h))}</td><td class="ev">${h.scr||h.ev==null?'':h.ev.toFixed(2)}</td>`}</tr>
+      <tr class="hcard" data-hc="${h.uno}"><td colspan="6">${horseCard(h)}</td></tr>`; }).join('');
+  const right=LK?'':`<div class="seg sm srt"><button data-s="uno" class="${SORT==='uno'?'on':''}">馬番</button><button data-s="p" class="${SORT==='p'?'on':''}">勝率</button></div>`;
+  return `<div class="sec">${sh(n,'list','出馬表',right)}<table class="t" style="margin-top:0"><tr><th></th><th class="l">馬</th><th>単勝</th><th>人気</th><th>勝率%</th><th>期待値</th></tr>${rows}</table>
+    <div class="note">馬を押すと、近5走・騎手と調教師のこれまで・人気馬だったときの実績が開きます。札は <span class="rn r1">逃げ</span><span class="rn r2">先行</span><span class="rn r3">差し</span><span class="rn r4">追込</span> の脚質と、休み明け・乗り替わり・距離の変更などの要素。</div></div>`; }
+function resSec(r,n){ const order=r.result.order; const winU=+order[0].uma; const PAYS=['単勝','複勝','馬連','馬単','3連複','3連単'];
+  return `<div class="sec">${sh(n,'trophy','結果')}<div class="res" style="margin-top:0;border:none;padding:0"><div class="ro">${order.slice(0,3).map(o=>{ const h=(r.runners||[]).find(x=>+x.uno===+o.uma)||{uno:o.uma,waku:0,name:''}; return `<div><i>${o.fin}着</i>${cap(h)}${esc(h.name)}<small>${o.pop?o.pop+'人気':''}</small></div>`; }).join('')}</div>
+    <table class="pay">${PAYS.filter(k=>r.result.pays&&r.result.pays[k]).map(k=>{ const p=r.result.pays[k]; const gold=k==='単勝'&&(r.runners||[]).some(h=>+h.uno===winU&&evCls(h)); return `<tr class="${gold?'g':''}"><td>${k}</td><td>${p.uma.map(u=>esc(u).replace(/\s+/g,'-')).join('／')}</td><td>${p.yen.map(y=>y.toLocaleString()+'円').join(' / ')}${gold?'<small>金の的中</small>':''}</td></tr>`; }).join('')}</table></div></div>`; }
+function renderRacePage(r){ const el=$('#s-race'); const X=lxDay();
+  const sel=`<div id="rsel">${rselBody(r,r.venue_name)}</div>`;
+  const yoso=r.odds_status==='yoso';
+  const head=`<div class="rh2"><div class="rh-n"><em>${esc(r.venue_name)} ${r.R}R</em>${esc(r.name)}</div><div class="rh-m"><span>${esc(r.time||'')} 発走</span><span class="sf">${esc(r.surface||'')}${r.dist||''}m${r.turn?'・'+esc(r.turn):''}</span>${r.going?`<span>馬場 ${esc(r.going)}</span>`:''}${r.odds_at?`<span class="${yoso?'yoso':''}">${yoso?'発売前の想定':'オッズ '+esc(r.odds_at)}</span>`:''}</div></div>`;
+  const fin=lxFin(r); const LK=locked(DAY); if(LK) SORT='uno';
+  let n=0; const secs=[courseSec(r,++n), evSec(r,++n,LK,fin)]; if(!LK) secs.push(betSec(r,++n)); secs.push(alertSec(r,++n,LK), tableSec(r,++n,LK,fin)); if(fin) secs.push(resSec(r,++n));
+  el.innerHTML=sel+head+secs.join('');
   bindRsel(el, r); const ob=el.querySelector('#oupd'); if(ob) ob.onclick=()=>updOdds(r);
+  const bb=el.querySelector('#bbud'), bm=el.querySelector('#bmode'); const reb=()=>{ BET.budget=Math.max(1000,Math.round((+bb.value||10000)/1000)*1000); BET.mode=bm.value; ls.set('sunao_bet',BET); const y=window.scrollY; renderRacePage(r); window.scrollTo(0,y); };
+  if(bb) bb.onchange=reb; if(bm) bm.onchange=reb;
   el.querySelectorAll('.srt button').forEach(b=>b.onclick=()=>{ SORT=b.dataset.s; renderRacePage(r); });
+  el.querySelectorAll('.vw button').forEach(b=>b.onclick=()=>{ VIEW=b.dataset.v; const y=window.scrollY; renderRacePage(r); window.scrollTo(0,y); });
   el.querySelectorAll('tr[data-h]').forEach(tr=>tr.onclick=()=>{ const hc=el.querySelector(`tr[data-hc="${tr.dataset.h}"]`); if(hc) hc.style.display=hc.style.display==='table-row'?'none':'table-row'; });
-
 }
 /* ===== 記録・使い方・会員 ===== */
 async function renderRecord(){ const el=$('#s-record'); el.innerHTML=`<h2>${ico('chart')}記録</h2>`;
@@ -627,28 +883,28 @@ function renderMem(){ const el=$('#s-mem');
     <div class="box"><b>1日券の合い言葉</b><p>開催日ごとの合い言葉で、その日の全レースの勝率と期待値が開きます。終わった日は誰でも見られます。</p>${lockBox(DAY,'合い言葉を入れる')}</div>
     <div class="box"><b>この端末で開いている日</b>${od.length?`<div class="mem-open">${od.map(d=>`<span>${dayLab(d)}</span>`).join('')}</div>`:'<p>まだありません。</p>'}</div>
     ${NOTE_URL?`<div class="box"><b>1日券を買う</b><p>noteの記事から、その日の合い言葉を手に入れられます。</p><div class="lock" style="border:none;padding:0;margin-top:6px"><div class="buy"><a href="${esc(NOTE_URL)}" target="_blank" rel="noopener">1日券の記事一覧</a></div></div></div>`:`<div class="box"><b>1日券は準備中</b><p>買える場所が決まり次第ここに出します。</p></div>`}`; }
-function renderHowto(){ $('#s-howto').innerHTML=`<h2>${ico('book')}使い方</h2><div class="hto">
+function renderHowto(){ const H=(n,icon,title,point,more)=>`<div class="hs"><div><i class="num"><svg class="ic"><use href="#i-${icon}"/></svg><em>${n}</em></i><b>${title}</b></div><div class="pt-box">${point}</div>${more?`<details><summary>くわしく</summary><ul>${more}</ul></details>`:''}</div>`;
+  $('#s-howto').innerHTML=`<h2>${ico('book')}使い方</h2><div class="hto">
   <div class="lead">すなおは、地方競馬の全レースに「正直な勝率」と「期待値」を付けるサービスです。</div>
-  <div class="qs"><div><b>1</b><span>目次でレースを押す。<em>金の点</em>がある列は、期待値が金の馬がいるレースです。</span></div><div><b>2</b><span>出馬表の<em>期待値</em>を見る。1.00以上は濃い金、0.90以上は淡い金。</span></div><div><b>3</b><span>馬を押すと近5走が開く。人気馬に小さな札があれば、その中身も見られます。</span></div></div>
-  <div class="hs"><div>${ico('horse')}<b>勝率はどう決めている？</b></div><ul>
-    <li><b>人気を出発点にして</b>、人気のわりに来る・来ないのずれだけを、過去の地方の全レースから学んでいます。だから<b>人気そのものとは少しだけ違う</b>、正直な勝率になります。</li>
-    <li>たとえば、すなおが「50%」と出した馬は、100頭いれば50頭ほど勝ちます。「10%」なら10頭ほど。見込みどおりに来るように作ってあります。</li>
-    <li>材料は、近走の速さ・着順・位置取り、騎手と厩舎の実績、乗り替わり、馬体重など。</li>
-  </ul></div>
-  <div class="hs"><div>${ico('coin')}<b>期待値の読み方</b></div><ul>
-    <li><b>期待値＝勝率×単勝オッズ</b>。100円の単勝を買ったとき、平均していくら戻るかの倍率です。</li>
-    <li><span class="k g">1.00以上</span> は、長く買い続けると元が取れる見込みの馬。<span class="k g2">0.90以上</span> は惜しい馬。</li>
-    <li>全部の馬を買うと、100円あたり70円ほどしか戻りません。期待値が高い馬だけに絞るのが、すなおの使い方です。</li>
-  </ul></div>
-  <div class="hs"><div>${ico('clock')}<b>オッズは動く</b></div><ul>
-    <li>期待値はオッズで変わります。<b>発売前は「想定」</b>のオッズなので目安。発走が近づくほど本当の値に近づきます。</li>
-    <li>オッズと勝率は10分ごとに取り直しています。ページの上に更新した時刻が出ます。</li>
-    <li>取消になった馬は薄く表示し、残りの馬で勝率を配り直します。</li>
-  </ul></div>
-  <div class="hs"><div>${ico('flag')}<b>人気馬の小さな札</b></div><ul>
-    <li>単勝5倍以下の人気馬で、騎手・厩舎・その組み合わせが過去に人気馬だったとき、<b>見込みより来ていない</b>場合に出ます。</li>
-    <li>「100回中 見込み48→実際40」のように、同じ人気の馬が普通どれだけ勝つかと並べて見せます。回数が少ないうちは偶然の幅があります。</li>
-  </ul></div>
+  <div class="qs"><div><b>1</b><span>目次でレースを押す。色の丸はレースのラベル（<em>本線・相手・穴</em>）、小さな数字は人気馬の注意の数です。</span></div><div><b>2</b><span>「勝率と期待値」で<em>見立て</em>を見る。1.00以上は濃い金、0.90以上は淡い金。</span></div><div><b>3</b><span>気になる馬を出馬表で押すと、近5走と騎手・調教師のこれまでが開きます。</span></div></div>
+  ${H(1,'horse','勝率はどう決めている？','<b>人気を出発点に</b>、人気のわりに来る・来ないのずれだけを、過去の地方の全レースから学んだ勝率です。すなおが「50%」と出した馬は、100頭いれば50頭ほど勝ちます。',
+    `<li>人気そのものとは少しだけ違います。人気より上がっている馬は「人気のわりに来る」、下がっている馬は「人気のわりに来ない」と見ています。</li><li>材料は、近走の速さ・着順・位置取り、騎手と厩舎のこれまで、乗り替わり、距離や場の変更、馬体重など。</li><li>出した勝率が本当にその通りだったかは、<b>記録</b>のタブで帯ごとに公開しています（例: 20〜30%の帯は、100頭中 見込み24頭→実際25頭）。</li>`)}
+  ${H(2,'coin','期待値と金の2段','<b>期待値＝勝率×単勝オッズ</b>。100円の単勝を買ったとき、平均していくら戻るかの倍率です。<span class="k g">1.00以上</span> は買い続けると元が取れる見込みの馬、<span class="k g2">0.90以上</span> は惜しい馬。',
+    `<li>全部の馬を100円ずつ買うと、100円あたり70円ほどしか戻りません。期待値の高い馬だけに絞るのが、すなおの使い方です。</li><li>見立て＝期待値が0.90以上の馬を勝率順に並べたもの。いなければ勝率の上位3頭。全頭＝全馬を勝率順に。</li><li>期待値はオッズで動きます。発売前は「想定」のオッズなので目安。発走が近づくほど本当の値に近づきます。</li>`)}
+  ${H(3,'ticket','買い目','予算と配分を選ぶと、期待値0.90以上の馬の単勝に100円単位で配った表が出ます。該当する馬がいないレースは「見送り」。',
+    `<li>「勝率に比例」は勝ちやすい馬に多く、「均等」は同じ額ずつ。予算と配分はこの端末に残ります。</li><li>「的中時」はその馬が勝ったときに戻る額（いまのオッズ）。オッズを更新すると配分も出し直します。</li><li>買い目は材料です。買うかどうか、いくら買うかはご自身で決めてください。</li>`)}
+  ${H(4,'flag','レースのラベル','期待値が0.90以上の馬の勝率を足して、<b>本線</b>（100レース中25勝分以上）・<b>相手</b>（10勝分以上）・<b>穴</b>（それ未満）の3つに分けています。',
+    `<li>本線は「金の馬が勝ちやすいレース」。穴は「金の馬はいるが勝率は低い」ので、当たれば大きい代わりに外れやすいレースです。</li><li>目次の色の丸と、レースページの「勝率と期待値」の札に出ます。</li>`)}
+  ${H(5,'alert','人気馬の注意','単勝5倍以下の人気馬で、<b>すなおの勝率が人気を下回る</b>か、<b>騎手・厩舎・その組み合わせ</b>が人気馬だったときに見込みより来ていない馬に札が付きます。',
+    `<li>「100回中 見込み24→実際15（65回）」は、同じ人気の馬が普通どれだけ勝つかと比べた数です。回数が少ないうちは偶然の幅があります。</li><li>「やや」と「人気の割に」の2段。人気馬を軸にするときの、念のための確認に。</li><li>レースページの「人気馬の注意」の章に、該当する馬だけをまとめています。</li>`)}
+  ${H(6,'run','脚質と札','出馬表の馬名の横に <span class="k rn r1">逃げ</span><span class="k rn r2">先行</span><span class="k rn r3">差し</span><span class="k rn r4">追込</span> の脚質と、休み明け・乗り替わり・距離の変更などの要素の札が付きます。',
+    `<li>脚質は近5走で最初のコーナーをどの位置で回ったかから。逃げ・先行が多いレースは前が苦しくなりやすい、といった見方に。</li><li>乗替↑は前の騎手より勝率の高い騎手に替わった馬、乗替↓はその逆。速さ1位は近5走のいちばん速い走りがレースで1位の馬。</li><li>馬を押すと近5走の表が開き、速さ（大きいほど速い）、上りの順位（1〜3位は札）、通過順も見られます。</li>`)}
+  ${H(7,'clock','オッズを更新','「オッズを更新」を押すと、その時点の単勝オッズを取り直し、勝率と期待値も出し直します。押したあと20秒は押せません。',
+    `<li>何もしなくても5分ごとに新しい値に入れ替わります。ページの上に更新した時刻が出ます。</li><li>取消になった馬は薄く表示し、残りの馬で勝率を配り直します。</li>`)}
+  ${H(8,'key','合い言葉（1日券）','勝率・期待値・人気馬の注意は、<b>開催日ごとの合い言葉</b>で開きます。一度入れればこの端末では開いたまま。終わった日は誰でも見られます。',
+    `<li>出馬表・オッズ・近5走・結果・記録は、合い言葉なしで見られます。</li><li>合い言葉は「会員」のタブか、レースページの箱に入れます。</li>`)}
+  ${H(9,'chart','記録','出した勝率の帯ごとに「100頭中 見込み何頭→実際何頭」を、日ごとに積んでいます。期待値が金だった馬を単勝100円ずつ買った成績も。',
+    `<li>判定は発走1分前までの最後の勝率とオッズ、払い戻しは確定の値です。</li>`)}
   <div class="note">すなおは予想を売るサービスではなく、判断の材料を出すサービスです。馬券の購入は自己責任でお願いします。</div>
 </div>`; }
 function renderAll(){ renderHeader(); renderRaces(); renderRecord(); renderMem(); renderHowto(); if(cur.race&&byRid[cur.race]) renderRacePage(byRid[cur.race]); }
