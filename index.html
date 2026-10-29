@@ -214,6 +214,20 @@ html[data-theme=dark] #rsel .rs-r button .ck svg{stroke:#6d6f75}html[data-theme=
 .rcs{display:flex;gap:8px;margin-top:10px}.rc{flex:1;border-radius:12px;padding:10px 10px 8px;background:var(--bg2)}.rc b{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 8px;border-radius:999px}.rc.g b{background:#f5e19e;color:#3a2a00}.rc.g2 b{background:#fff;color:#5a4000;box-shadow:inset 0 0 0 1px #d9b85a}
 .rc-n{display:flex;justify-content:space-between;margin-top:8px;font-size:10px;color:var(--mute)}.rc-n em{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:15px;color:var(--ink);margin-right:1px}
 html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{background:#1a1c21}
+
+/* 合い言葉（2026-10-30） */
+.lock{border:1.5px dashed var(--ac);border-radius:14px;padding:18px 14px;text-align:center;margin-top:12px;background:#fff}
+.lock>i{width:30px;height:30px;display:block;margin:0 auto 8px}.lock>i svg{stroke:var(--ac)}
+.lock p{font-size:12px;color:var(--mute);margin:0 0 12px;font-weight:500;line-height:1.7;word-break:auto-phrase}
+.lock .pw{display:flex;gap:6px;max-width:320px;margin:0 auto}
+.lock input{flex:1;padding:10px;border:1.5px solid var(--ink);border-radius:999px;font-size:15px;text-align:center;letter-spacing:.14em;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;min-width:0;background:#fff;color:var(--ink)}
+.lock button{padding:10px 16px;background:var(--ac);color:#fff;border-radius:999px;font-weight:700;font-size:13px;white-space:nowrap}
+.lock .er{color:#c0392b;font-size:11.5px;margin-top:8px;display:none;font-weight:700}
+.lock .n{font-size:10.5px;color:var(--soft);margin-top:10px;line-height:1.7}
+.lock .buy{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.lock .buy a{font-size:11px;font-weight:700;color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:5px 12px;white-space:nowrap;text-decoration:none}
+.t td.lk{text-align:center}.t td.lk i{width:12px;height:12px;display:inline-block;vertical-align:-1px}.t td.lk svg{stroke:#b9b7b0}
+.mem-open{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.mem-open span{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--ac2);color:var(--ac)}
 </style>
 <style id="dk">
 html[data-theme=dark]{color-scheme:dark}html[data-theme=dark] body{background:#0f1013}
@@ -363,6 +377,16 @@ html[data-theme=dark] .rc-n{color:var(--mute)}
 html[data-theme=dark] .rc-n em{color:var(--ink)}
 html[data-theme=dark][data-theme=dark] .rc{background:#525254}
 html[data-theme=dark][data-theme=dark] .rc.g2 b{background:#505258}
+html[data-theme=dark] .lock{border:1.5px dashed var(--ac);background:#1a1c21}
+html[data-theme=dark] .lock>i svg{stroke:var(--ac)}
+html[data-theme=dark] .lock p{color:var(--mute)}
+html[data-theme=dark] .lock input{border:1.5px solid var(--ink);background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] .lock button{background:var(--ac);color:#16181c}
+html[data-theme=dark] .lock .er{color:#e8675c}
+html[data-theme=dark] .lock .n{color:var(--soft)}
+html[data-theme=dark] .lock .buy a{color:var(--ink);border:1px solid var(--ink);text-decoration:none}
+html[data-theme=dark] .t td.lk svg{stroke:#9a9891}
+html[data-theme=dark] .mem-open span{background:var(--ac2);color:var(--ac)}
 html[data-theme=dark] :not(text)[fill="#111"]{fill:#e6e6e3}
 html[data-theme=dark] [stroke="#111"]{stroke:#d6d6d3}
 html[data-theme=dark] :not(text)[fill="#fff"]{fill:#1a1c21}
@@ -401,6 +425,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 <symbol id="i-horse" viewBox="0 0 48 48"><path d="M10 40 L10 26 Q10 18 18 16 L26 12 L30 6 L34 12 L36 20 Q34 26 28 26 L26 32 L26 40"/><path d="M14 40 L14 32"/><path d="M22 40 L22 34"/><circle cx="31" cy="15" r="1" fill="#111"/><path d="M28 10 L30 8"/></symbol>
 <symbol id="i-clock" viewBox="0 0 48 48"><circle cx="24" cy="26" r="13"/><path d="M24 17 L24 26 L30 30"/><path d="M14 10 L18 13 M34 10 L30 13"/></symbol>
 <symbol id="i-check" viewBox="0 0 12 12"><path d="M2.5 6.5 L5 9 L9.5 3.5"/></symbol>
+<symbol id="i-lock" viewBox="0 0 14 14"><rect x="2.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M4.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></symbol>
 </defs></svg>
 <div class="wrap">
   <div class="hd" id="hd"></div>
@@ -422,6 +447,8 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 <script>
 const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
 const BUILT='2026-10-30T0101';
+const GATED=true;        /* 合い言葉あり（1日券） */
+const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const ico=(n,cls)=>`<i class="${cls||''}"><svg class="ic"><use href="#i-${n}"/></svg></i>`;
@@ -438,13 +465,44 @@ let DAY=null, DATA=null, byRid={}, VENUES=[], cur={race:null}, tab='races', SORT
 const CACHE={};
 function pickDay(){ const q=new URLSearchParams(location.search).get('d'); if(q&&DAYS.includes(q)) return q; const t=ymd(new Date()); if(DAYS.includes(t)) return t; const fut=DAYS.filter(d=>d>t).sort(); return fut[0]||DAYS[0]; }
 async function loadDay(d){ if(CACHE[d]) return CACHE[d]; const r=await fetch(`data/${d}.json?v=${BUILT}`); const j=await r.json(); CACHE[d]=j; return j; }
-async function setDay(d){ DAY=d; DATA=await loadDay(d); byRid={}; (DATA.races||[]).forEach(r=>{ byRid[r.rid]=r; (r.runners||[]).forEach(h=>h._rid=r.rid); });
+async function setDay(d){ DAY=d; DATA=await loadDay(d); mergePaid(DATA,d); byRid={}; (DATA.races||[]).forEach(r=>{ byRid[r.rid]=r; (r.runners||[]).forEach(h=>h._rid=r.rid); });
   VENUES=[...new Set((DATA.races||[]).map(r=>r.venue_name))]; }
 const PR=h=>h.scr?0:(h.p==null?null:h.p);
 function renderHeader(){ const d=DAY||'', ds=d?`${d.slice(0,4)}.${d.slice(4,6)}.${d.slice(6,8)}`:'';
   $('#hd').innerHTML=`<div class="wm"><div><span class="kana">すなお</span><small class="en">SUNAO</small></div></div><div class="hdr"><div class="dt">${ds}<b>${DATA&&DATA.built?'更新 '+esc(DATA.built.slice(11)):''}</b></div>${thmBtn()}</div>`; }
 function showTab(k){ if(!document.getElementById('s-'+k)) k='races'; tab=k; document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id==='s-'+k));
   document.querySelectorAll('.nav button[data-k]').forEach(b=>b.classList.toggle('on',b.dataset.k===(k==='race'?'races':k))); $('.nav').classList.toggle('rc',k==='race'); if(k!=='race') ls.set('sunao_tab',k); window.scrollTo(0,0); }
+
+/* ===== 合い言葉（2026-10-30） ===== */
+const LSK='sunao_pw';            /* この端末で覚えている合い言葉（配列） */
+let ENC=null, OPEN={};           /* ENC: data/enc.json（鍵のかかった日）、OPEN: 開いた日 → {rid:{uno:{p,ev,mkt,fav,alert}}} */
+function b64d(s){const r=atob(s),a=new Uint8Array(r.length);for(let i=0;i<r.length;i++)a[i]=r.charCodeAt(i);return a;}
+async function kekOf(pw){ const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  return crypto.subtle.deriveKey({name:'PBKDF2',salt:b64d(ENC.salt),iterations:ENC.it,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']); }
+const dec=(k,iv,ct)=>crypto.subtle.decrypt({name:'AES-GCM',iv:b64d(iv)},k,b64d(ct));
+async function unz(buf,z){ if(!z) return new TextDecoder().decode(buf);
+  if(typeof DecompressionStream!=='undefined'){ const st=new Blob([buf]).stream().pipeThrough(new DecompressionStream('gzip')); return await new Response(st).text(); }
+  if(!window.fflate){ await new Promise((ok,ng)=>{ const sc=document.createElement('script'); sc.src='https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js'; sc.onload=ok; sc.onerror=ng; document.head.appendChild(sc); }); }
+  return new TextDecoder().decode(window.fflate.gunzipSync(new Uint8Array(buf))); }
+async function loadEnc(){ if(!GATED) return; try{ const r=await fetch(`data/enc.json?v=${BUILT}`,{cache:'no-store'}); if(r.ok) ENC=await r.json(); }catch(e){} }
+const locked=d=>!!(ENC&&ENC.days&&ENC.days[d]&&!OPEN[d]);
+async function openWith(pw){       /* その合い言葉で開ける日を全部開く。戻り: 開けた日 */
+  const got=[]; if(!ENC||!ENC.days||!pw) return got; const k=await kekOf(pw);
+  for(const [d,x] of Object.entries(ENC.days)){
+    for(const w of (x.w||[])){
+      try{ const raw=await dec(k,w.iv,w.k);
+        if(!OPEN[d]){ const ck=await crypto.subtle.importKey('raw',raw,{name:'AES-GCM'},false,['decrypt']); OPEN[d]=JSON.parse(await unz(await dec(ck,x.iv,x.ct),x.z)); }
+        got.push(d); break; }catch(e){} } }
+  return got; }
+function mergePaid(j,d){ const m=OPEN[d]; if(!m||!j) return; (j.races||[]).forEach(r=>{ const pr=m[r.rid]; if(!pr) return; (r.runners||[]).forEach(h=>{ const x=pr[String(h.uno)]; if(x) Object.assign(h,x); }); }); }
+async function tryUnlock(pw,remember){
+  try{ pw=(pw||'').trim(); if(!pw) return false; const got=await openWith(pw); if(!got.length) return false;
+    if(remember){ const l=(ls.get(LSK,[])||[]).filter(x=>x!==pw); l.push(pw); ls.set(LSK,l); }
+    Object.keys(CACHE).forEach(d=>mergePaid(CACHE[d],d)); if(DATA) mergePaid(DATA,DAY);
+    renderAll(); return true; }catch(e){ return false; } }
+async function unlockFrom(inp){ const box=inp.closest('.lock'); const ok=await tryUnlock(inp.value,true); if(!ok&&box){ box.querySelector('.er').style.display='block'; } }
+function lockBox(d,msg){ const A=NOTE_URL?`<div class="buy"><a href="${esc(NOTE_URL)}" target="_blank" rel="noopener">1日券を買う</a></div>`:'';
+  return `<div class="lock">${ico('lock')}<p>${esc(msg||`この日の合い言葉を入れると、${dayLab(d)}の全レースの勝率と期待値が開きます。`)}</p><div class="pw"><input type="password" placeholder="合い言葉" autocomplete="off" inputmode="numeric" onkeydown="if(event.key==='Enter')unlockFrom(this)"><button type="button" onclick="unlockFrom(this.previousElementSibling)">開く</button></div><div class="er">合い言葉が違います</div><div class="n">合い言葉は開催日ごとです。一度入れればこの端末では開いたままになります。${NOTE_URL?'':'<br>1日券は準備中です。'}</div>${A}</div>`; }
 /* ===== 目次 ===== */
 const lxMin=r=>{ const m=(r.time||'').match(/(\d+):(\d+)/); return m?(+m[1]*60+ +m[2]):9999; };
 const lxOk=r=>r.runners&&r.runners.length>=2;
@@ -492,12 +550,13 @@ function renderRacePage(r){ const el=$('#s-race'); const X=lxDay(); const rs=(DA
   const live=(r.runners||[]).filter(h=>!h.scr); const yoso=r.odds_status==='yoso';
   const head=`<div class="rh2"><div class="rh-n"><em>${esc(r.venue_name)} ${r.R}R</em>${esc(r.name)}</div><div class="rh-m"><span>${esc(r.time||'')} 発走</span><span class="sf">${esc(r.surface||'')}${r.dist||''}m${r.turn?'・'+esc(r.turn):''}</span><span>${live.length}頭</span>${r.going?`<span>馬場 ${esc(r.going)}</span>`:''}${r.odds_at?`<span class="${yoso?'yoso':''}">${yoso?'発売前の想定':'オッズ '+esc(r.odds_at)}</span>`:''}</div></div>`;
   const fin=lxFin(r); const order=fin?r.result.order:[]; const winU=fin?+order[0].uma:null; const top3=new Set(order.slice(0,3).map(o=>+o.uma));
+  const LK=locked(DAY); if(LK) SORT='uno';
   const hs=(r.runners||[]).slice().sort((a,b)=>SORT==='p'?((PR(b)||0)-(PR(a)||0)||a.uno-b.uno):a.uno-b.uno);
   const rows=hs.map(h=>{ const c=[evCls(h),h.scr?'scr':'',fin&&!h.scr&&h.uno===winU&&evCls(h)?'hit':''].filter(Boolean).join(' ');
     const al=h.alert?`<span class="al${h.alert>=2?' a2':''}">${h.alert>=2?'人気の割に':'やや'}</span>`:'';
-    return `<tr data-h="${h.uno}" class="${c}"><td class="c">${cap(h)}</td><td class="nm l"><div class="hn"><span>${esc(h.name)}</span>${h.jchg?'<span class="sw" title="乗り替わり">替</span>':''}${al}</div><small><b>${esc(h.jockey||'')}</b> ${h.kinryo||''}${fmtWt(h)?' '+fmtWt(h):''}</small></td><td class="od">${h.scr?'取消':(h.odds==null?'—':h.odds.toFixed(1))}</td><td class="pp">${h.scr?'':(h.pop==null?'—':h.pop)}</td><td class="p">${h.scr?'':pct(PR(h))}</td><td class="ev">${h.scr||h.ev==null?'':h.ev.toFixed(2)}</td></tr>
+    return `<tr data-h="${h.uno}" class="${c}"><td class="c">${cap(h)}</td><td class="nm l"><div class="hn"><span>${esc(h.name)}</span>${h.jchg?'<span class="sw" title="乗り替わり">替</span>':''}${al}</div><small><b>${esc(h.jockey||'')}</b> ${h.kinryo||''}${fmtWt(h)?' '+fmtWt(h):''}</small></td><td class="od">${h.scr?'取消':(h.odds==null?'—':h.odds.toFixed(1))}</td><td class="pp">${h.scr?'':(h.pop==null?'—':h.pop)}</td>${LK&&!h.scr?`<td class="lk">${ico('lock')}</td><td class="lk">${ico('lock')}</td>`:`<td class="p">${h.scr?'':pct(PR(h))}</td><td class="ev">${h.scr||h.ev==null?'':h.ev.toFixed(2)}</td>`}</tr>
       <tr class="hcard" data-hc="${h.uno}"><td colspan="6"><div class="hc">${pastRows(h)}${favRows(h)}</div></td></tr>`; }).join('');
-  const table=`<div class="tt"><b>出馬表</b><div class="seg sm srt"><button data-s="uno" class="${SORT==='uno'?'on':''}">馬番</button><button data-s="p" class="${SORT==='p'?'on':''}">勝率</button></div></div>
+  const table=`${LK?lockBox(DAY):''}<div class="tt"><b>出馬表</b>${LK?'':`<div class="seg sm srt"><button data-s="uno" class="${SORT==='uno'?'on':''}">馬番</button><button data-s="p" class="${SORT==='p'?'on':''}">勝率</button></div>`}</div>
     <table class="t"><tr><th></th><th class="l">馬</th><th>単勝</th><th>人気</th><th>勝率%</th><th>期待値</th></tr>${rows}</table>
     <div class="note">期待値＝勝率×単勝オッズ。<span class="k g" style="background:#f5e19e;color:#3a2a00;padding:0 6px;border-radius:999px">1.00以上</span> と <span style="color:#b39a52;font-weight:700">0.90以上</span> の2段。馬を押すと近5走が開きます。</div>`;
   const PAYS=['単勝','複勝','馬連','馬単','3連複','3連単'];
@@ -524,7 +583,13 @@ async function renderRecord(){ const el=$('#s-record'); el.innerHTML=`<h2>${ico(
     <div class="box"><b>出した勝率は当たっていたか</b><p>勝率の帯ごとに、100頭あたりの見込みと実際の勝ち。近いほど正直。</p>
     <table class="pt"><tr><th class="l">出した勝率</th><th>頭数</th><th>見込み</th><th>実際</th></tr>${bands}</table></div>
     <div class="box"><b>日ごと</b><table class="pt"><tr><th class="l">日</th><th>R</th><th>金</th><th>的中</th><th>回収</th><th>淡金</th><th>的中</th><th>回収</th></tr>${days}</table></div>`; }
-function renderMem(){ $('#s-mem').innerHTML=`<h2>${ico('user')}会員</h2><div class="box"><b>1日券は準備中</b><p>いまは全部のレースをそのまま見られます。</p></div>`; }
+function renderMem(){ const el=$('#s-mem');
+  if(!GATED){ el.innerHTML=`<h2>${ico('user')}会員</h2><div class="box"><b>1日券は準備中</b><p>いまは全部のレースをそのまま見られます。</p></div>`; return; }
+  const od=Object.keys(OPEN).filter(d=>DAYS.includes(d)).sort();
+  el.innerHTML=`<h2>${ico('user')}会員</h2>
+    <div class="box"><b>1日券の合い言葉</b><p>開催日ごとの合い言葉で、その日の全レースの勝率と期待値が開きます。終わった日は誰でも見られます。</p>${lockBox(DAY,'合い言葉を入れる')}</div>
+    <div class="box"><b>この端末で開いている日</b>${od.length?`<div class="mem-open">${od.map(d=>`<span>${dayLab(d)}</span>`).join('')}</div>`:'<p>まだありません。</p>'}</div>
+    ${NOTE_URL?`<div class="box"><b>1日券を買う</b><p>noteの記事から、その日の合い言葉を手に入れられます。</p><div class="lock" style="border:none;padding:0;margin-top:6px"><div class="buy"><a href="${esc(NOTE_URL)}" target="_blank" rel="noopener">1日券の記事一覧</a></div></div></div>`:`<div class="box"><b>1日券は準備中</b><p>買える場所が決まり次第ここに出します。</p></div>`}`; }
 function renderHowto(){ $('#s-howto').innerHTML=`<h2>${ico('book')}使い方</h2><div class="hto">
   <div class="lead">すなおは、地方競馬の全レースに「正直な勝率」と「期待値」を付けるサービスです。</div>
   <div class="qs"><div><b>1</b><span>目次でレースを押す。<em>金の点</em>がある列は、期待値が金の馬がいるレースです。</span></div><div><b>2</b><span>出馬表の<em>期待値</em>を見る。1.00以上は濃い金、0.90以上は淡い金。</span></div><div><b>3</b><span>馬を押すと近5走が開く。人気馬に小さな札があれば、その中身も見られます。</span></div></div>
@@ -551,11 +616,12 @@ function renderHowto(){ $('#s-howto').innerHTML=`<h2>${ico('book')}使い方</h2
 </div>`; }
 function renderAll(){ renderHeader(); renderRaces(); renderRecord(); renderMem(); renderHowto(); if(cur.race&&byRid[cur.race]) renderRacePage(byRid[cur.race]); }
 async function main(){ if(!DAYS.length){ $('#hd').innerHTML='<div class="wm"><div><span class="kana">すなお</span><small class="en">SUNAO</small></div></div>'; $('#s-races').innerHTML='<div class="pend">データがまだありません</div>'; showTab('races'); return; }
+  await loadEnc(); for(const pw of (ls.get(LSK,[])||[])){ try{ await openWith(pw); }catch(e){} }
   await setDay(pickDay()); renderAll();
   const q=new URLSearchParams(location.search).get('r'); let k=ls.get('sunao_tab','races'); if(q&&byRid[q]){ openRace(q); } else { if(k==='race') k='races'; showTab(k); }
   document.querySelectorAll('.nav button[data-k]').forEach(b=>b.onclick=()=>{ const k=b.dataset.k; if(k==='up'){ window.scrollTo({top:0,behavior:'smooth'}); return; } if(k==='list'){ showTab('races'); return; } showTab(k); });
   let lastY=window.scrollY; window.addEventListener('scroll',()=>{ const y=window.scrollY; const nv=$('.nav'); if(tab==='race'){ nv.classList.toggle('hid',y>lastY+6&&y>120); if(y<lastY-6) nv.classList.remove('hid'); } else nv.classList.remove('hid'); lastY=y; const rs=$('#rsel'); if(rs) rs.classList.toggle('stuck',y>40); },{passive:true});
-  setInterval(async()=>{ try{ const r=await fetch(`data/${DAY}.json?t=${Date.now()}`,{cache:'no-store'}); const j=await r.json(); if(j.built!==DATA.built){ CACHE[DAY]=j; await setDay(DAY); const y=window.scrollY; renderAll(); window.scrollTo(0,y); } }catch(e){} },300000);   /* 5分ごとに新しいデータがあれば描き直す */
+  setInterval(async()=>{ try{ const r=await fetch(`data/${DAY}.json?t=${Date.now()}`,{cache:'no-store'}); const j=await r.json(); if(j.built!==DATA.built){ CACHE[DAY]=j; if(GATED){ try{ const e=await fetch(`data/enc.json?t=${Date.now()}`,{cache:'no-store'}); if(e.ok){ ENC=await e.json(); OPEN={}; for(const pw of (ls.get(LSK,[])||[])){ try{ await openWith(pw); }catch(x){} } } }catch(x){} } await setDay(DAY); const y=window.scrollY; renderAll(); window.scrollTo(0,y); } }catch(e){} },300000);   /* 5分ごとに新しいデータがあれば描き直す */
 }
 main();
 </script>
