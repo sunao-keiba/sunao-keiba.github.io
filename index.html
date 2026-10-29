@@ -228,6 +228,13 @@ html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{back
 .lock .buy a{font-size:11px;font-weight:700;color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:5px 12px;white-space:nowrap;text-decoration:none}
 .t td.lk{text-align:center}.t td.lk i{width:12px;height:12px;display:inline-block;vertical-align:-1px}.t td.lk svg{stroke:#b9b7b0}
 .mem-open{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.mem-open span{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--ac2);color:var(--ac)}
+
+/* オッズを更新（UMAMI と同じ形。2026-10-30） */
+.oupdg{width:100%;height:44px;margin-top:10px;border-radius:12px;background:var(--ac);color:#fff;border:none;font-size:13.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:7px;letter-spacing:.04em;cursor:pointer}
+.oupdg svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.oupdg em{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:400;font-size:10.5px;opacity:.75;margin-left:4px;letter-spacing:0}
+.oupdg:disabled{opacity:.6;cursor:default}
+.oupd-n{font-size:10.5px;color:var(--mute);text-align:right;margin-top:4px;min-height:14px;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
 </style>
 <style id="dk">
 html[data-theme=dark]{color-scheme:dark}html[data-theme=dark] body{background:#0f1013}
@@ -387,6 +394,9 @@ html[data-theme=dark] .lock .n{color:var(--soft)}
 html[data-theme=dark] .lock .buy a{color:var(--ink);border:1px solid var(--ink);text-decoration:none}
 html[data-theme=dark] .t td.lk svg{stroke:#9a9891}
 html[data-theme=dark] .mem-open span{background:var(--ac2);color:var(--ac)}
+html[data-theme=dark] .oupdg{background:var(--ac);color:#16181c;border:none}
+html[data-theme=dark] .oupdg svg{fill:none;stroke:currentColor}
+html[data-theme=dark] .oupd-n{color:var(--mute)}
 html[data-theme=dark] :not(text)[fill="#111"]{fill:#e6e6e3}
 html[data-theme=dark] [stroke="#111"]{stroke:#d6d6d3}
 html[data-theme=dark] :not(text)[fill="#fff"]{fill:#1a1c21}
@@ -446,7 +456,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </div></div>
 <script>
 const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
-const BUILT='2026-10-30T0121';
+const BUILT='2026-10-30T0124';
 const GATED=true;        /* 合い言葉あり（1日券） */
 const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
 const $=s=>document.querySelector(s);
@@ -503,6 +513,33 @@ async function tryUnlock(pw,remember){
 async function unlockFrom(inp){ const box=inp.closest('.lock'); const ok=await tryUnlock(inp.value,true); if(!ok&&box){ box.querySelector('.er').style.display='block'; } }
 function lockBox(d,msg){ const A=NOTE_URL?`<div class="buy"><a href="${esc(NOTE_URL)}" target="_blank" rel="noopener">1日券を買う</a></div>`:'';
   return `<div class="lock">${ico('lock')}<p>${esc(msg||`この日の合い言葉を入れると、${dayLab(d)}の全レースの勝率と期待値が開きます。`)}</p><div class="pw"><input type="password" placeholder="合い言葉" autocomplete="off" inputmode="numeric" onkeydown="if(event.key==='Enter')unlockFrom(this)"><button type="button" onclick="unlockFrom(this.previousElementSibling)">開く</button></div><div class="er">合い言葉が違います</div><div class="n">合い言葉は開催日ごとです。一度入れればこの端末では開いたままになります。${NOTE_URL?'':'<br>1日券は準備中です。'}</div>${A}</div>`; }
+
+/* ===== オッズを更新（2026-10-30） ===== */
+const OUPD={};                                   /* rid → 最後に押した時刻（20秒は押せない） */
+const RELAY='https://r.jina.ai/https://nar.netkeiba.com/api/api_get_nar_odds.html?race_id=';
+const hhmm=()=>{ const n=new Date(); return `${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}`; };
+function oddsBtn(r){ const left=Math.max(0,20000-(Date.now()-(OUPD[r.rid]||0))); const y=r.odds_status==='yoso';
+  return `<button class="oupdg" id="oupd" type="button"${left>0?' disabled':''}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>オッズを更新<em>${r.odds_at?(y?'発売前の想定':esc(r.odds_at)+' 時点'):''}</em></button><div class="oupd-n" id="oupdn">${OUPD['n_'+r.rid]||''}</div>`; }
+function applyOdds(r,byHid,st,at){
+  (r.runners||[]).forEach(h=>{ const x=byHid[String(h.hid)]; if(x&&x.odds>0){ h.odds=x.odds; h.pop=x.pop; } });
+  if(st) r.odds_status=st; if(at) r.odds_at=at;
+  const live=(r.runners||[]).filter(h=>!h.scr&&h.odds>0&&h.raw!=null);
+  if(live.length>=2){                              /* 開いている日: 新しいオッズから勝率を出し直す（AIのずれ raw はそのまま） */
+    const S=live.reduce((a,h)=>a+1/h.odds,0); let Q=0;
+    live.forEach(h=>{ const m=(1/h.odds)/S; const z=h.raw+Math.log(m/(1-m)); h._q=1/(1+Math.exp(-z)); h.mkt=+m.toFixed(4); Q+=h._q; });
+    live.forEach(h=>{ h.p=+(h._q/Q).toFixed(4); h.ev=+(h.p*h.odds).toFixed(2); delete h._q; });
+  }
+}
+async function updOdds(r){ const b=$('#oupd'); if(!b||b.disabled) return; b.disabled=true; b.innerHTML='更新中…'; OUPD[r.rid]=Date.now(); OUPD['n_'+r.rid]='';
+  let ok=false;
+  try{ const ac=new AbortController(); const tm=setTimeout(()=>ac.abort(),10000);
+    const res=await fetch(RELAY+encodeURIComponent(r.rid)+'%26type%3D1%26action%3Dinit',{headers:{'x-return-format':'text'},signal:ac.signal}); clearTimeout(tm);
+    const t=await res.text(); const j=JSON.parse(t.slice(t.indexOf('{'))); const kn=(j.ary_odds||{}).KettoNum||{};
+    if(j.status==='OK'&&Object.keys(kn).length){ const m={}; Object.entries(kn).forEach(([h,v])=>{ m[h]={odds:+v.Odds,pop:+v.Ninki}; }); applyOdds(r,m,j.odds_status,hhmm()); ok=true; }
+  }catch(e){}
+  if(!ok){ try{ const res=await fetch(`data/${DAY}.json?t=${Date.now()}`,{cache:'no-store'}); const j=await res.json(); const x=(j.races||[]).find(q=>q.rid===r.rid);
+      if(x){ const m={}; (x.runners||[]).forEach(h=>{ if(h.odds>0) m[String(h.hid)]={odds:h.odds,pop:h.pop}; }); applyOdds(r,m,x.odds_status,x.odds_at); OUPD['n_'+r.rid]='サイトの値で更新'; } }catch(e){} }
+  renderRacePage(r); setTimeout(()=>{ const bb=$('#oupd'); if(bb&&cur.race===r.rid) bb.disabled=false; },20000); }
 /* ===== 目次 ===== */
 const lxMin=r=>{ const m=(r.time||'').match(/(\d+):(\d+)/); return m?(+m[1]*60+ +m[2]):9999; };
 const lxOk=r=>r.runners&&r.runners.length>=2;
@@ -556,14 +593,14 @@ function renderRacePage(r){ const el=$('#s-race'); const X=lxDay(); const rs=(DA
     const al=h.alert?`<span class="al${h.alert>=2?' a2':''}">${h.alert>=2?'人気の割に':'やや'}</span>`:'';
     return `<tr data-h="${h.uno}" class="${c}"><td class="c">${cap(h)}</td><td class="nm l"><div class="hn"><span>${esc(h.name)}</span>${h.jchg?'<span class="sw" title="乗り替わり">替</span>':''}${al}</div><small><b>${esc(h.jockey||'')}</b> ${h.kinryo||''}${fmtWt(h)?' '+fmtWt(h):''}</small></td><td class="od">${h.scr?'取消':(h.odds==null?'—':h.odds.toFixed(1))}</td><td class="pp">${h.scr?'':(h.pop==null?'—':h.pop)}</td>${LK&&!h.scr?`<td class="lk">${ico('lock')}</td><td class="lk">${ico('lock')}</td>`:`<td class="p">${h.scr?'':pct(PR(h))}</td><td class="ev">${h.scr||h.ev==null?'':h.ev.toFixed(2)}</td>`}</tr>
       <tr class="hcard" data-hc="${h.uno}"><td colspan="6"><div class="hc">${pastRows(h)}${favRows(h)}</div></td></tr>`; }).join('');
-  const table=`${LK?lockBox(DAY):''}<div class="tt"><b>出馬表</b>${LK?'':`<div class="seg sm srt"><button data-s="uno" class="${SORT==='uno'?'on':''}">馬番</button><button data-s="p" class="${SORT==='p'?'on':''}">勝率</button></div>`}</div>
+  const table=`${LK?lockBox(DAY):''}${oddsBtn(r)}<div class="tt"><b>出馬表</b>${LK?'':`<div class="seg sm srt"><button data-s="uno" class="${SORT==='uno'?'on':''}">馬番</button><button data-s="p" class="${SORT==='p'?'on':''}">勝率</button></div>`}</div>
     <table class="t"><tr><th></th><th class="l">馬</th><th>単勝</th><th>人気</th><th>勝率%</th><th>期待値</th></tr>${rows}</table>
     <div class="note">期待値＝勝率×単勝オッズ。<span class="k g" style="background:#f5e19e;color:#3a2a00;padding:0 6px;border-radius:999px">1.00以上</span> と <span style="color:#b39a52;font-weight:700">0.90以上</span> の2段。馬を押すと近5走が開きます。</div>`;
   const PAYS=['単勝','複勝','馬連','馬単','3連複','3連単'];
   const res=fin?`<div class="res"><div class="ro">${order.slice(0,3).map(o=>{ const h=(r.runners||[]).find(x=>+x.uno===+o.uma)||{uno:o.uma,waku:0,name:''}; return `<div><i>${o.fin}着</i>${cap(h)}${esc(h.name)}<small>${o.pop?o.pop+'人気':''}</small></div>`; }).join('')}</div>
     <table class="pay">${PAYS.filter(k=>r.result.pays&&r.result.pays[k]).map(k=>{ const p=r.result.pays[k]; const gold=k==='単勝'&&(r.runners||[]).some(h=>+h.uno===winU&&evCls(h)); return `<tr class="${gold?'g':''}"><td>${k}</td><td>${p.uma.map(u=>esc(u).replace(/\s+/g,'-')).join('／')}</td><td>${p.yen.map(y=>y.toLocaleString()+'円').join(' / ')}</td></tr>`; }).join('')}</table></div>`:'';
   el.innerHTML=sel+head+res+table;
-  bindRsel(el, r);
+  bindRsel(el, r); const ob=el.querySelector('#oupd'); if(ob) ob.onclick=()=>updOdds(r);
   el.querySelectorAll('.srt button').forEach(b=>b.onclick=()=>{ SORT=b.dataset.s; renderRacePage(r); });
   el.querySelectorAll('tr[data-h]').forEach(tr=>tr.onclick=()=>{ const hc=el.querySelector(`tr[data-hc="${tr.dataset.h}"]`); if(hc) hc.style.display=hc.style.display==='table-row'?'none':'table-row'; });
 
