@@ -510,11 +510,11 @@ html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{back
 #s-race .lock .buy a{display:inline-block;padding:6px 12px;border:1.5px solid var(--ink);border-radius:999px;font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;background:#fff}
 /* 馬柱（中央の .mb） */
 #s-race .mbx{margin-top:12px}
-#s-race .mbw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -16px;padding:0 16px}
+#s-race .mbw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0;padding:0}   /* 端まで広げると貼り付いた左の欄の外側（余白）に右の中身が透けて見える（2026-10-30） */
 #s-race .mb{border-collapse:separate;border-spacing:0;font-size:10px;line-height:1.35;letter-spacing:0;background:#fff}
 #s-race .mb th{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:9.5px;color:var(--mute);font-weight:400;text-align:left;padding:6px 6px;border-bottom:1.5px solid var(--ink);white-space:nowrap;letter-spacing:.06em;background:#fff}
 #s-race .mb td{padding:7px 6px;border-bottom:1px solid #e3e3df;vertical-align:top;white-space:nowrap;text-align:left}
-#s-race .mb .mbh{position:sticky;left:0;z-index:1;background:#fff;border-right:1px solid #e3e3df}
+#s-race .mb .mbh{position:sticky;left:0;z-index:3;background:#fff;border-right:1px solid #e3e3df;background-clip:padding-box}
 #s-race .mb th.mbh{z-index:2}
 #s-race .mb td.mbh,#s-race .mb th.mbh{width:132px;min-width:132px;max-width:132px;box-sizing:border-box}
 #s-race .mb td.mbh div,#s-race .mb .pc div{overflow:hidden;text-overflow:ellipsis}
@@ -1090,7 +1090,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </div></div>
 <script>
 const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
-const BUILT='2026-10-30T1241';
+const BUILT='2026-10-30T1243';
 const GATED=true;        /* 合い言葉あり（1日券） */
 const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
 const $=s=>document.querySelector(s);
