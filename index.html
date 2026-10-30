@@ -399,6 +399,214 @@ html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{back
 .alin h4{font-size:13px;font-weight:800;margin:0 0 8px;display:flex;align-items:center;gap:6px}
 .alin h4 svg{width:15px;height:15px;stroke:var(--ac);stroke-width:2}
 .rh2 .rh-m span.sf{background:var(--ac2);color:var(--ac)}
+
+/* ===== v4: 中央（UMAMI）のレースページの部品を写す（2026-10-30） ===== */
+.hd .bk{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:6px 10px 6px 6px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font-family:inherit}
+.hd .bk i{width:14px;height:14px;display:block}.hd .bk i svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.hd .dt b{display:block;color:var(--ink);font-size:13px;font-weight:400}
+#s-race .rh.rh2{text-align:left;margin-top:12px}
+#s-race .rh2 .rh-n{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:800;line-height:1.3;letter-spacing:.02em;color:#111;word-break:auto-phrase}
+#s-race .rh2 .rh-m{display:flex;flex-wrap:wrap;gap:6px 10px;margin-top:8px;align-items:center}
+#s-race .rh2 .rh-m span{margin:0;background:none;border-radius:0;padding:0;font-size:11.5px;font-weight:700;color:#444}
+#s-race .rh2 .rh-t{display:inline-flex;align-items:baseline;gap:3px;font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:10.5px;color:#555;white-space:nowrap}
+#s-race .rh2 .rh-t b{display:inline;margin:0;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:13.5px;font-weight:500;color:#111;letter-spacing:.06em}
+#s-race .rh2 .rh-s{display:inline-block;font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:10.5px;font-weight:700;color:#555;border:1px solid #cfcfca;border-radius:999px;padding:0 8px;white-space:nowrap}
+#s-race .rh2 .rh-s.yoso{color:#5a4000;border-color:#d9b85a}
+#s-race .rh2 .rh-sf{display:inline-block;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em;border-radius:999px;padding:2px 10px;background:#fdf6e1;color:#5a4000}
+#s-race .rh2 .rh-hc{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em;color:#444}
+#s-race .scrl{margin-top:8px}
+/* コースと馬場（中央の案1: 大きな3つ） */
+#s-race .rcd{margin:12px 0 4px;border:none;background:#fff;border-radius:22px;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06);padding:11px 12px 10px}
+#s-race .rcd.rc1{position:relative;padding:18px 10px 14px}
+#s-race .rc1 .rlab{position:absolute;right:14px;top:-9px;bottom:auto;font-size:9.5px;font-weight:700;line-height:1;padding:3px 6px;border-radius:999px;letter-spacing:.04em}
+#s-race .rlab.u-main{background:#f5e19e;color:#3a2a00;box-shadow:inset 0 0 0 1px #c9a227}#s-race .rlab.u-mid{background:#fff;color:#5a4000;box-shadow:inset 0 0 0 1px #c9a227}#s-race .rlab.u-ana{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px #9a9a9a}#s-race .rlab.u-none{display:none}
+#s-race .rc1-g{display:grid;text-align:center}
+#s-race .rc1-g>div{min-width:0;padding:0 4px}
+#s-race .rc1-g>div+div{border-left:1px solid #f0efea}
+#s-race .rc1-g label{display:block;font-size:10.5px;font-weight:700;color:#8a8a86;letter-spacing:.02em}
+#s-race .rc1-g .v{display:block;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:26px;font-weight:500;color:var(--ac);line-height:1.2;margin-top:3px;letter-spacing:0}
+#s-race .rc1-g .v small{font-size:12px;margin-left:1px}
+#s-race .rc1-g .v.j{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:800;font-size:24px}
+#s-race .rc1-g .v.na{color:#b5b5b0;font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:700;font-size:18px;line-height:1.7}
+#s-race .rc1-g .s{display:block;font-size:10.5px;font-weight:700;color:#8a8a86;margin-top:3px;white-space:nowrap;letter-spacing:0}
+#s-race .rc1-g .s.gd{color:#8a6400}
+#s-race .rc1-g .sc{display:flex;gap:3px;justify-content:center;margin-top:8px}
+#s-race .rc1-g .sc i{width:12px;height:5px;border-radius:999px;background:#e8e7e1}
+#s-race .rc1-g .sc i.on{background:var(--ac)}
+#s-race .rc1-f{margin-top:12px;display:flex;flex-wrap:wrap;justify-content:center;column-gap:6px;row-gap:2px;font-size:10.5px;color:#a3a29b;font-weight:500;line-height:1.6;letter-spacing:0}
+#s-race .rc1-f i{font-style:normal;color:#d4d3cc}
+#s-race .rc1-f b{color:#555;font-weight:700}#s-race .rc1-f small{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:9.5px;color:#b5b5b0;margin-left:3px}
+#s-race .rc1-w{margin-top:6px}
+/* 章の帯 */
+#s-race .steps{position:sticky;top:36px;z-index:20;background:var(--bg2);padding:10px 0 8px;margin-top:8px}
+#s-race .steps .in{display:flex;border:none;border-radius:999px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(60,45,20,.06),0 4px 14px rgba(60,45,20,.07)}
+#s-race .steps button{flex:1;padding:8px 0;font-size:11.5px;font-weight:700;color:var(--mute);display:flex;align-items:center;justify-content:center;gap:3px;white-space:nowrap;letter-spacing:0;background:none;border:none;font-family:inherit}
+#s-race .steps button i{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:10px}
+#s-race .steps button.on{background:var(--ink);color:#fff}
+#s-race .steps button .lk{width:10px;height:10px;display:block}#s-race .steps button .lk svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.2}
+/* 章カード */
+#s-race .sec{margin:14px -6px 0;padding:20px 16px 24px;border:none;background:#fff;border-radius:22px;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06);scroll-margin-top:100px}
+#s-race .sec+.sec{margin-top:44px}
+#s-race .sec .sh{display:flex;border-bottom:none;padding-bottom:0;align-items:center;gap:10px}
+#s-race .sec .sh .shic{position:relative;display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#f6f1e6;flex:none;font-style:normal}
+#s-race .sec .sh .shic svg{width:20px;height:20px;stroke:var(--ac);stroke-width:3;fill:none}
+#s-race .sec .sh .shic em{position:absolute;right:-3px;top:-3px;width:16px;height:16px;border-radius:50%;background:#e2c46a;color:#3a2a00;font:800 9.5px/16px 'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;text-align:center;font-style:normal;letter-spacing:0}
+#s-race .sec .sh b{font-size:18.5px;font-weight:800;letter-spacing:.02em}
+#s-race .sec .sh span.shr,#s-race .sec .sh>span{font-size:10.5px;color:var(--mute);margin-left:auto;font-weight:500;letter-spacing:0;white-space:nowrap}
+#s-race h3{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:14.5px;font-weight:800;letter-spacing:.02em;line-height:1.5;margin:30px 0 0;color:#111;font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
+#s-race h3::before{content:"";width:6px;height:6px;border-radius:50%;background:#e2c46a;flex:none}
+#s-race h3 small{flex-basis:100%;font-size:11px;font-weight:400;letter-spacing:0;line-height:1.65;color:#8a8a86;margin:2px 0 0}
+#s-race .note{font-size:11px;color:var(--mute);line-height:1.7;margin-top:10px;letter-spacing:0}
+/* ポイント */
+#s-race .ptb{margin:16px 0 2px;padding:12px 14px 13px;background:#fdf6e1;border-radius:16px}
+#s-race .ptb>i{display:inline-block;font-style:normal;font-size:10px;font-weight:800;color:#8a6400;background:#fff;border-radius:999px;padding:1px 8px;margin-bottom:5px;letter-spacing:.02em}
+#s-race .ptb>b{font-size:15px;font-weight:800;color:#111;line-height:1.55;letter-spacing:.02em}
+#s-race .ptb>span{font-size:11.5px;color:#6b5a2a;margin-top:3px;line-height:1.75;letter-spacing:0}
+#s-race .ptb>b,#s-race .ptb>span{display:flex;flex-wrap:wrap;align-items:center;column-gap:8px;row-gap:3px}
+#s-race .ptb>span{column-gap:16px}
+#s-race .ptb .cap{width:20px;height:20px;font-size:10.5px;margin:0;vertical-align:0}
+#s-race .ptb .ar{font-style:normal;color:#b9a46a;margin:0;font-weight:700;font-size:13px;line-height:1}
+#s-race .ptb em.pn{font-style:normal;white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
+/* ラベル・更新ボタン・時刻の行 */
+#s-race .ulab{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding:8px 10px 8px 8px;border-radius:12px;border:1px solid #e2e1db;background:var(--bg)}
+#s-race .ulab b{flex:none;font-size:12.5px;font-weight:700;padding:5px 10px;border-radius:999px;letter-spacing:.04em;white-space:nowrap}
+#s-race .ulab span{font-size:10.5px;color:var(--mute);text-align:right;line-height:1.4;letter-spacing:.02em}
+#s-race .ulab em{display:block;font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:17px;font-weight:500;color:var(--ink);letter-spacing:0}
+#s-race .ulab.u-main b{background:#f5e19e;color:#3a2a00}#s-race .ulab.u-mid b{background:#fefaf0;color:#5a4000;box-shadow:inset 0 0 0 1px #d9b85a}#s-race .ulab.u-ana b{background:var(--bg);color:var(--ink);box-shadow:inset 0 0 0 1px #e2e1db}#s-race .ulab.u-none b{background:var(--bg2);color:var(--mute)}
+#s-race .oupdg{width:100%;height:44px;margin-top:10px;border-radius:12px;background:var(--ac);color:#fff;border:none;font-size:13.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:7px;letter-spacing:.04em;cursor:pointer;font-family:inherit}
+#s-race .oupdg svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+#s-race .oupdg em{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:400;font-size:10.5px;opacity:.75;margin-left:4px;letter-spacing:0}
+#s-race .oupdg:disabled{opacity:.6}
+#s-race .fxl{display:flex;align-items:flex-start;gap:6px;margin-top:8px;font-size:10.5px;line-height:1.55;color:var(--mute);letter-spacing:.02em}
+#s-race .fxl svg{width:14px;height:14px;flex:none;margin-top:1.5px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+/* 全頭の表（金2段）・着順の札 */
+#s-race .tw{overflow-x:auto}
+#s-race .zt{width:100%;border-collapse:collapse;font-size:12.5px;background:#fff;margin-top:8px}
+#s-race .zt th{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:9.5px;color:var(--mute);font-weight:400;text-align:right;padding:6px 6px;border-bottom:1.5px solid var(--ink);white-space:nowrap;letter-spacing:.06em}
+#s-race .zt td{padding:7px 6px;border-bottom:1px solid #e3e3df;text-align:right;white-space:nowrap;vertical-align:middle;max-width:none;width:auto}
+#s-race .zt th.l,#s-race .zt td.l{text-align:left}
+#s-race .zt td.nm{font-weight:700;white-space:nowrap;line-height:1.15;max-width:none;width:auto;overflow:visible;padding-left:6px}
+#s-race .zt td.nm small{display:block;margin:1px 0 0;color:var(--mute);font-family:inherit;font-size:9.5px;font-weight:500}
+#s-race .zt td.mono{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:12.5px;color:var(--ink)}
+#s-race .zt tr.e1 td{background:#fff}#s-race .zt tr.e1 td.evc,#s-race .zt tr.e1 td.kev{font-weight:700;color:#b39a52}
+#s-race .zt tr.e2 td{background:#f5e19e}#s-race .zt tr.e2 td.evc,#s-race .zt tr.e2 td.kev{font-weight:700;color:#5a4000}
+#s-race .zt tr.scr td{opacity:.42}
+#s-race .zt td.kp{text-align:right}#s-race .zt td.kp span{display:inline-block;min-width:54px;padding:4px 6px;border:1px solid #e2e1db;border-radius:8px;background:#fff;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:12.5px;text-align:right}
+#s-race .zt tr.e2 td.kp span{background:#fff}
+.z2w{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle}
+.z2w .z2b,.z2w .z2s{display:block;margin-top:-4px;width:22px;height:13px;box-sizing:border-box;font-style:normal}.z2w .z2s{visibility:hidden}
+.z2b{position:relative;border-radius:999px;border:1px solid #000;background:#fff;color:#000;font:800 8px/11px 'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;text-align:center;letter-spacing:0;box-shadow:0 0 0 1.5px #fff}
+.z2b.k1{background:#000;color:#fff}#s-race .zt tr.e2 .z2b{box-shadow:0 0 0 1.5px #f5e19e}
+/* 鍵の箱（中央と同じ形） */
+#s-race .lock{border:1.5px dashed var(--ink);border-radius:14px;padding:18px 14px;text-align:center;margin-top:12px;background:#fff}
+#s-race .lock i{width:32px;height:32px;display:block;margin:0 auto 8px}#s-race .lock i svg{width:100%;height:100%;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#s-race .lock p{font-size:12px;color:var(--mute);margin:0 0 12px;font-weight:500;line-height:1.7;word-break:auto-phrase}
+#s-race .lock .pw{display:flex;gap:6px;max-width:320px;margin:0 auto}
+#s-race .lock input{flex:1;padding:10px;border:1.5px solid var(--ink);border-radius:999px;font-size:15px;text-align:center;letter-spacing:.14em;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;min-width:0;background:#fff;color:var(--ink)}
+#s-race .lock button{padding:10px 16px;background:var(--ink);color:#fff;border-radius:999px;font-weight:700;font-size:13px;white-space:nowrap;border:none;font-family:inherit}
+#s-race .lock .er{color:#c0392b;font-size:11.5px;margin-top:8px;display:none;font-weight:700}
+#s-race .lock .n{font-size:10.5px;color:var(--soft);margin-top:10px;line-height:1.7}
+#s-race .lock .buy{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+#s-race .lock .buy a{display:inline-block;padding:6px 12px;border:1.5px solid var(--ink);border-radius:999px;font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;background:#fff}
+/* 馬柱（中央の .mb） */
+#s-race .mbx{margin-top:12px}
+#s-race .mbw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -16px;padding:0 16px}
+#s-race .mb{border-collapse:separate;border-spacing:0;font-size:10px;line-height:1.35;letter-spacing:0;background:#fff}
+#s-race .mb th{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:9.5px;color:var(--mute);font-weight:400;text-align:left;padding:6px 6px;border-bottom:1.5px solid var(--ink);white-space:nowrap;letter-spacing:.06em;background:#fff}
+#s-race .mb td{padding:7px 6px;border-bottom:1px solid #e3e3df;vertical-align:top;white-space:nowrap;text-align:left}
+#s-race .mb .mbh{position:sticky;left:0;z-index:1;background:#fff;border-right:1px solid #e3e3df}
+#s-race .mb th.mbh{z-index:2}
+#s-race .mb td.mbh,#s-race .mb th.mbh{width:132px;min-width:132px;max-width:132px;box-sizing:border-box}
+#s-race .mb td.mbh div,#s-race .mb .pc div{overflow:hidden;text-overflow:ellipsis}
+#s-race .mb td.mbh .h1{display:flex;align-items:center;gap:4px;margin-bottom:3px}#s-race .mb td.mbh .cap{width:18px;height:18px;font-size:10px;margin:0;flex:none}
+#s-race .mb td.mbh .h1 b{font-size:10.5px;font-weight:700;overflow:hidden;text-overflow:ellipsis}
+#s-race .mb td.mbh .bl{color:var(--mute);font-size:9px}
+#s-race .mb td.mbh .od{display:flex;gap:6px;align-items:baseline}#s-race .mb td.mbh .od .pp{color:var(--mute)}
+#s-race .mb td.mbh .rn{font-size:8.5px;padding:0 5px;margin-right:3px}
+#s-race .mb td.pc{width:124px;min-width:124px;max-width:124px;box-sizing:border-box;border-right:1px solid #ecece8;background:linear-gradient(#e2e1db,#e2e1db) left 0 top 14px/1px calc(100% - 28px) no-repeat,#f7f6f2}
+#s-race .mb thead th:not(.mbh){border-right:1px solid #ecece8}
+#s-race .mb .pc .l1{display:flex;align-items:center;gap:5px;margin-bottom:2px}
+#s-race .mb .pc .l2{font-weight:700;font-size:10.5px}#s-race .mb .pc .l1 .pl{overflow:hidden;text-overflow:ellipsis;min-width:0}
+#s-race .mb .mono{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
+#s-race .mb .rk{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;padding:0 3px;border-radius:5px;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11px;font-weight:500;box-sizing:border-box;flex:none}
+#s-race .mb .rk.k4{background:#fff;border:1px solid #e2e1db;color:#666}
+#s-race .mb .rk.kx{color:var(--mute);font-size:9.5px;padding:0}
+#s-race .mb .rk.m1{background:#e2c46a;color:#3a2a00;border:none;font-weight:700}
+#s-race .mb .rk.m2{background:var(--ac);color:#fff;border:none;font-weight:700}
+#s-race .mb .rk.m3{background:#d6d5cf;color:#333;border:none;font-weight:700}
+#s-race .mb .ag{display:inline-block;line-height:13px;border-radius:3px;box-sizing:border-box;padding:0 1px;margin-left:1px}
+#s-race .mb .ag.m1{background:#e2c46a;color:#3a2a00;font-weight:700}#s-race .mb .ag.m2{background:var(--ac);color:#fff;font-weight:700}#s-race .mb .ag.m3{background:#d6d5cf;color:#333;font-weight:700}
+#s-race .mb .pc.nil{color:var(--mute);background:#f7f6f2;vertical-align:middle;text-align:left}
+#s-race .mb tr.scr td{opacity:.42}
+/* 馬カード（中央の .hc .hcg） */
+#s-race .mb .hcard{display:none}#s-race .mb .hcard.on{display:table-row}
+#s-race .mb .hcard td{padding:0 0 10px;text-align:left;white-space:normal;background:#fff;border-right:none;position:sticky;left:0}
+#s-race .hc{border:1px solid #e2e1db;border-radius:12px;padding:10px;background:#f7f6f2;width:calc(100vw - 52px);max-width:468px;box-sizing:border-box}
+#s-race .hcl{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}#s-race .hcl span{font-size:14px;font-weight:700}
+#s-race .hcg{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5px;background:#e2e1db;border:1.5px solid #e2e1db;border-radius:8px;overflow:hidden}
+#s-race .hcg div{background:#fff;padding:7px 8px 6px}#s-race .hcg label{display:block;font-size:9.5px;color:var(--mute);font-weight:500}#s-race .hcg b{display:block;font-size:13px;font-weight:700}#s-race .hcg b.mono{font-weight:400;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}#s-race .hcg i{display:block;font-style:normal;font-size:9.5px;color:var(--soft);font-weight:500}
+#s-race .hcg>div.w2{grid-column:1/-1}
+#s-race .hc h4{font-size:11px;font-weight:800;margin:10px 0 4px;color:#111}
+#s-race .hc .fv div{display:grid;grid-template-columns:58px 1fr;gap:8px;align-items:center;font-size:11px}#s-race .hc .fv em{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:700}#s-race .hc .fv p{font-size:10px;color:var(--mute);margin:4px 0 0;line-height:1.6}
+#s-race .hc .chs{display:flex;flex-wrap:wrap;gap:4px}
+/* 人気馬の注意（章の中の小枠） */
+#s-race .alc{display:grid;gap:8px;margin-top:8px}
+#s-race .alc .a{border:1px solid #e2e1db;border-radius:12px;padding:10px 12px;background:#fff}
+#s-race .alc .ah{display:flex;align-items:center;gap:6px;flex-wrap:wrap}#s-race .alc .ah b{font-size:13.5px}
+#s-race .alc .ah .od{margin-left:auto;font-size:10.5px;color:var(--mute);font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
+#s-race .alc .ap{font-size:11.5px;margin-top:4px;color:#444}#s-race .alc .ap em{font-style:normal;font-weight:800;color:var(--ac)}#s-race .alc .ap small{display:block;color:var(--mute);font-size:10px}
+#s-race .alc .fv{margin-top:6px}#s-race .alc .fv div{display:grid;grid-template-columns:58px 1fr;gap:8px;align-items:center;font-size:11px}#s-race .alc .fv em{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:700}#s-race .alc .fv p{display:none}
+#s-race .al{display:inline-block;font-size:9.5px;font-weight:800;padding:1px 7px;border-radius:999px;background:#fff;color:var(--ac);box-shadow:inset 0 0 0 1px var(--ac);white-space:nowrap}
+#s-race .alc-none{font-size:12px;color:var(--mute);margin-top:8px}
+/* 買い方（中央の 勝率の見立て・買い目リスト） */
+#s-race .kin{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+#s-race .kin label{display:block;font-size:10.5px;color:var(--mute);font-weight:700}
+#s-race .kin input,#s-race .kin select{width:100%;box-sizing:border-box;margin-top:4px;padding:9px 10px;border:1px solid #e2e1db;border-radius:10px;font-size:14px;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;background:#fff;color:var(--ink)}
+#s-race .zt td.yen{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:700}
+#s-race .zt tr.tot td{border-top:1.5px solid var(--ink);border-bottom:none;font-weight:800}
+/* 結果（中央の .rs3 と .payt） */
+#s-race .rs3 td{vertical-align:middle}#s-race .rs3 tr:first-child td{border-top:1px solid #e3e3df}
+#s-race .rs3 .rpo{width:30px;white-space:nowrap;padding-right:0;text-align:left}#s-race .rs3 .rpo b{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:21px;font-weight:500;line-height:1}
+#s-race .rs3 .rpo small{font-size:10px;color:var(--mute);margin-left:1px;font-family:inherit}
+#s-race .rs3 td.nm{font-size:13.5px;letter-spacing:.04em}#s-race .rs3 td.nm small{font-family:inherit;letter-spacing:.04em;font-size:10px;margin-top:3px}
+#s-race .rs3 .rrt b{display:block;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:14px;font-weight:500;line-height:1.2}#s-race .rs3 .rrt small{display:block;margin:3px 0 0;font-size:10px;font-family:inherit;color:var(--mute)}
+#s-race .rs3 tr.rw1 td.nm{font-size:15px}#s-race .rs3 tr.rw1 .rpo b{font-size:24px}
+#s-race .payt .dash{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;color:var(--mute);margin:0 1px}
+#s-race .payt tr.cont td{border-top:none}#s-race .payt tr:has(+tr.cont) td{border-bottom-color:transparent}
+#s-race .payt tr.g td{background:#f5e19e}#s-race .payt tr.g td.mono{font-weight:700;color:#5a4000}
+
+/* ===== v4b: 買い方（中央の kellyBody と同じ部品） ===== */
+#s-race .kin{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+#s-race .kin label{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:9.5px;color:var(--mute);display:block;letter-spacing:.06em;font-weight:400}
+#s-race .kin input,#s-race .kin select{width:100%;height:42px;box-sizing:border-box;margin:0;padding:0 10px;border:1.5px solid #e2e1db;border-radius:10px;font-size:14px;font-weight:700;background:#fff;color:var(--ink);font-family:inherit}
+#s-race .kin input{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;text-align:right}
+#s-race .zt input.c{width:56px;padding:4px;border:1.5px solid #e2e1db;border-radius:6px;font-size:12.5px;text-align:right;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;background:#fff;color:var(--ink)}
+#s-race .zt td.kpc{padding:4px 6px;text-align:right}
+#s-race .sum{display:flex;justify-content:space-between;font-size:13px;padding:8px 0;border-top:1.5px solid var(--ink);margin-top:6px;font-weight:700;align-items:center;flex-wrap:wrap;gap:6px}
+#s-race .sum .kph{font-size:10px;color:#9a6a00;margin-left:6px;font-weight:500}
+#s-race .lnk-s{margin-left:8px;border:1.5px solid #e2e1db;border-radius:999px;background:#fff;font-size:10px;font-weight:700;padding:3px 8px;color:var(--ink);font-family:inherit}
+#s-race .kbar{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;margin:2px 0 4px}#s-race .kbar .lnk-s{margin-left:0;white-space:nowrap}
+#s-race .tkt{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:8px 0}#s-race .tkt button{height:32px;padding:0;border-radius:999px;border:1.5px solid #e2e1db;background:#fff;font-size:11px;font-weight:700;white-space:nowrap;color:var(--ink);font-family:inherit}#s-race .tkt button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+#s-race .nbh{display:flex;align-items:center;gap:8px;margin:10px 0 4px}#s-race .nbh label{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:9.5px;color:var(--mute);letter-spacing:.06em}#s-race .nbh button{border:1.5px solid #e2e1db;border-radius:999px;background:#fff;font-size:10px;font-weight:700;padding:2px 9px;color:var(--ink);font-family:inherit}#s-race .nbh button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+#s-race .nb6{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+#s-race .nc{height:44px;border:1px solid #e2e1db;border-radius:8px;background:#fff;padding:0 3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:0;font-family:inherit}
+#s-race .nc b{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11px;font-weight:800;line-height:1;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;box-shadow:0 1px 2px rgba(0,0,0,.13)}
+#s-race .nc b[style*="background:#ffffff"]{box-shadow:inset 0 0 0 1.5px #d2d1ca,0 1px 2px rgba(0,0,0,.07)}
+#s-race .nc small{font-size:9.5px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+#s-race .nc.on{background:var(--ink);border-color:var(--ink)}#s-race .nc.on small{color:#fff}
+#s-race .nc:disabled{opacity:.28}
+#s-race .b10k{margin-top:10px;width:100%;padding:12px 12px;border-radius:999px;border:none;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center;background:#f6f1e6;color:var(--ac);font-family:inherit}
+#s-race .b10k:disabled{opacity:.5}#s-race .b10k i{width:16px;height:16px;display:block}#s-race .b10k i svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2}
+#s-race .tkl td,#s-race .tkl th{padding:7px 2px}#s-race .tkl td:first-child{padding-left:0}#s-race .tkl td:last-child,#s-race .tkl th:last-child{padding-right:0}#s-race .tkl .cap{width:20px;height:20px;font-size:11px}
+#s-race .zt input.ko2{width:44px;padding:4px 2px;border:1.5px solid #e2e1db;border-radius:6px;font-size:12.5px;text-align:right;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;background:#fff;color:var(--ink)}
+#s-race .zt button.x{border:none;background:none;font-size:15px;color:var(--mute);padding:0 2px;line-height:1;font-family:inherit}
+#s-race .tkl tr.hit td,#s-race .tkl tr.hb td{background:#e1f5ee}#s-race .tkl tr.back td,#s-race .tkl tr.hb.bk td{background:#fff8e1}#s-race .tkl tr.miss td{opacity:.42}
+#s-race .tkl tr.hit td,#s-race .tkl tr.back td{border-bottom:none}
+#s-race .tkl tr.hb td{text-align:left;font-size:11px;padding:0 4px 8px 0;white-space:normal}
+#s-race .hbl{display:inline-block;border:1px solid var(--ink);border-radius:999px;padding:0 7px;margin-right:8px;font-size:10px;font-weight:700;line-height:1.7;background:#fff;letter-spacing:.04em}
+#s-race .tkl .hret{font-size:12.5px;font-weight:700;margin-right:8px}#s-race .tkl tr.hb small{margin-left:0;font-size:10.5px;color:var(--mute)}
+#s-race .kst{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 6px;border-top:1.5px solid var(--ink);padding-top:8px;margin-top:6px}#s-race .kst label{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:9px;color:var(--mute);display:block;letter-spacing:.06em}#s-race .kst b{font-size:14px;font-weight:700;white-space:nowrap}
+#s-race .kres{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px;padding:10px 12px;border-radius:12px;background:#f7f6f2;font-size:12px;font-weight:700}#s-race .kres.win{background:#e1f5ee}#s-race .kres small{display:block;font-size:10px;color:var(--mute);font-weight:500}#s-race .kres b{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:500}
 </style>
 <style id="dk">
 html[data-theme=dark]{color-scheme:dark}html[data-theme=dark] body{background:#0f1013}
@@ -664,6 +872,154 @@ html[data-theme=dark] .alc .ap em{color:var(--ac)}
 html[data-theme=dark] .alin{border-top:1px solid var(--line)}
 html[data-theme=dark] .alin h4 svg{stroke:var(--ac)}
 html[data-theme=dark] .rh2 .rh-m span.sf{background:var(--ac2);color:var(--ac)}
+html[data-theme=dark] .hd .bk{border:1.5px solid var(--ink);background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] .hd .bk i svg{fill:none;stroke:currentColor}
+html[data-theme=dark] .hd .dt b{color:var(--ink)}
+html[data-theme=dark] #s-race .rh2 .rh-n{color:#ececea}
+html[data-theme=dark] #s-race .rh2 .rh-m span{background:none;color:#bebebe}
+html[data-theme=dark] #s-race .rh2 .rh-t{color:#bebebe}
+html[data-theme=dark] #s-race .rh2 .rh-t b{color:#ececea}
+html[data-theme=dark] #s-race .rh2 .rh-s{color:#bebebe;border:1px solid #363632}
+html[data-theme=dark] #s-race .rh2 .rh-s.yoso{color:#f2d27a;border-color:#b0964a}
+html[data-theme=dark] #s-race .rh2 .rh-sf{background:#2e2817;color:#f2d27a}
+html[data-theme=dark] #s-race .rh2 .rh-hc{color:#bebebe}
+html[data-theme=dark] #s-race .rcd{border:none;background:#1a1c21;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06)}
+html[data-theme=dark] #s-race .rlab.u-main{background:#4a3d14;color:#cfbc91;box-shadow:inset 0 0 0 1px #b0954a}
+html[data-theme=dark] #s-race .rlab.u-mid{background:#1a1c21;color:#f2d27a;box-shadow:inset 0 0 0 1px #b0954a}
+html[data-theme=dark] #s-race .rlab.u-ana{background:#1a1c21;color:var(--ink);box-shadow:inset 0 0 0 1px #54575f}
+html[data-theme=dark] #s-race .rc1-g>div+div{border-left:1px solid #363532}
+html[data-theme=dark] #s-race .rc1-g label{color:#bebeba}
+html[data-theme=dark] #s-race .rc1-g .v{color:var(--ac)}
+html[data-theme=dark] #s-race .rc1-g .v.na{color:#8d9097}
+html[data-theme=dark] #s-race .rc1-g .s{color:#bebeba}
+html[data-theme=dark] #s-race .rc1-g .s.gd{color:#e0b768}
+html[data-theme=dark] #s-race .rc1-g .sc i{background:#24231f}
+html[data-theme=dark] #s-race .rc1-g .sc i.on{background:var(--ac)}
+html[data-theme=dark] #s-race .rc1-f{color:#bfbeb7}
+html[data-theme=dark] #s-race .rc1-f i{color:#bfbeb7}
+html[data-theme=dark] #s-race .rc1-f b{color:#bebebe}
+html[data-theme=dark] #s-race .rc1-f small{color:#8d9097}
+html[data-theme=dark] #s-race .steps{background:var(--bg2)}
+html[data-theme=dark] #s-race .steps .in{border:none;background:#1a1c21;box-shadow:0 1px 2px rgba(60,45,20,.06),0 4px 14px rgba(60,45,20,.07)}
+html[data-theme=dark] #s-race .steps button{color:var(--mute);background:none;border:none}
+html[data-theme=dark] #s-race .steps button.on{background:var(--ink);color:#16181c}
+html[data-theme=dark] #s-race .steps button .lk svg{fill:none;stroke:currentColor}
+html[data-theme=dark] #s-race .sec{border:none;background:#1a1c21;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06)}
+html[data-theme=dark] #s-race .sec .sh{border-bottom:none}
+html[data-theme=dark] #s-race .sec .sh .shic{background:#211e18}
+html[data-theme=dark] #s-race .sec .sh .shic svg{stroke:var(--ac);fill:none}
+html[data-theme=dark] #s-race .sec .sh .shic em{background:#392f14;color:#cfbc91}
+html[data-theme=dark] #s-race .sec .sh span.shr,html[data-theme=dark] #s-race .sec .sh>span{color:var(--mute)}
+html[data-theme=dark] #s-race h3{color:#ececea}
+html[data-theme=dark] #s-race h3::before{background:#392f14}
+html[data-theme=dark] #s-race h3 small{color:#bebeba}
+html[data-theme=dark] #s-race .note{color:var(--mute)}
+html[data-theme=dark] #s-race .ptb{background:#2e2817}
+html[data-theme=dark] #s-race .ptb>i{color:#e0b768;background:#1a1c21}
+html[data-theme=dark] #s-race .ptb>b{color:#ececea}
+html[data-theme=dark] #s-race .ptb>span{color:#cfbc8a}
+html[data-theme=dark] #s-race .ptb .ar{color:#d1bc81}
+html[data-theme=dark] #s-race .ulab{border:1px solid #363532;background:var(--bg)}
+html[data-theme=dark] #s-race .ulab span{color:var(--mute)}
+html[data-theme=dark] #s-race .ulab em{color:var(--ink)}
+html[data-theme=dark] #s-race .ulab.u-main b{background:#4a3d14;color:#cfbc91}
+html[data-theme=dark] #s-race .ulab.u-mid b{background:#25231c;color:#f2d27a;box-shadow:inset 0 0 0 1px #b0964a}
+html[data-theme=dark] #s-race .ulab.u-ana b{background:var(--bg);color:var(--ink);box-shadow:inset 0 0 0 1px #363532}
+html[data-theme=dark] #s-race .ulab.u-none b{background:var(--bg2);color:var(--mute)}
+html[data-theme=dark] #s-race .oupdg{background:var(--ac);color:#16181c;border:none}
+html[data-theme=dark] #s-race .oupdg svg{fill:none;stroke:currentColor}
+html[data-theme=dark] #s-race .fxl{color:var(--mute)}
+html[data-theme=dark] #s-race .fxl svg{fill:none;stroke:currentColor}
+html[data-theme=dark] #s-race .zt{background:#1a1c21}
+html[data-theme=dark] #s-race .zt th{color:var(--mute);border-bottom:1.5px solid var(--ink)}
+html[data-theme=dark] #s-race .zt td{border-bottom:1px solid #30333a}
+html[data-theme=dark] #s-race .zt td.nm small{color:var(--mute)}
+html[data-theme=dark] #s-race .zt td.mono{color:var(--ink)}
+html[data-theme=dark] #s-race .zt tr.e1 td{background:#1a1c21}
+html[data-theme=dark] #s-race .zt tr.e1 td.evc,html[data-theme=dark] #s-race .zt tr.e1 td.kev{color:#d5bc73}
+html[data-theme=dark] #s-race .zt tr.e2 td{background:#4a3d14}
+html[data-theme=dark] #s-race .zt tr.e2 td.evc,html[data-theme=dark] #s-race .zt tr.e2 td.kev{color:#f2d27a}
+html[data-theme=dark] #s-race .zt td.kp span{border:1px solid #363532;background:#1a1c21}
+html[data-theme=dark] #s-race .zt tr.e2 td.kp span{background:#1a1c21}
+html[data-theme=dark] .z2b{border:1px solid #b9bcc2;background:#1a1c21;color:#ececea;box-shadow:0 0 0 1.5px #1a1c21}
+html[data-theme=dark] .z2b.k1{background:#ececea;color:#16181c}
+html[data-theme=dark] #s-race .zt tr.e2 .z2b{box-shadow:0 0 0 1.5px #6b5719}
+html[data-theme=dark] #s-race .lock{border:1.5px dashed var(--ink);background:#1a1c21}
+html[data-theme=dark] #s-race .lock i svg{fill:none;stroke:var(--ink)}
+html[data-theme=dark] #s-race .lock p{color:var(--mute)}
+html[data-theme=dark] #s-race .lock input{border:1.5px solid var(--ink);background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] #s-race .lock button{background:var(--ink);color:#16181c;border:none}
+html[data-theme=dark] #s-race .lock .er{color:#e8675c}
+html[data-theme=dark] #s-race .lock .n{color:var(--soft)}
+html[data-theme=dark] #s-race .lock .buy a{border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;background:#1a1c21}
+html[data-theme=dark] #s-race .mb{background:#1a1c21}
+html[data-theme=dark] #s-race .mb th{color:var(--mute);border-bottom:1.5px solid var(--ink);background:#1a1c21}
+html[data-theme=dark] #s-race .mb td{border-bottom:1px solid #30333a}
+html[data-theme=dark] #s-race .mb .mbh{background:#1a1c21;border-right:1px solid #30333a}
+html[data-theme=dark] #s-race .mb td.mbh .bl{color:var(--mute)}
+html[data-theme=dark] #s-race .mb td.mbh .od .pp{color:var(--mute)}
+html[data-theme=dark] #s-race .mb td.pc{border-right:1px solid #2c2f36;background:linear-gradient(#262522,#262522) left 0 top 14px/1px calc(100% - 28px) no-repeat,#1d1d1b}
+html[data-theme=dark] #s-race .mb thead th:not(.mbh){border-right:1px solid #2c2f36}
+html[data-theme=dark] #s-race .mb .rk.k4{background:#1a1c21;border:1px solid #363532;color:#a7aab0}
+html[data-theme=dark] #s-race .mb .rk.kx{color:var(--mute)}
+html[data-theme=dark] #s-race .mb .pc.nil{color:var(--mute);background:#1d1d1b}
+html[data-theme=dark] #s-race .mb .hcard td{background:#1a1c21;border-right:none}
+html[data-theme=dark] #s-race .hc{border:1px solid #363532;background:#1d1d1b}
+html[data-theme=dark] #s-race .hcg{background:#262522;border:1.5px solid #363532}
+html[data-theme=dark] #s-race .hcg div{background:#1a1c21}
+html[data-theme=dark] #s-race .hcg label{color:var(--mute)}
+html[data-theme=dark] #s-race .hcg i{color:var(--soft)}
+html[data-theme=dark] #s-race .hc h4{color:#ececea}
+html[data-theme=dark] #s-race .hc .fv p{color:var(--mute)}
+html[data-theme=dark] #s-race .alc .a{border:1px solid #363532;background:#1a1c21}
+html[data-theme=dark] #s-race .alc .ah .od{color:var(--mute)}
+html[data-theme=dark] #s-race .alc .ap{color:#bebebe}
+html[data-theme=dark] #s-race .alc .ap em{color:var(--ac)}
+html[data-theme=dark] #s-race .alc .ap small{color:var(--mute)}
+html[data-theme=dark] #s-race .al{background:#1a1c21;color:var(--ac);box-shadow:inset 0 0 0 1px var(--ac)}
+html[data-theme=dark] #s-race .alc-none{color:var(--mute)}
+html[data-theme=dark] #s-race .kin label{color:var(--mute)}
+html[data-theme=dark] #s-race .kin input,html[data-theme=dark] #s-race .kin select{border:1px solid #363532;background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] #s-race .zt tr.tot td{border-top:1.5px solid var(--ink);border-bottom:none}
+html[data-theme=dark] #s-race .rs3 tr:first-child td{border-top:1px solid #30333a}
+html[data-theme=dark] #s-race .rs3 .rpo small{color:var(--mute)}
+html[data-theme=dark] #s-race .rs3 .rrt small{color:var(--mute)}
+html[data-theme=dark] #s-race .payt .dash{color:var(--mute)}
+html[data-theme=dark] #s-race .payt tr.cont td{border-top:none}
+html[data-theme=dark] #s-race .payt tr:has(+tr.cont) td{border-bottom-color:transparent}
+html[data-theme=dark] #s-race .payt tr.g td{background:#4a3d14}
+html[data-theme=dark] #s-race .payt tr.g td.mono{color:#f2d27a}
+html[data-theme=dark] #s-race .kin label{color:var(--mute)}
+html[data-theme=dark] #s-race .kin input,html[data-theme=dark] #s-race .kin select{border:1.5px solid #363532;background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] #s-race .zt input.c{border:1.5px solid #363532;background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] #s-race .sum{border-top:1.5px solid var(--ink)}
+html[data-theme=dark] #s-race .sum .kph{color:#e6b94f}
+html[data-theme=dark] #s-race .lnk-s{border:1.5px solid #363532;background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] #s-race .tkt button{border:1.5px solid #363532;background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] #s-race .tkt button.on{background:var(--ink);color:#16181c;border-color:var(--ink)}
+html[data-theme=dark] #s-race .nbh label{color:var(--mute)}
+html[data-theme=dark] #s-race .nbh button{border:1.5px solid #363532;background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] #s-race .nbh button.on{background:var(--ink);color:#16181c;border-color:var(--ink)}
+html[data-theme=dark] #s-race .nc{border:1px solid #363532;background:#1a1c21}
+html[data-theme=dark] #s-race .nc b{border:none;box-shadow:0 1px 2px rgba(0,0,0,.13)}
+html[data-theme=dark] #s-race .nc b[style*="background:#ffffff"]{box-shadow:inset 0 0 0 1.5px #363531,0 1px 2px rgba(0,0,0,.07)}
+html[data-theme=dark] #s-race .nc small{color:var(--mute)}
+html[data-theme=dark] #s-race .nc.on{background:var(--ink);border-color:var(--ink)}
+html[data-theme=dark] #s-race .nc.on small{color:#16181c}
+html[data-theme=dark] #s-race .b10k{border:none;background:#211e18;color:var(--ac)}
+html[data-theme=dark] #s-race .b10k i svg{fill:none;stroke:currentColor}
+html[data-theme=dark] #s-race .zt input.ko2{border:1.5px solid #363532;background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] #s-race .zt button.x{border:none;background:none;color:var(--mute)}
+html[data-theme=dark] #s-race .tkl tr.hit td,html[data-theme=dark] #s-race .tkl tr.hb td{background:#16221e}
+html[data-theme=dark] #s-race .tkl tr.back td,html[data-theme=dark] #s-race .tkl tr.hb.bk td{background:#201c0e}
+html[data-theme=dark] #s-race .tkl tr.hit td,html[data-theme=dark] #s-race .tkl tr.back td{border-bottom:none}
+html[data-theme=dark] #s-race .hbl{border:1px solid var(--ink);background:#1a1c21}
+html[data-theme=dark] #s-race .tkl tr.hb small{color:var(--mute)}
+html[data-theme=dark] #s-race .kst{border-top:1.5px solid var(--ink)}
+html[data-theme=dark] #s-race .kst label{color:var(--mute)}
+html[data-theme=dark] #s-race .kres{background:#1d1d1b}
+html[data-theme=dark] #s-race .kres.win{background:#16221e}
+html[data-theme=dark] #s-race .kres small{color:var(--mute)}
 html[data-theme=dark] :not(text)[fill="#111"]{fill:#e6e6e3}
 html[data-theme=dark] [stroke="#111"]{stroke:#d6d6d3}
 html[data-theme=dark] :not(text)[fill="#fff"]{fill:#1a1c21}
@@ -734,7 +1090,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </div></div>
 <script>
 const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
-const BUILT='2026-10-30T1231';
+const BUILT='2026-10-30T1233';
 const GATED=true;        /* 合い言葉あり（1日券） */
 const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
 const $=s=>document.querySelector(s);
@@ -757,8 +1113,9 @@ async function setDay(d){ DAY=d; DATA=await loadDay(d); mergePaid(DATA,d); byRid
   VENUES=[...new Set((DATA.races||[]).map(r=>r.venue_name))]; }
 const PR=h=>h.scr?0:(h.p==null?null:h.p);
 function renderHeader(){ const d=DAY||'', ds=d?`${d.slice(0,4)}.${d.slice(4,6)}.${d.slice(6,8)}`:'';
+  if(tab==='race'&&cur.race&&byRid[cur.race]){ const r=byRid[cur.race]; $('#hd').innerHTML=`<button class="bk" type="button" onclick="showTab('races')"><i><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></i>${esc(r.venue_name)} R一覧</button><div class="hdr"><div class="dt"><b>${ds}</b>${d?WDJ[new Date(+d.slice(0,4),+d.slice(4,6)-1,+d.slice(6,8)).getDay()]+'曜':''}</div>${thmBtn()}</div>`; return; }
   $('#hd').innerHTML=`<div class="wm"><i><svg class="ic" style="stroke-width:1.5"><use href="#i-face"/></svg></i><div><span class="kana">うまみ</span><small class="en">UMAMI</small></div></div><div class="hdr"><div class="dt">${ds}<b>${DATA&&DATA.built?'更新 '+esc(DATA.built.slice(11)):''}</b></div>${thmBtn()}</div>`; }
-function showTab(k){ if(!document.getElementById('s-'+k)) k='races'; tab=k; document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id==='s-'+k));
+function showTab(k){ if(!document.getElementById('s-'+k)) k='races'; tab=k; try{ renderHeader(); }catch(e){} document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id==='s-'+k));
   document.querySelectorAll('.nav button[data-k]').forEach(b=>b.classList.toggle('on',b.dataset.k===(k==='race'?'races':k))); $('.nav').classList.toggle('rc',k==='race'); if(k!=='race') ls.set('sunao_tab',k); window.scrollTo(0,0); }
 
 /* ===== 合い言葉（2026-10-30） ===== */
@@ -789,15 +1146,15 @@ async function tryUnlock(pw,remember){
     Object.keys(CACHE).forEach(d=>mergePaid(CACHE[d],d)); if(DATA) mergePaid(DATA,DAY);
     renderAll(); return true; }catch(e){ return false; } }
 async function unlockFrom(inp){ const box=inp.closest('.lock'); const ok=await tryUnlock(inp.value,true); if(!ok&&box){ box.querySelector('.er').style.display='block'; } }
-function lockBox(d,msg){ const A=NOTE_URL?`<div class="buy"><a href="${esc(NOTE_URL)}" target="_blank" rel="noopener">1日券を買う</a></div>`:'';
-  return `<div class="lock">${ico('lock')}<p>${esc(msg||`この日の合い言葉を入れると、${dayLab(d)}の全レースの勝率と期待値が開きます。`)}</p><div class="pw"><input type="password" placeholder="合い言葉" autocomplete="off" inputmode="numeric" onkeydown="if(event.key==='Enter')unlockFrom(this)"><button type="button" onclick="unlockFrom(this.previousElementSibling)">開く</button></div><div class="er">合い言葉が違います</div><div class="n">合い言葉は開催日ごとです。一度入れればこの端末では開いたままになります。${NOTE_URL?'':'<br>1日券は準備中です。'}</div>${A}</div>`; }
+function lockBox(d,msg){ const A=NOTE_URL?`<div class="buy"><a href="${esc(NOTE_URL)}" target="_blank" rel="noopener">${dayLab(d)}だけ</a></div>`:'';
+  return `<div class="lock">${ico('lock')}<p>${esc(msg||'勝率と期待値は会員向け。')}</p><div class="pw"><input type="password" placeholder="合い言葉" autocomplete="off" inputmode="numeric" onkeydown="if(event.key==='Enter')unlockFrom(this)"><button type="button" onclick="unlockFrom(this.previousElementSibling)">解錠</button></div><div class="er">合い言葉が違います</div><div class="n">合い言葉は開催日ごとです。<br>入れるとその日の全レースが開きます。${NOTE_URL?'':'<br>1日券は準備中です。'}</div>${A}</div>`; }
 
 /* ===== オッズを更新（2026-10-30） ===== */
 const OUPD={};                                   /* rid → 最後に押した時刻（20秒は押せない） */
 const RELAY='https://r.jina.ai/https://nar.netkeiba.com/api/api_get_nar_odds.html?race_id=';
 const hhmm=()=>{ const n=new Date(); return `${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}`; };
 function oddsBtn(r){ const left=Math.max(0,20000-(Date.now()-(OUPD[r.rid]||0))); const y=r.odds_status==='yoso';
-  return `<button class="oupdg" id="oupd" type="button"${left>0?' disabled':''}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>オッズを更新<em>${r.odds_at?(y?'発売前の想定':esc(r.odds_at)+' 時点'):''}</em></button><div class="oupd-n" id="oupdn">${OUPD['n_'+r.rid]||''}</div>`; }
+  return `<button class="oupdg" id="oupd" type="button"${left>0?' disabled':''}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>最新のオッズに更新する<em>${r.odds_at?(y?'発売前の想定':esc(r.odds_at)+'時点'):''}</em></button><div class="oupd-n" id="oupdn">${OUPD['n_'+r.rid]||''}</div>`; }
 function applyOdds(r,byHid,st,at){
   (r.runners||[]).forEach(h=>{ const x=byHid[String(h.hid)]||byHid[String(h.uno).padStart(2,'0')]||byHid[String(h.uno)]; if(x&&x.odds>0){ h.odds=x.odds; h.pop=x.pop; } });   /* 発売後は馬番 "01" が鍵（2026-10-30） */
   if(st) r.odds_status=st; if(at) r.odds_at=at;
@@ -867,8 +1224,15 @@ function jtRows(h){ const j=h.jt||{}; const f=(a,lab)=>a&&a[2]?`<div><b>${lab}</
 function pastRows(h){ const P=h.past||[]; if(!P.length) return '<h4>近走</h4><p class="note" style="margin-top:0">まだ記録がありません。</p>';
   const l3=p=>`${p.l3!=null?p.l3:'—'}${p.l3r>=1&&p.l3r<=3?`<span class="l3b k${p.l3r}">${p.l3r}</span>`:''}`;
   return `<h4>近5走</h4><div class="ptw"><table class="pt"><tr><th class="l">日付</th><th class="l">場</th><th>距離</th><th>着</th><th>人気</th><th>速さ</th><th>上り</th><th class="l">通過</th><th class="l">騎手</th><th>体重</th><th class="l">レース</th></tr>${P.map(p=>`<tr><td class="l">${esc(p.d||'')}</td><td class="l">${esc(p.v||'')}</td><td>${esc(p.surf||'')}${p.dist||''}${p.go?'<small style="color:var(--mute)">'+esc(p.go)+'</small>':''}</td><td class="${p.fin===1?'w1':''}"><b>${p.fin==null?'—':p.fin}</b>/${p.n||''}</td><td>${p.pop||'—'}</td><td>${p.sp!=null?p.sp.toFixed(0):'—'}</td><td>${l3(p)}</td><td class="l">${esc(p.pos||'')}</td><td class="l">${esc(p.j||'')}</td><td>${p.wt||''}</td><td class="nmr">${esc(p.nm||'')}</td></tr>`).join('')}</table></div>`; }
-function horseCard(h){ return `<div class="hc">${(h.run||(h.chips||[]).length)?`<div class="chs">${runChip(h)}${(h.chips||[]).map(c=>`<span class="ch ${CHC(c)}">${esc(c)}</span>`).join('')}</div>`:''}${pastRows(h)}${jtRows(h)}${favRows(h)}</div>`; }
-
+function horseCard(r,h){ const p0=(h.past||[])[0]||{}; const pos=p0.pos?String(p0.pos).split('-').pop():null; const j=h.jt||{}; const jt=(a)=>a&&a[2]?`<b>勝率 ${a[0]==null?'—':a[0].toFixed(0)}%</b><i>3着内 ${a[1]==null?'—':a[1].toFixed(0)}%（${(a[2]||0).toLocaleString()}回）</i>`:'<b>—</b>';
+  const C=(h.chips||[]).filter(Boolean);
+  return `<tr class="hcard" data-h="${h.uno}"><td colspan="6"><div class="hc"><div class="hcl"><span>${esc(h.name)}</span></div><div class="hcg">
+    <div><label>脚質</label><b>${h.run||'—'}</b><i>近5走の序盤の位置</i></div>
+    <div><label>前走の位置</label><b class="mono">${pos?pos+'番手':'—'}</b><i>${p0.l3!=null?'上がり '+p0.l3:'最後のコーナー'}</i></div>
+    <div><label>騎手 ${esc(h.jockey||'')}</label>${jt(j.j)}</div>
+    <div><label>調教師 ${esc(h.trainer||'')}</label>${jt(j.t)}</div>
+    ${C.length?`<div class="w2"><label>要素</label><div class="chs">${C.map(c=>`<span class="ch ${CHC(c)}">${esc(c)}</span>`).join('')}</div></div>`:''}
+  </div>${favRows(h)}</div></td></tr>`; }
 /* 帯の会場タブとレース番号タブ（UMAMI と同じ部品。会場を押すとその会場の番号に入れ替わり、番号を押すとそのレースへ） */
 function rselBody(r,v){ const X=lxDay(); const rs=(DATA.races||[]).filter(x=>x.venue_name===v).sort((a,b)=>a.R-b.R);
   const nx=X.past?null:(rs.find(x=>lxOk(x)&&!lxGone(x,X))||{}).rid;
@@ -879,75 +1243,165 @@ function bindRsel(el,r){ const box=el.querySelector('#rsel'); if(!box) return;
   box.onclick=e=>{ const vb=e.target.closest('.rs-v button'); if(vb){ box.innerHTML=rselBody(r,vb.dataset.v); return; }
     const rb=e.target.closest('.rs-r button'); if(rb&&!rb.disabled&&rb.dataset.rid!==r.rid) openRace(rb.dataset.rid); }; }
 let VIEW='mitate';
-const sh=(n,icon,title,right)=>`<div class="sh"><i class="shic"><svg class="ic"><use href="#i-${icon}"/></svg><em>${n}</em></i><b>${title}</b>${right?`<div class="shr">${right}</div>`:''}</div>`;
-function courseSec(r,n){ const live=(r.runners||[]).filter(h=>!h.scr).length; const na='<b class="na">発表前</b>';
-  const it=[['会場',`<b>${esc(r.venue_name||'')}</b>`],['距離',`<b class="mono">${esc(r.surface||'')}${r.dist||''}m${r.turn?'<small style="font-size:9px;color:var(--mute)"> '+esc(r.turn)+'</small>':''}</b>`],['直線（目安）',r.straight?`<b class="mono">${r.straight}m</b>`:'<b class="na">—</b>'],
-    ['頭数',`<b class="mono">${live}頭${(r.runners||[]).length>live?'<small style="font-size:9px;color:var(--mute)">（取消'+((r.runners||[]).length-live)+'）</small>':''}</b>`],['クラス',`<b>${esc(r.cond||'—')}</b>`],['1着賞金',r.prize1?`<b class="mono">${r.prize1}万円</b>`:'<b class="na">—</b>'],
-    ['天候',r.weather?`<b>${esc(r.weather)}</b>`:na],['馬場',r.going?`<b>${esc(r.going)}</b>`:na],['発走',`<b class="mono">${esc(r.time||'—')}</b>`]];
-  const w=r.wind; const wl=w&&w.spd!=null?`<div class="wnd">${ico('wind')}<span>風 ${esc(w.dir||'')} <span class="mono">${w.spd} m/s</span><small>（発走時刻の予報）</small></span>${w.now&&w.now.spd!=null?`<span>いま ${esc(w.now.dir||'')} <span class="mono">${w.now.spd} m/s</span>${w.now.at?`<small>（${esc(w.now.at)}）</small>`:''}</span>`:''}</div>`:'';
-  return `<div class="rcd"><div class="rcd-h"><b>コースと馬場</b>${r.odds_status==='yoso'?'<span class="rh-y">発売前の想定</span>':''}</div><div class="crs">${it.map(([k,v])=>`<div><i>${k}</i>${v}</div>`).join('')}</div>${wl}</div>`; }
-/* 買い目（UMAMI の買い目リストの形）: 期待値0.90以上の馬の単勝に、予算を100円単位で配分 */
-let BET=Object.assign({budget:10000,mode:'prob'},ls.get('sunao_bet',{})||{});
-function betAlloc(hs,budget,mode){ const w=hs.map(h=>mode==='even'?1:h.p); const S=w.reduce((a,b)=>a+b,0)||1; const units=Math.round(budget/100);
-  const raw=w.map(x=>units*x/S); const fl=raw.map(x=>Math.floor(x)); let left=units-fl.reduce((a,b)=>a+b,0);
-  const ord=raw.map((x,i)=>[x-fl[i],i]).sort((a,b)=>b[0]-a[0]); for(let k=0;k<ord.length&&left>0;k++,left--) fl[ord[k][1]]++;
-  return fl.map(u=>u*100); }
-function betSec(r,n){ const hs=(r.runners||[]).filter(h=>!h.scr&&h.p>0&&h.odds>0&&h.ev!=null&&h.ev>=0.9).sort((a,b)=>b.p-a.p);
-  const ctl=`<div class="bin"><label>予算（円）<input id="bbud" type="number" min="1000" step="1000" value="${BET.budget}"></label><label>配分<select id="bmode"><option value="prob"${BET.mode!=='even'?' selected':''}>勝率に比例</option><option value="even"${BET.mode==='even'?' selected':''}>均等</option></select></label></div>`;
-  let body;
-  if(!hs.length) body='<div class="alc-none" style="margin-top:8px">このレースは見送り（期待値0.90以上の馬がいません）。</div>';
-  else{ const am=betAlloc(hs,BET.budget,BET.mode); const tot=am.reduce((a,b)=>a+b,0);
-    body=`<table class="bt"><tr><th></th><th class="l">馬</th><th>単勝</th><th>勝率</th><th>期待値</th><th>金額</th><th>的中時</th></tr>${hs.map((h,i)=>`<tr class="${evCls(h)}"><td class="c">${cap(h)}</td><td class="nm">${esc(h.name)}</td><td>${h.odds.toFixed(1)}</td><td>${pct(h.p)}%</td><td class="ev">${h.ev.toFixed(2)}</td><td class="yen">${am[i].toLocaleString()}</td><td>${Math.floor(am[i]*h.odds).toLocaleString()}</td></tr>`).join('')}<tr class="tot"><td></td><td class="l">合計</td><td colspan="3"></td><td class="yen">${tot.toLocaleString()}</td><td></td></tr></table>
-      <div class="note">単勝100円単位。「的中時」はその馬が勝ったときに戻る額（いまのオッズで）。オッズを更新すると配分も出し直します。</div>`; }
-  return `<div class="sec" id="sec-bet">${sh(n,'coin','買い方')}${ctl}${body}</div>`; }
-function evSec(r,n,LK,fin){ const L=LK?null:raceLabel(r); const hasP=(r.runners||[]).some(h=>h.p!=null);
-  const lab=L?`<span class="rlab u-${L.k}">${ULAB[L.k]}</span>`:'';
-  let body='';
-  if(LK) body=lockBox(DAY);
-  else if(!hasP) body='<div class="alc-none">このレースの勝率は出ていません。</div>';
-  else{ const all=(r.runners||[]).filter(h=>!h.scr&&h.p!=null).sort((a,b)=>b.p-a.p);
-    const pick=all.filter(h=>h.ev!=null&&h.ev>=0.9); const list=VIEW==='all'?all:(pick.length?pick:all.slice(0,3));
-    const winU=fin?+r.result.order[0].uma:null;
-    body=`<div class="mit-h"><span class="l"></span><span class="l">馬</span><span>勝率 / 人気</span><span>期待値</span></div><div class="mit">${list.map(h=>`<div class="mr ${evCls(h)}${fin&&h.uno===winU?' hit':''}">${cap(h)}<div class="nm">${esc(h.name)}<small>${esc(h.jockey||'')}　単勝 ${h.odds!=null?h.odds.toFixed(1):'—'}${h.pop?'（'+h.pop+'人気）':''}</small></div><div class="pv">${pct(h.p)}%<small>人気 ${pct(h.mkt)}%</small></div><div class="ev">${h.ev!=null?h.ev.toFixed(2):''}</div></div>`).join('')}</div>
-      ${VIEW!=='all'&&!pick.length?'<div class="note" style="margin-top:6px">期待値が0.90以上の馬がいないので、勝率の上位3頭を出しています。</div>':''}
-      <div class="note">勝率はオッズに合わせて動きます。期待値＝勝率×単勝オッズ。<span style="background:#f5e19e;color:#3a2a00;padding:0 6px;border-radius:999px;font-weight:700">1.00以上</span> と <span style="color:#b39a52;font-weight:700">0.90以上</span> の2段。</div>`; }
-  const right=LK?'':`${lab}<div class="seg sm vw"><button data-v="mitate" class="${VIEW==='mitate'?'on':''}">見立て</button><button data-v="all" class="${VIEW==='all'?'on':''}">全頭</button></div>`;
-  return `<div class="sec" id="sec-win">${sh(n,'chart','勝率・期待値',right)}${body}${oddsBtn(r)}${alertBox(r,LK)}</div>`; }
-function alertBox(r,LK){ let body;
-  if(LK) body='<div class="alc-none">合い言葉で開くと、人気馬の注意がここに出ます。</div>';
-  else{ const A=(r.runners||[]).filter(h=>!h.scr&&h.alert>=1).sort((a,b)=>(b.alert-a.alert)||(a.odds-b.odds));
-    body=A.length?`<div class="alc">${A.map(h=>`<div class="a${h.alert>=2?' a2':''}"><div class="ah">${cap(h)}<b>${esc(h.name)}</b><span class="al${h.alert>=2?' a2':''}">${h.alert>=2?'人気の割に':'やや'}</span><span class="od">単勝 ${h.odds!=null?h.odds.toFixed(1):'—'}${h.pop?'・'+h.pop+'人気':''}</span></div><div class="ap">人気 ${pct(h.mkt)}% → うまみ <em>${pct(h.p)}%</em><small>${esc(h.jockey||'')}／${esc(h.trainer||'')}</small></div>${favRows(h).replace('<h4>人気馬だったときの実績</h4>','')}</div>`).join('')}</div>
-      <div class="note">単勝5倍以下の人気馬のうち、うまみの勝率が人気を下回るか、騎手・厩舎・その組み合わせが人気馬だったときに見込みより来ていない馬。「100回中 見込み24→実際15」は、同じ人気の馬が普通どれだけ勝つかとの比べ。回数が少ないうちは幅があります。</div>`:'<div class="alc-none">今回は該当なし。</div>'; }
-  return `<div class="alin"><h4><svg class="ic"><use href="#i-alert"/></svg>人気馬の注意</h4>${body}</div>`; }
-function tableSec(r,n,LK,fin){ const order=fin?r.result.order:[]; const winU=fin?+order[0].uma:null;
-  const hs=(r.runners||[]).slice().sort((a,b)=>SORT==='p'?((PR(b)||0)-(PR(a)||0)||a.uno-b.uno):a.uno-b.uno);
-  const rows=hs.map(h=>{ const c=[evCls(h),h.scr?'scr':'',fin&&!h.scr&&h.uno===winU&&evCls(h)?'hit':''].filter(Boolean).join(' ');
-    const al=!LK&&h.alert?`<span class="al${h.alert>=2?' a2':''}">${h.alert>=2?'人気の割に':'やや'}</span>`:'';
-    return `<tr data-h="${h.uno}" class="${c}"><td class="c">${cap(h)}</td><td class="nm l"><div class="hn"><span>${esc(h.name)}</span>${runChip(h)}${al}</div><small><b>${esc(h.jockey||'')}</b> ${h.kinryo||''}${fmtWt(h)?' '+fmtWt(h):''}</small>${chips(h,3)}</td><td class="od">${h.scr?'取消':(h.odds==null?'—':h.odds.toFixed(1))}</td><td class="pp">${h.scr?'':(h.pop==null?'—':h.pop)}</td>${LK&&!h.scr?`<td class="lk">${ico('lock')}</td><td class="lk">${ico('lock')}</td>`:`<td class="p">${h.scr?'':pct(PR(h))}</td><td class="ev">${h.scr||h.ev==null?'':h.ev.toFixed(2)}</td>`}</tr>
-      <tr class="hcard" data-hc="${h.uno}"><td colspan="6">${horseCard(h)}</td></tr>`; }).join('');
-  const right=LK?'':`<div class="seg sm srt"><button data-s="uno" class="${SORT==='uno'?'on':''}">馬番</button><button data-s="p" class="${SORT==='p'?'on':''}">勝率</button></div>`;
-  return `<div class="sec" id="sec-horses">${sh(n,'horse','うまたち',right)}<table class="t" style="margin-top:0"><tr><th></th><th class="l">馬</th><th>単勝</th><th>人気</th><th>勝率%</th><th>期待値</th></tr>${rows}</table>
-    <div class="note">馬を押すと、近5走・騎手と調教師のこれまで・人気馬だったときの実績が開きます。札は <span class="rn r1">逃げ</span><span class="rn r2">先行</span><span class="rn r3">差し</span><span class="rn r4">追込</span> の脚質と、休み明け・乗り替わり・距離の変更などの要素。</div></div>`; }
-function resSec(r,n){ const order=r.result.order; const winU=+order[0].uma; const PAYS=['単勝','複勝','馬連','馬単','3連複','3連単'];
-  return `<div class="sec" id="sec-res">${sh(n,'trophy','結果')}<div class="res" style="margin-top:0;border:none;padding:0"><div class="ro">${order.slice(0,3).map(o=>{ const h=(r.runners||[]).find(x=>+x.uno===+o.uma)||{uno:o.uma,waku:0,name:''}; return `<div><i>${o.fin}着</i>${cap(h)}${esc(h.name)}<small>${o.pop?o.pop+'人気':''}</small></div>`; }).join('')}</div>
-    <table class="pay">${PAYS.filter(k=>r.result.pays&&r.result.pays[k]).map(k=>{ const p=r.result.pays[k]; const gold=k==='単勝'&&(r.runners||[]).some(h=>+h.uno===winU&&evCls(h)); return `<tr class="${gold?'g':''}"><td>${k}</td><td>${p.uma.map(u=>esc(u).replace(/\s+/g,'-')).join('／')}</td><td>${p.yen.map(y=>y.toLocaleString()+'円').join(' / ')}${gold?'<small>金の的中</small>':''}</td></tr>`; }).join('')}</table></div></div>`; }
+const sh=(n,icon,title,right)=>`<div class="sh"><i class="shic"><svg class="ic"><use href="#i-${icon}"/></svg><em>${n}</em></i><b>${title}</b>${right?`<span class="shr">${right}</span>`:''}</div>`;
+/* ポイント（中央と同じ部品） */
+function ptBox(t,sub){ return `<div class="ptb"><i>ポイント</i><b>${t}</b>${sub?`<span>${sub}</span>`:''}</div>`; }
+const ptU=(h,x,lb)=>`<em class="pn">${lb?lb+' ':''}${cap(h)}${esc(h.name)}${x?' '+x:''}</em>`, ptS=t=>`<em class="pn">${t}</em>`, ptJ=a=>a.filter(Boolean).join('');
+function labelBar(L){ if(!L) return ''; return `<div class="ulab u-${L.k}"><b>${ULAB[L.k]}</b>${L.k==='none'?'<span>期待値0.90以上の馬がいません</span>':`<span>色付き${L.n1+L.n9}頭のどれかが勝つ見込み<em>${Math.round(L.sum*100)}%</em></span>`}</div>`; }
+const straightWord=m=>m>=500?'とても長い':m>=350?'長い':m>=250?'ふつう':'短い';
+/* コースと馬場（中央の案1: 大きな3つ） */
+function rcdCard(r,LK){ const live=(r.runners||[]).filter(h=>!h.scr).length, scr=(r.runners||[]).length-live; const GO=['良','稍重','重','不良'];
+  const cells=[];
+  if(r.straight) cells.push(`<div><label>直線</label><b class="v">${r.straight}<small>m</small></b><span class="s gd">${straightWord(r.straight)}</span></div>`);
+  cells.push(`<div><label>${r.surface==='芝'?'芝':'ダート'}の馬場</label>${r.going?`<b class="v j">${esc(r.going)}</b>`:'<b class="v na">発表前</b>'}<span class="sc">${GO.map(x=>`<i class="${x===r.going?'on':''}"></i>`).join('')}</span></div>`);
+  cells.push(`<div><label>頭数</label><b class="v">${live}<small>頭</small></b><span class="s">${scr?'取消 '+scr+'頭':'&nbsp;'}</span></div>`);
+  const cs=[]; if(r.turn) cs.push(`${esc(r.turn)}回り`); if(r.cond) cs.push(esc(r.cond)); if(r.prize1) cs.push(`1着 <b>${r.prize1}万円</b>`); cs.push(`天候 <b>${r.weather?esc(r.weather):'発表前'}</b>`);
+  const ws=[]; const w=r.wind; if(w&&w.spd!=null) ws.push(`${esc(r.time||'')}ごろ 風 <b>${esc(w.dir||'')} ${w.spd}m/s</b><small>予報</small>`); if(w&&w.now&&w.now.spd!=null) ws.push(`いま <b>${esc(w.now.dir||'')} ${w.now.spd}m/s</b>${w.now.at?`<small>${esc(w.now.at)}</small>`:''}`);
+  const L=LK?null:raceLabel(r); const lab=L&&ULAB[L.k]&&L.k!=='none'?`<span class="rlab u-${L.k}">${ULAB[L.k]}</span>`:'';
+  return `<div class="rcd rc1">${lab}<div class="rc1-g" style="grid-template-columns:repeat(${cells.length},minmax(0,1fr))">${cells.join('')}</div>${cs.length?`<div class="rc1-f">${cs.map(x=>`<span>${x}</span>`).join('<i>・</i>')}</div>`:''}${ws.length?`<div class="rc1-f rc1-w">${ws.map(x=>`<span>${x}</span>`).join('<i>・</i>')}</div>`:''}</div>`; }
+/* 1 うまたち: 馬柱（中央の .mb と同じ形。左に馬の欄、右に近5走） */
+const PAST_H=['前走','2走前','3走前','4走前','5走前'];
+function pastTd(p){ if(!p) return '<td class="pc"></td>'; const n=p.fin; const rc=(n>=1&&n<=3)?'m'+n:(n!=null?'k4':'kx'); const ac=(p.l3r>=1&&p.l3r<=3)?'m'+p.l3r:'';
+  return `<td class="pc"><div class="l1"><b class="rk ${rc}">${n!=null?n:'—'}</b><span class="mono">${esc(p.d||'')}</span><span class="pl">${esc(p.v||'')}</span></div>`
+    +`<div class="l2">${esc(p.nm||'')}</div>`
+    +`<div>${esc(p.surf||'')}${p.dist||''} ${esc(p.go||'')} <span class="mono">${esc(p.time||'')}</span></div>`
+    +`<div>${p.n?`<span class="mono">${p.n}</span>頭 `:''}${p.pop?`<span class="mono">${p.pop}</span>人`:''}${p.odds?` <span class="mono">${p.odds}</span>`:''}</div>`
+    +`<div>${esc(p.j||'')} <span class="mono">${p.kin!=null?p.kin:''}</span> <span class="mono">${p.wt||''}</span></div>`
+    +`<div><span class="mono">${esc(p.pos||'')}</span>${p.l3!=null?` 上<span class="ag mono ${ac}">${p.l3}</span>`:''}</div>`
+    +`<div>速さ <span class="mono">${p.sp!=null?p.sp.toFixed(0):'—'}</span>${p.mg?` <span class="mono">${esc(p.mg)}</span>`:''}</div></td>`; }
+function horseTd(h){ const od=!h.scr&&h.odds!=null?`<span class="mono">${h.odds.toFixed(1)}</span>`+(h.pop?`<span class="pp">${h.pop}人</span>`:''):(h.scr?'<span class="pp">取消</span>':'');
+  return `<td class="mbh"><div class="h1">${cap(h)}<b>${esc(h.name)}</b></div>`
+    +`<div>${esc(h.sex||'')}${h.age||''} <span class="mono">${h.kinryo||''}</span> ${esc(h.jockey||'')}</div>`
+    +`<div class="bl">${esc(h.aff||'')} ${esc(h.trainer||'')}</div>`
+    +`<div class="bl">${runChip(h)}${(h.chips||[]).slice(0,2).map(c=>esc(c)).join('・')}</div>`
+    +`<div class="od">${h.weight?`<span class="mono">${fmtWt(h)}</span>`:''}${od}</div></td>`; }
+function tableSec(r,n,LK,fin){ const hs=(r.runners||[]).slice().sort((a,b)=>a.uno-b.uno);
+  const A=LK?[]:hs.filter(h=>!h.scr&&h.alert>=1); const W=hs.filter(h=>!h.scr&&(h.chips||[]).includes('前走勝ち'));
+  const pt=A.length?ptBox(`人気の割に来ていない馬 ${A.length}頭`, ptJ(A.slice(0,4).map(h=>ptU(h)))+(A.length>4?ptS('ほか'):'')):(W.length?ptBox(`前走勝ちの馬 ${W.length}頭`, ptJ(W.slice(0,4).map(h=>ptU(h)))+(W.length>4?ptS('ほか'):'')):'');
+  const rows=hs.map(h=>{ const ps=h.past||[]; const cells=ps.length?[0,1,2,3,4].map(i=>pastTd(ps[i])).join(''):`<td class="pc nil" colspan="5">初出走</td>`; return `<tr data-h="${h.uno}"${h.scr?' class="scr"':''}>${horseTd(h)}${cells}</tr>`+horseCard(r,h); }).join('');
+  return `<div class="sec" id="sec-horses">${sh(n,'horse','うまたち','出馬表：近5走')}${pt}<div class="mbx"><div class="mbw"><table class="mb"><thead><tr><th class="mbh">馬</th>${PAST_H.map(t=>`<th class="pc">${t}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div></div>
+    <div class="note">近5走は横にずらして見られます。着順の札は1〜3着、上がりの札は上がり3Fのレース内1〜3位。速さ＝走破タイムを場・距離・馬場でそろえた指数（大きいほど速い）。行を押すと馬カード（脚質・前走の位置・騎手と調教師のこれまで・人気馬だったときの実績）。</div></div>`; }
+/* 2 勝率・期待値（中央の aiBody と同じ: ポイント・更新ボタン・ラベル・全頭の表） */
+function rkCap(r,h){ const o=((r.result||{}).order||[]); const i=o.findIndex(x=>+x.uma===+h.uno); const k=i>=0&&i<3?i+1:0; return `<span class="z2w">${cap(h)}${k?`<i class="z2b k${k}">${k}着</i>`:'<i class="z2s"></i>'}</span>`; }
+function evSec(r,n,LK,fin){ let body='';
+  if(LK) body=lockBox(DAY,'勝率と期待値は会員向け。');
+  else{ const HP=handP(r); const PX=h=>HP?HP[(r.runners||[]).indexOf(h)]:h.p; const EX=h=>(PX(h)!=null&&h.odds)?PX(h)*h.odds:h.ev; const hs=(r.runners||[]).filter(h=>!h.scr&&PX(h)!=null).sort((a,b)=>PX(b)-PX(a)); const hasO=(r.runners||[]).some(h=>h.odds);
+    if(!hs.length) body='<div class="alc-none">このレースの勝率は出ていません。</div>';
+    else{ const pc=h=>pct(PX(h))+'%'; const pt=ptBox(`${HP?'見立ての1番手':'うまみの1番手'} ${ptU(hs[0],pc(hs[0]))}`, ptJ(hs.slice(1,3).map((h,i)=>ptU(h,pc(h),`${i+2}番手`))));
+      const L=HP?null:raceLabel(r); const all=(r.runners||[]).slice().sort((a,b)=>((PX(b)||0)-(PX(a)||0))||a.uno-b.uno); const tier=v=>{ if(v==null||!isFinite(v)) return ''; const x=Math.round(v*100)/100; return x>=1?'e2':(x>=0.9?'e1':''); };
+      const rows=all.map(h=>`<tr class="${h.scr?'scr':tier(EX(h))}"><td class="l">${fin?rkCap(r,h):cap(h)}</td><td class="l nm">${esc(h.name)}<small>${h.scr?'取消':(h.run||'')}</small></td><td class="mono">${h.scr?'':pct(PX(h))+'%'}</td><td class="mono">${h.odds?h.odds.toFixed(1):'—'}</td><td class="mono evc">${h.scr?'取消':(EX(h)!=null?EX(h).toFixed(2):'—')}</td></tr>`).join('');
+      body=pt+oddsBtn(r)+labelBar(L)+`<div class="fxl"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span>勝率は人気を出発点に、人気のわりに来る・来ないのずれを足したもの。オッズが動くと勝率も動きます${r.odds_at?`（${esc(r.odds_at)}時点）`:''}。</span></div>`
+        +`<h3>全頭${HP?'<small>勝率は買い方で入れた自分の見立て</small>':''}</h3><div class="tw"><table class="zt"><thead><tr><th class="l">番</th><th class="l">馬名</th><th>勝率</th><th>単勝</th><th>期待値</th></tr></thead><tbody>${rows}</tbody></table></div>`
+        +`<div class="note">${hasO?(r.odds_status==='yoso'?'オッズは発売前の想定。':'オッズは'+esc(r.odds_at||'')+'時点。'):'単勝オッズは未発売のため期待値は空欄。'}<br>金色＝期待値1.00以上、淡い金色＝0.90〜0.99。<br>締切直前はオッズが動き、色が変わりやすくなります。</div>`
+        +alertBlock(r); } }
+  return `<div class="sec" id="sec-win">${sh(n,'chart','勝率・期待値',LK?'1日券':'')}${body}</div>`; }
+function alertBlock(r){ const A=(r.runners||[]).filter(h=>!h.scr&&h.alert>=1).sort((a,b)=>(b.alert-a.alert)||(a.odds-b.odds));
+  const body=A.length?`<div class="alc">${A.map(h=>`<div class="a"><div class="ah">${cap(h)}<b>${esc(h.name)}</b><span class="al">${h.alert>=2?'人気の割に':'やや'}</span><span class="od">単勝 ${h.odds!=null?h.odds.toFixed(1):'—'}${h.pop?'・'+h.pop+'人気':''}</span></div><div class="ap">人気 ${pct(h.mkt)}% → うまみ <em>${pct(h.p)}%</em><small>${esc(h.jockey||'')}／${esc(h.trainer||'')}</small></div>${favRows(h).replace('<h4>人気馬だったときの実績</h4>','')}</div>`).join('')}</div>`:'<div class="alc-none">今回は該当なし。</div>';
+  return `<h3>人気馬の注意<small>単勝5倍以下の人気馬のうち、うまみの勝率が人気を下回るか、騎手・厩舎・その組み合わせが人気馬だったときに見込みより来ていない馬。「100回中 見込み24→実際15」は、同じ人気の馬が普通どれだけ勝つかとの比べ。</small></h3>${body}`; }
+/* 3 買い方（中央の kellyBody と同じ: 勝率の見立て → 買い目を組む → 買い目リスト。確率は Harville） */
+const TKK=()=>'sunao_tk_'+DAY, TYPES=['単勝','複勝','馬連','ワイド','馬単','3連複','3連単'];
+const ROWS={'単勝':['馬番'],'複勝':['馬番'],'馬連':['軸','相手'],'ワイド':['軸','相手'],'馬単':['1着','2着'],'3連複':['軸','相手','相手'],'3連単':['1着','2着','3着']};
+function tkState(rid){ const all=ls.get(TKK(),{})||{}; if(!all[rid]) all[rid]={type:'馬連',marks:{},odds:{},list:[],budget:10000,mode:'prob'}; const st=all[rid]; st.marks=st.marks||{}; st.odds=st.odds||{}; st.list=st.list||[]; return [all,st]; }
+function harv(p){ /* 自分の勝率 → 着順の確率(Harville)。複勝は8頭以上で3着内、7頭以下で2着内。ワイドは常に3着内 */
+  const n=p.length, top=n>=8?3:2, pl=new Array(n).fill(0), pair={}, wide={}, exa={}, trio={}, tri3={}; const k2=(a,b)=>a<b?a+'-'+b:b+'-'+a;
+  for(let a=0;a<n;a++){ const pa=p[a]; if(pa<=0) continue; for(let b=0;b<n;b++){ if(b===a) continue; const pb=p[b]; if(pb<=0) continue; const pab=pa*pb/Math.max(1e-9,1-pa); exa[a+'>'+b]=pab; pair[k2(a,b)]=(pair[k2(a,b)]||0)+pab; if(top===2){ pl[a]+=pab; pl[b]+=pab; }
+    for(let c=0;c<n;c++){ if(c===a||c===b) continue; const pc=p[c]; if(pc<=0) continue; const pabc=pab*pc/Math.max(1e-9,1-pa-pb); tri3[a+'>'+b+'>'+c]=pabc; const ks=[a,b,c].sort((x,y)=>x-y).join('-'); trio[ks]=(trio[ks]||0)+pabc; wide[k2(a,b)]=(wide[k2(a,b)]||0)+pabc; wide[k2(a,c)]=(wide[k2(a,c)]||0)+pabc; wide[k2(b,c)]=(wide[k2(b,c)]||0)+pabc; if(top===3){ pl[a]+=pabc; pl[b]+=pabc; pl[c]+=pabc; } } } }
+  return {win:p,pl,pair,wide,exa,trio,tri3}; }
+function tkCombos(type,mk){ const rows=ROWS[type].length, m=[0,1,2].map(k=>(mk&&mk[k]||[]).slice()); if(rows>=2&&!m[1].length) m[1]=m[0].slice(); if(rows>=3&&!m[2].length) m[2]=m[1].slice(); const out=[], seen=new Set(), ord=type==='馬単'||type==='3連単'; const push=t=>{ const c=ord?t:[...t].sort((x,y)=>x-y); const k=c.join(','); if(!seen.has(k)){ seen.add(k); out.push(c); } };
+  if(rows===1) m[0].forEach(a=>push([a])); else if(rows===2) m[0].forEach(a=>m[1].forEach(b=>{ if(a!==b) push([a,b]); })); else m[0].forEach(a=>m[1].forEach(b=>m[2].forEach(c=>{ if(a!==b&&b!==c&&a!==c) push([a,b,c]); }))); return out; }
+function handP(r){ /* 買い方で「期待値に反映」を押したときの自分の勝率（合計1にならす）。押していなければ null */
+  if(locked(DAY)) return null; const st=tkState(r.rid)[1]; if(!st.handOn||!st.hand) return null;
+  const v=(r.runners||[]).map(h=>{ const x=parseFloat(st.hand[h.uno]); return x>0?x:0; }), t=v.reduce((a,b)=>a+b,0); return t>0?v.map(x=>x/t):null; }
+function payAll(r){ /* 地方の result.pays {券種:{uma:[...],yen:[...]}} → {券種:[{c:'4-5',y:660}]}（馬単・3連単は '5>4'） */
+  const pays=(r.result&&r.result.pays)||{}; const o={};
+  Object.keys(pays).forEach(k=>{ const p=pays[k]; if(!p||!p.uma) return; const combos=String(p.uma.join('\n')).split(/\n\s*\n/).map(x=>x.split(/\n/).map(y=>parseInt(y.trim(),10)).filter(v=>v>0)).filter(c=>c.length);
+    o[k]=combos.map((c,j)=>({c:(k==='馬単'||k==='3連単')?c.join('>'):[...c].sort((a,b)=>a-b).join('-'), y:p.yen[j]})).filter(x=>x.y!=null); if(!o[k].length) delete o[k]; });
+  return Object.keys(o).length?o:null; }
+function tkComb(t,hs){ const u=t.idx.map(i=>hs[i]&&hs[i].uno); return (t.type==='馬単'||t.type==='3連単')?u.join('>'):[...u].sort((a,b)=>a-b).join('-'); }
+function tkHit(r,t){ /* 当たり={y:100円あたり} / 返還={back:true} / 外れ=false / 払戻が取れていない券種=null */
+  const sc=(r.runners||[]).filter(h=>h.scr).map(h=>h.uno); if(t.idx.some(i=>r.runners[i]&&sc.includes(r.runners[i].uno))) return {back:true}; if(!lxFin(r)) return null;
+  const pa=payAll(r); if(!pa||!pa[t.type]) return null; const c=tkComb(t,r.runners); return pa[t.type].find(x=>String(x.c)===c)||false; }
+function betSum(r){ if(!r||!lxFin(r)) return null; const L=(tkState(r.rid)[1].list||[]).filter(t=>t.yen>0); if(!L.length) return null;
+  let inv=0, ret=0, hits=0, back=0, unk=0; L.forEach(t=>{ inv+=t.yen; const h=tkHit(r,t); if(h&&h.back){ back++; ret+=t.yen; } else if(h){ hits++; ret+=Math.round(t.yen/100*h.y); } else if(h===null) unk++; });
+  return {inv,ret,hits,back,unk,pts:L.length}; }
+const plS=v=>(v>=0?'+':'−')+Math.abs(Math.round(v)).toLocaleString()+'円';
+function betLine(r){ const s=betSum(r); if(!s) return ''; return `<div class="kres${s.ret>s.inv?' win':''}"><span>${s.hits?`的中 ${s.hits}点／購入${s.pts}点`:'この買い目は不的中'}${s.back?`<small>返還 ${s.back}点</small>`:''}${s.unk?`<small>${s.unk}点は払戻が無い券種</small>`:''}</span><b class="mono">${yenS(s.inv)} → ${yenS(s.ret)}（${plS(s.ret-s.inv)}）</b></div>`; }
+function betSec(r,n,LK){ if(LK) return `<div class="sec" id="sec-bet">${sh(n,'coin','買い方','1日券')}${lockBox(DAY,'資金配分と券種は会員向け。')}</div>`;
+  const hs=r.runners; const st=tkState(r.rid)[1]; const hv=h=>{ const x=st.hand&&st.hand[h.uno]; if(x!=null&&x!=='') return esc(String(x)); return h.p!=null?(h.p*100).toFixed(1):''; };
+  const body=`<h3>勝率の見立て</h3><div class="tw"><table class="zt" id="kt"><thead><tr><th class="l">番</th><th class="l">馬名</th><th>勝率%</th><th>単勝</th><th>期待値</th></tr></thead><tbody>`+
+    hs.map((h,i)=>`<tr data-i="${i}"${h.scr?' class="scr"':''}><td class="l">${cap(h)}</td><td class="l nm">${esc(h.name)}</td><td class="kpc"><input class="c kp" value="${h.scr?'0':hv(h)}"${h.scr?' disabled':''}></td><td class="mono kod">${h.scr?'取消':(h.odds?h.odds.toFixed(1):'—')}</td><td class="mono kev">—</td></tr>`).join('')+
+    `</tbody></table></div><div class="sum"><span>勝率の合計 <b class="mono" id="kpsum">—</b><small class="kph" id="kphint"></small></span></div>
+    <div class="kbar"><button class="lnk-s" id="knorm" type="button">100%にならす</button><button class="lnk-s" id="kapply" type="button">${st.handOn?'期待値に反映済み':'期待値に反映'}</button>${st.hand?'<button class="lnk-s" id="kreset" type="button">AIに戻す</button>':''}</div>
+    <h3>買い目を組む</h3><div class="tkt" id="tkt">${TYPES.map(t=>`<button type="button" data-t="${t}"${t===st.type?' class="on"':''}>${t}</button>`).join('')}</div><div id="tkm"></div>
+    <button class="b10k" id="kadd" type="button"><span>買い目リストに載せる</span><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg></i></button>
+    <h3>買い目リスト</h3><div class="kin"><div><label>予算（円）</label><input id="kb" type="number" value="${st.budget||10000}" step="1000"></div><div><label>配分のしかた</label><select id="kmode"><option value="prob"${st.mode!=='even'?' selected':''}>的中率に比例</option><option value="even"${st.mode==='even'?' selected':''}>払い戻しを揃える</option></select></div></div>
+    <div id="kout"></div><div class="sum"><button class="lnk-s" id="oupd2" type="button" style="margin-left:0">オッズ更新</button><button class="lnk-s" id="kclr" type="button">リストを全部消す</button></div>
+    <div class="note">自動で入るのは単勝オッズだけ。複勝・馬連などは、オッズの欄に手で入れると期待値と配分が出ます。</div>`;
+  return `<div class="sec" id="sec-bet">${sh(n,'coin','買い方','会員・最適配分')}${body}</div>`; }
+function bindKelly(r){ const hs=r.runners, n=hs.length; if(!$('#kt')) return; const [all,st]=tkState(r.rid); const save=()=>{ all[r.rid]=st; ls.set(TKK(),all); }; let cur=[]; bindKelly.rid=r.rid;
+  const rates=()=>{ const v=[...document.querySelectorAll('#kt .kp')].map(x=>+x.value||0), t=v.reduce((a,b)=>a+b,0); $('#kpsum').textContent=t.toFixed(0)+'%'; $('#kpsum').style.color=Math.abs(t-100)>3?'#9a6a00':''; const hn=$('#kphint'); if(hn) hn.textContent=Math.abs(t-100)>3?'100%にならして計算':''; return v.map(x=>x/(t||1)); };
+  const keyOf=t=>t.type+'|'+t.idx.join(','); const sep=t=>(t.type==='馬単'||t.type==='3連単')?'<span class="dash">＞</span>':'<span class="dash">–</span>';
+  const autoOdds=t=>t.type==='単勝'?(hs[t.idx[0]].odds||0):0;   /* 地方: 自動は単勝だけ */
+  const oddsOf=t=>{ const k=keyOf(t); if(st.odds[k]!=null&&st.odds[k]!=='') return +st.odds[k]||0; return autoOdds(t); };
+  const probOf=(H,t)=>{ const [a,b,c]=t.idx, k2=(x,y)=>x<y?x+'-'+y:y+'-'+x; switch(t.type){ case '単勝': return H.win[a]||0; case '複勝': return H.pl[a]||0; case '馬連': return H.pair[k2(a,b)]||0; case 'ワイド': return H.wide[k2(a,b)]||0; case '馬単': return H.exa[a+'>'+b]||0; case '3連複': return H.trio[[a,b,c].sort((x,y)=>x-y).join('-')]||0; case '3連単': return H.tri3[a+'>'+b+'>'+c]||0; } return 0; };
+  const preview=()=>{ const cnt=tkCombos(st.type,st.marks[st.type]).length; const b=$('#kadd'); b.disabled=!cnt; b.querySelector('span').textContent=cnt?`買い目リストに載せる（${st.type} ${cnt}点）`:'買い目リストに載せる'; };
+  const renderMarks=()=>{ const rows=ROWS[st.type]; const mk=st.marks[st.type]||(st.marks[st.type]=[[],[],[]]); document.querySelectorAll('#tkt button[data-t]').forEach(b=>b.classList.toggle('on',b.dataset.t===st.type));
+    $('#tkm').innerHTML=rows.map((lb,k)=>`<div class="nbh"><label>${lb}</label><button type="button" class="all${(mk[k]||[]).length===n?' on':''}" data-k="${k}">全</button></div><div class="nb6">${Array.from({length:18},(_,i)=>i<n?`<button type="button" class="nc${(mk[k]||[]).includes(i)?' on':''}" data-k="${k}" data-i="${i}"${hs[i].scr?' disabled':''}><b style="background:${WBG[hs[i].waku]};color:${WFG[hs[i].waku]}">${hs[i].uno}</b><small>${esc((hs[i].name||'').slice(0,3))}</small></button>`:`<button type="button" class="nc" disabled><b>${i+1}</b></button>`).join('')}</div>`).join('');
+    document.querySelectorAll('#tkm button:not(:disabled)').forEach(b=>b.onclick=()=>{ const k=+b.dataset.k; mk[k]=mk[k]||[]; if(b.classList.contains('all')) mk[k]=mk[k].length===n?[]:hs.map((h,i)=>i).filter(i=>!hs[i].scr); else { const i=+b.dataset.i, j=mk[k].indexOf(i); if(j<0) mk[k].push(i); else mk[k].splice(j,1); mk[k].sort((x,y)=>x-y); } save(); renderMarks(); }); preview(); };
+  const money=()=>{ const B=st.budget=+$('#kb').value||0; st.mode=$('#kmode').value; const ws=cur.map(t=>st.mode==='even'?(t.odds>0?1/t.odds:0):t.prob); const tw=ws.reduce((a,b)=>a+b,0)||1; let used=0; cur.forEach((t,i)=>{ t.yen=Math.floor(B*ws[i]/tw/100)*100; used+=t.yen; }); let rest=B-used; const by=cur.map((t,i)=>i).filter(i=>ws[i]>0).sort((x,y)=>ws[y]-ws[x]); for(let k=0;rest>=100&&by.length;k=(k+1)%by.length){ cur[by[k]].yen+=100; rest-=100; }
+    cur.forEach((t,i)=>{ if(st.list[i]) st.list[i].yen=t.yen; }); save();
+    const trs=document.querySelectorAll('#kout tbody tr.tkr'); cur.forEach((t,i)=>{ const tr=trs[i]; if(!tr) return; tr.querySelector('.yen').textContent=t.yen>0?t.yen.toLocaleString()+'円':'—'; tr.querySelector('.ev').textContent=t.odds>0?(t.prob*t.odds).toFixed(2):'—';
+      const hb=tr.nextElementSibling, hr=hb&&hb.classList.contains('hb')?hb.querySelector('.hret'):null; if(hr) hr.textContent=t.yen>0?(t.hit.back?yenS(t.yen):'払戻 '+yenS(t.yen/100*t.hit.y)):''; });
+    const k4=$('#kres4'); if(k4) k4.innerHTML=betLine(r);
+    const tot=cur.reduce((a,t)=>a+t.yen,0), hit=cur.reduce((a,t)=>a+t.prob,0), wo=cur.filter(t=>t.odds>0&&t.yen>0), ret=wo.reduce((a,t)=>a+t.prob*t.odds*t.yen,0), inv=wo.reduce((a,t)=>a+t.yen,0), ev=inv>0?ret/inv:null, allO=cur.length&&cur.every(t=>t.odds>0), gos=allO?1/cur.reduce((a,t)=>a+1/t.odds,0):null;
+    const sm=$('#ksum'); if(sm) sm.innerHTML=[['点数',cur.length+'点'],['当たる確率の合計',(Math.min(1,hit)*100).toFixed(1)+'%'],['全体の倍率',gos?gos.toFixed(1)+'倍':'—'],['期待値',ev!=null?ev.toFixed(2):'—'],['合計',tot.toLocaleString()+'円']].map(([l,v])=>`<div><label>${l}</label><b class="mono">${v}</b></div>`).join(''); };
+  const ktEV=p=>{ document.querySelectorAll('#kt tbody tr').forEach((tr,i)=>{ const h=hs[i]; if(!h) return; const o=tr.querySelector('.kod'), e=tr.querySelector('.kev');
+      if(o) o.textContent=h.scr?'取消':(h.odds?h.odds.toFixed(1):'—'); const ev=(h.odds&&p[i]>0)?p[i]*h.odds:null, et=h.scr?'':(ev==null?'':(Math.round(ev*100)/100>=1?'e2':Math.round(ev*100)/100>=0.9?'e1':''));
+      if(e){ e.textContent=ev!=null?ev.toFixed(2):'—'; } tr.classList.toggle('e1',et==='e1'); tr.classList.toggle('e2',et==='e2'); }); };
+  const renderList=()=>{ const p=rates(); ktEV(p); const H=harv(p); cur=st.list.map(t=>({...t,prob:probOf(H,t),odds:oddsOf(t),hit:tkHit(r,t)})); if(!cur.length){ $('#kout').innerHTML=''; return; }
+    const hbar=t=>!t.hit?'':t.hit.back?`<tr class="hb bk"><td colspan="7"><span class="hbl">返還</span><b class="mono hret"></b><small>取消・除外の馬を含む</small></td></tr>`:`<tr class="hb"><td colspan="7"><span class="hbl">的中</span><b class="mono hret"></b><small>${yenS(t.hit.y)}／100円</small></td></tr>`;
+    $('#kout').innerHTML=`<div class="tw"><table class="zt tkl"><thead><tr><th class="l">券種</th><th class="l">買い目</th><th>当たる<br>確率</th><th>オッズ</th><th>期待値</th><th>金額</th><th></th></tr></thead><tbody>`+cur.map(t=>`<tr class="tkr${!t.hit?(t.hit===false?' miss':''):t.hit.back?' back':' hit'}"><td class="l">${t.type}</td><td class="l">${t.idx.map(i=>cap(hs[i])).join(sep(t))}</td><td class="mono">${(t.prob*100).toFixed(1)}%</td><td><input class="c ko2" value="${t.odds?t.odds:''}" placeholder="—"></td><td class="mono ev"></td><td class="mono yen"></td><td><button type="button" class="x" aria-label="消す">×</button></td></tr>${hbar(t)}`).join('')+`</tbody></table></div><div class="kst" id="ksum"></div><div id="kres4"></div>`;
+    document.querySelectorAll('#kout .ko2').forEach((inp,i)=>inp.oninput=()=>{ st.odds[keyOf(cur[i])]=inp.value; cur[i].odds=+inp.value||0; save(); money(); });
+    document.querySelectorAll('#kout .x').forEach((b,i)=>b.onclick=()=>{ st.list.splice(i,1); save(); renderList(); }); money(); };
+  const rerender=()=>{ const y=window.scrollY; renderRacePage(r); window.scrollTo(0,y); };
+  const resetHand=()=>{ delete st.hand; st.handOn=false; save(); rerender(); };
+  const keepHand=()=>{ const ins=[...document.querySelectorAll('#kt .kp')]; st.hand={}; hs.forEach((h,i)=>{ st.hand[h.uno]=ins[i]?ins[i].value:''; }); save(); const ka=$('#kapply'); if(ka) ka.textContent='期待値に反映';
+    if(!$('#kreset')){ const bar=document.querySelector('#sec-bet .kbar'); if(bar){ const b=document.createElement('button'); b.className='lnk-s'; b.id='kreset'; b.type='button'; b.textContent='AIに戻す'; b.onclick=resetHand; bar.appendChild(b); } } };
+  document.querySelectorAll('#kt .kp').forEach(i=>{ i.oninput=()=>{ keepHand(); renderList(); }; }); $('#kb').oninput=money; $('#kmode').onchange=money;
+  const ka=$('#kapply'); if(ka) ka.onclick=()=>{ keepHand(); st.handOn=true; save(); rerender(); const b=$('#kapply'); if(b){ b.textContent='反映しました'; setTimeout(()=>{ const z=$('#kapply'); if(z&&z.textContent==='反映しました') z.textContent='期待値に反映済み'; },1500); } };
+  const kr=$('#kreset'); if(kr) kr.onclick=resetHand;
+  document.querySelectorAll('#tkt button[data-t]').forEach(b=>b.onclick=()=>{ st.type=b.dataset.t; save(); renderMarks(); });
+  $('#kadd').onclick=()=>{ const have=new Set(st.list.map(keyOf)); tkCombos(st.type,st.marks[st.type]).forEach(c=>{ const t={type:st.type,idx:c}; if(!have.has(keyOf(t))){ have.add(keyOf(t)); st.list.push(t); } }); st.marks[st.type]=[[],[],[]]; save(); renderMarks(); renderList(); $('#kout').scrollIntoView({behavior:'smooth',block:'start'}); };
+  $('#kclr').onclick=()=>{ st.list=[]; st.odds={}; save(); renderList(); };
+  const nb=$('#knorm'); if(nb) nb.onclick=()=>{ const ins=[...document.querySelectorAll('#kt .kp')]; const v=ins.map(x=>+x.value||0), t=v.reduce((q,w)=>q+w,0); if(t>0) ins.forEach((x,i)=>x.value=(v[i]/t*100).toFixed(1)); keepHand(); renderList(); };
+  $('#oupd2').onclick=()=>updOdds(r);
+  renderMarks(); renderList(); }
+/* 4 結果（中央の ptRes・着順・払戻） */
+const yenS=v=>Math.round(v).toLocaleString()+'円';
+function payRows(r){ const pays=(r.result&&r.result.pays)||{}; const H=u=>(r.runners||[]).find(h=>+h.uno===+u); const PAYK=['単勝','複勝','枠連','馬連','ワイド','馬単','3連複','3連単']; const winU=+((r.result.order||[])[0]||{}).uma;
+  const out=[]; PAYK.forEach(k=>{ const p=pays[k]; if(!p||!p.uma) return; const combos=String(p.uma.join('\n')).split(/\n\s*\n/).map(x=>x.split(/\n/).map(y=>y.trim()).filter(Boolean)).filter(c=>c.length);
+    combos.forEach((c,j)=>{ const sep=(k==='馬単'||k==='3連単')?'<span class="dash">＞</span>':'<span class="dash">–</span>'; const comb=c.map(x=>H(+x)?cap(H(+x)):`<span class="cap">${esc(x)}</span>`).join(sep); const y=p.yen[j]; const gold=k==='単勝'&&H(winU)&&evCls(H(winU));
+      out.push(`<tr class="${j?'cont':''}${gold?' g':''}"><td class="l">${j?'':k}</td><td class="l">${comb}</td><td class="mono">${y!=null?yenS(y):'—'}</td></tr>`); }); });
+  return out.join(''); }
+function resSec(r,n){ const res=r.result; const H=u=>(r.runners||[]).find(h=>+h.uno===+u); const top=res.order.slice(0,3).map(o=>({o,h:H(o.uma)})).filter(x=>x.h);
+  const pays=res.pays||{}; const py=k=>pays[k]&&pays[k].yen&&pays[k].yen[0]!=null?ptS(`${k} ${yenS(pays[k].yen[0])}`):''; const pt=top.length?ptBox(top.map(x=>cap(x.h)).join('<i class="ar">→</i>'), ptJ([ptS('1着 '+esc(top[0].h.name)),...['3連単','馬連','単勝'].map(py).filter(Boolean).slice(0,2)])):'';
+  const rows=top.map((x,i)=>`<tr${i===0?' class="rw1"':''}><td class="l rpo"><b>${i+1}</b><small>着</small></td><td class="l">${cap(x.h)}</td><td class="l nm">${esc(x.h.name)}<small>${[x.h.jockey?esc(x.h.jockey):'',x.h.run||''].filter(Boolean).join('・')}</small></td><td class="rrt"><b>${esc(x.o.time||'—')}</b><small>${x.o.pop?x.o.pop+'人気':''}</small></td></tr>`).join('');
+  return `<div class="sec" id="sec-res">${sh(n,'trophy','結果','確定')}${pt}<h3>着順</h3><div class="tw"><table class="zt rs3"><tbody>${rows}</tbody></table></div><h3>払戻</h3><div class="tw"><table class="zt payt"><thead><tr><th class="l">券種</th><th class="l">組み合わせ</th><th>払戻</th></tr></thead><tbody>${payRows(r)}</tbody></table></div><div class="note">100円あたり。金色の単勝は、期待値が金だった馬の的中。</div></div>`; }
 function renderRacePage(r){ const el=$('#s-race'); const X=lxDay();
   const sel=`<div id="rsel">${rselBody(r,r.venue_name)}</div>`;
-  const yoso=r.odds_status==='yoso';
-  const head=`<div class="rh2"><div class="rh-n"><em>${esc(r.venue_name)} ${r.R}R</em>${esc(r.name)}</div><div class="rh-m"><span>${esc(r.time||'')} 発走</span><span class="sf">${esc(r.surface||'')}${r.dist||''}m${r.turn?'・'+esc(r.turn):''}</span>${r.going?`<span>馬場 ${esc(r.going)}</span>`:''}${r.odds_at&&!yoso?`<span>オッズ ${esc(r.odds_at)}</span>`:''}</div></div>`;
-  const fin=lxFin(r); const LK=locked(DAY); if(LK) SORT='uno';
-  let n=0; const secs=[courseSec(r,0), tableSec(r,++n,LK,fin), evSec(r,++n,LK,fin)]; if(!LK) secs.push(betSec(r,++n)); if(fin) secs.push(resSec(r,++n));
-  const steps=[['horses','うまたち'],['win','勝率・期待値']]; if(!LK) steps.push(['bet','買い方']); if(fin) steps.push(['res','結果']);
-  const stepBar=`<div class="steps"><div class="in">${steps.map(([k,l],i)=>`<button type="button" data-k="${k}"><i>${i+1}</i>${l}</button>`).join('')}</div></div>`;
-  el.innerHTML=sel+head+secs[0]+stepBar+secs.slice(1).join('');
-  el.querySelectorAll('.steps button').forEach(b=>b.onclick=()=>{ const t=document.getElementById('sec-'+b.dataset.k); if(t){ const y=t.getBoundingClientRect().top+window.scrollY-96; window.scrollTo({top:y,behavior:'smooth'}); } });
+  const yoso=r.odds_status==='yoso'; const fin=lxFin(r); const LK=locked(DAY);
+  const nm=String(r.name||''); const head=`<div class="rh rh2"><div class="rh-n" style="font-size:${nm.length>13?18:nm.length>10?20:22}px">${esc(r.name)}</div><div class="rh-m"><span class="rh-t"><b>${esc(r.time||'')}</b>発走</span>${fin?'<span class="rh-s">確定</span>':(yoso?'<span class="rh-s yoso">発売前の想定</span>':'')}<span class="rh-sf">${esc(r.surface||'')}${r.dist||''}m${r.turn?' '+esc(r.turn):''}</span><span class="rh-hc">${(r.runners||[]).filter(h=>!h.scr).length}頭</span></div></div>`;
+  const scr=(r.runners||[]).filter(h=>h.scr); const scrl=scr.length?`<div class="note scrl">取消・除外 ${scr.map(h=>`${h.uno} ${esc(h.name)}`).join('・')}</div>`:'';
+  let n=0; const secs=[tableSec(r,++n,LK,fin), evSec(r,++n,LK,fin), betSec(r,++n,LK)]; if(fin) secs.push(resSec(r,++n));
+  const steps=[['horses','うまたち',true],['win','勝率',!LK],['bet','買い方',!LK]]; if(fin) steps.push(['res','結果',true]);
+  const stepBar=`<div class="steps"><div class="in">${steps.map(([k,l,ok],i)=>`<button type="button" data-k="${k}"><i>${i+1}</i>${l}${ok?'':'<span class="lk"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>'}</button>`).join('')}</div></div>`;
+  el.innerHTML=sel+head+scrl+rcdCard(r,LK)+stepBar+secs.join('');
+  el.querySelectorAll('.steps button').forEach(b=>b.onclick=()=>{ const t=document.getElementById('sec-'+b.dataset.k); if(t){ const y=t.getBoundingClientRect().top+window.scrollY-100; window.scrollTo({top:y,behavior:'smooth'}); } });
   if(window.IntersectionObserver){ const obs=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ const k=e.target.id.replace('sec-',''); el.querySelectorAll('.steps button').forEach(b=>b.classList.toggle('on',b.dataset.k===k)); } }); },{rootMargin:'-40% 0px -55% 0px'}); el.querySelectorAll('.sec[id]').forEach(x=>obs.observe(x)); }
   bindRsel(el, r); const ob=el.querySelector('#oupd'); if(ob) ob.onclick=()=>updOdds(r);
-  const bb=el.querySelector('#bbud'), bm=el.querySelector('#bmode'); const reb=()=>{ BET.budget=Math.max(1000,Math.round((+bb.value||10000)/1000)*1000); BET.mode=bm.value; ls.set('sunao_bet',BET); const y=window.scrollY; renderRacePage(r); window.scrollTo(0,y); };
-  if(bb) bb.onchange=reb; if(bm) bm.onchange=reb;
-  el.querySelectorAll('.srt button').forEach(b=>b.onclick=()=>{ SORT=b.dataset.s; renderRacePage(r); });
-  el.querySelectorAll('.vw button').forEach(b=>b.onclick=()=>{ VIEW=b.dataset.v; const y=window.scrollY; renderRacePage(r); window.scrollTo(0,y); });
-  el.querySelectorAll('tr[data-h]').forEach(tr=>tr.onclick=()=>{ const hc=el.querySelector(`tr[data-hc="${tr.dataset.h}"]`); if(hc) hc.style.display=hc.style.display==='table-row'?'none':'table-row'; });
+  try{ bindKelly(r); }catch(e){ console.error(e); }
+  el.querySelectorAll('.mb tr[data-h]').forEach(tr=>tr.onclick=()=>{ const d=el.querySelector(`.mb .hcard[data-h="${tr.dataset.h}"]`); if(d) d.classList.toggle('on'); });
+  try{ renderHeader(); }catch(e){}
 }
 /* ===== 記録・使い方・会員 ===== */
 async function renderRecord(){ const el=$('#s-record'); el.innerHTML=`<h2>${ico('chart')}記録</h2>`;
