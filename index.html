@@ -24,7 +24,7 @@ svg.ic{width:100%;height:100%;fill:none;stroke:#111;stroke-width:1.6;stroke-line
 .hd{display:flex;align-items:center;justify-content:space-between;min-height:40px}
 .hd .wm{display:flex;align-items:center;gap:8px;line-height:1}
 .hd .wm>div{text-align:center}
-.hd .wm .kana{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:800;letter-spacing:.08em;font-size:24px;color:var(--ac)}
+.hd .wm .kana{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:800;letter-spacing:.08em;font-size:24px;color:#111}
 .hd .wm small.en{display:block;font-family:'Outfit',sans-serif;letter-spacing:.3em;font-weight:700;font-size:9.5px;color:var(--mute);margin-top:4px;white-space:nowrap;text-align:center}
 .hd .dt{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11px;color:var(--mute);text-align:right;line-height:1.4}
 .hd .dt b{display:block;color:var(--ink);font-size:13px;font-weight:400}
@@ -52,6 +52,7 @@ h3{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-s
 .lxh b{font-size:12px;font-weight:800;letter-spacing:.04em}
 .lxh span{font-size:10px;color:var(--mute)}
 .lxt{display:grid;column-gap:8px;row-gap:0;align-items:stretch;margin-top:2px}
+.lxt.wide{overflow-x:auto;scrollbar-width:none;margin-left:-14px;margin-right:-14px;padding:0 14px;scroll-padding:0 14px}.lxt.wide::-webkit-scrollbar{display:none}   /* 会場が5つ以上は左右にスライド（2026-10-30） */
 .lxt-vh{position:relative;font-size:11.5px;font-weight:800;text-align:left;padding:0 0 0 15px;margin-bottom:9px;display:flex;gap:5px;align-items:baseline;white-space:nowrap;overflow:hidden}
 .lxt-vh span{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:9.5px;color:var(--mute);font-weight:400}
 .lxt-vh::after{content:"";position:absolute;left:15px;right:0;bottom:-5px;height:1.5px;border-radius:1px;background:var(--ac)}
@@ -355,8 +356,8 @@ html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{back
 /* 上部（v05。2026-10-30）: 色帯・切替ピル・薄い背景のスライダー */
 .nav{display:none!important}
 .topband{height:6px;background:#6b4f2a;margin:-12px -14px 8px}
-.sitesw{display:flex;height:48px;border:1.5px solid #6b4f2a;border-radius:999px;overflow:hidden;background:#fff;margin:10px 0 8px}
-.sitesw button{flex:1;font-size:14px;font-weight:800;color:#6b4f2a;background:#fff;border:none;letter-spacing:.04em;font-family:inherit;cursor:pointer;line-height:1}
+.sitesw{display:flex;height:36px;border:1.5px solid #6b4f2a;border-radius:999px;overflow:hidden;background:#fff;margin:8px 0 6px}
+.sitesw button{flex:1;font-size:13px;font-weight:800;color:#6b4f2a;background:#fff;border:none;letter-spacing:.04em;font-family:inherit;cursor:pointer;line-height:1}
 .sitesw button+button{border-left:1.5px solid #6b4f2a}
 .sitesw button.on{background:#6b4f2a;color:#fff}
 .tnav{position:sticky;top:0;z-index:40;height:44px;background:#f6f1e6;border-bottom:1px solid #e6e4dc;margin:0 -14px 10px;padding:0 6px;display:flex;align-items:stretch}
@@ -376,7 +377,7 @@ html[data-theme=dark] body{background:var(--bg2);color:var(--ink)}
 html[data-theme=dark] button{color:inherit;background:none;border:none}
 html[data-theme=dark] a{color:inherit}
 html[data-theme=dark] svg.ic{fill:none;stroke:#b9bcc2}
-html[data-theme=dark] .hd .wm .kana{color:var(--ac)}
+html[data-theme=dark] .hd .wm .kana{color:#ececea}
 html[data-theme=dark] .hd .wm small.en{color:var(--mute)}
 html[data-theme=dark] .hd .dt{color:var(--mute)}
 html[data-theme=dark] .hd .dt b{color:var(--ink)}
@@ -790,7 +791,7 @@ function renderRaces(){ const el=$('#s-races'); const X=lxDay(); const LK=locked
   const heads=VENUES.map((v,i)=>{ const rs=byV[i], fin=rs.filter(r=>lxFin(r)).length; const r0=rs.find(r=>r.weather||r.going)||{}; const wx=[r0.weather,r0.going].filter(Boolean).join('・');
     return `<div class="lxt-vh">${esc(v)}<span>${X.past?'終了':`${fin}/${rs.length}`}</span>${wx?`<span class="wx">${esc(wx)}</span>`:''}</div>`; }).join('');
   const lg=`<div class="lxt-lg"><span><i class="d f"></i>終了</span><span><i class="d x"></i>次のレース</span>${LK?'':`<span><i class="lb u-main"></i>本線</span><span><i class="lb u-mid"></i>相手</span><span><i class="lb u-ana"></i>穴</span><span><i class="ac"></i>人気馬の注意</span>`}</div>`;
-  const map=VENUES.length?`<div class="lxh"><b>${X.today?'きょうのレース':X.past?'全レース（終了）':'全レース'}</b><span>押すとそのレースへ</span></div><div class="lxt" style="grid-template-columns:repeat(${VENUES.length},minmax(0,1fr))">${heads}${rows}</div>${lg}`:'<div class="pend">この日のレースはまだありません</div>';
+  const map=VENUES.length?`<div class="lxh"><b>${X.today?'きょうのレース':X.past?'全レース（終了）':'全レース'}</b><span>押すとそのレースへ</span></div><div class="lxt${VENUES.length>4?' wide':''}" style="grid-template-columns:repeat(${VENUES.length},${VENUES.length>4?'90px':'minmax(0,1fr)'})">${heads}${rows}</div>${lg}`:'<div class="pend">この日のレースはまだありません</div>';
   el.innerHTML=`<h2>${ico('flag')}レース</h2>${dsel}${map}`;
   el.querySelectorAll('.dsel button').forEach(b=>b.onclick=async()=>{ await setDay(b.dataset.d); ls.set('sunao_day',DAY); renderAll(); showTab('races'); });
   el.querySelectorAll('[data-rid]').forEach(b=>{ if(b.disabled) return; b.onclick=()=>openRace(b.dataset.rid); });
