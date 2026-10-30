@@ -351,6 +351,20 @@ html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{back
 .bt tr.e2 td.ev{color:#3a2a00;font-weight:700}.bt tr.e1 td.ev{color:#b39a52;font-weight:700}
 .bt tr.tot td{border-bottom:none;border-top:1.5px solid var(--ink);font-weight:700;padding-top:7px}
 .bt tr.tot td.l{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
+
+/* 上部スライダーのメニュー（2026-10-30） */
+.nav{display:none!important}
+.tnav{position:sticky;top:0;z-index:40;height:44px;background:var(--bg2,#fff);border-bottom:1px solid #e6e4dc;margin:0 -14px 10px;padding:0 0 0 10px;display:flex;align-items:stretch}
+.tnav .site{flex:none;display:flex;align-self:center;border:1.5px solid #6b4f2a;border-radius:999px;overflow:hidden;margin-right:6px;background:#fff}
+.tnav .site button{padding:5px 9px;font-size:11px;font-weight:700;color:#6b4f2a;background:#fff;border:none;white-space:nowrap;line-height:1.2;font-family:inherit;cursor:pointer}
+.tnav .site button+button{border-left:1.5px solid #6b4f2a}
+.tnav .site button.on{background:#6b4f2a;color:#fff}
+.tnav .sc{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;min-width:0;flex:1}
+.tnav .sc::-webkit-scrollbar{display:none}
+.tnav .sc button{flex:none;padding:0 11px;height:43px;font-size:13.5px;font-weight:700;color:#8e8c85;border:none;border-bottom:2.5px solid transparent;background:none;white-space:nowrap;line-height:1;font-family:inherit;cursor:pointer}
+.tnav .sc button.on{color:var(--ink,#111);border-bottom-color:#6b4f2a}
+.tnav .fade{position:absolute;right:0;top:0;bottom:1px;width:26px;background:linear-gradient(90deg,rgba(255,255,255,0),var(--bg2,#fff));pointer-events:none}
+#rsel{top:44px}.wrap{padding-bottom:28px}
 </style>
 <style id="dk">
 html[data-theme=dark]{color-scheme:dark}html[data-theme=dark] body{background:#0f1013}
@@ -583,6 +597,14 @@ html[data-theme=dark] .bt td{border-bottom:1px solid var(--line)}
 html[data-theme=dark] .bt tr.e2 td.ev{color:#cfbc91}
 html[data-theme=dark] .bt tr.e1 td.ev{color:#d5bc73}
 html[data-theme=dark] .bt tr.tot td{border-bottom:none;border-top:1.5px solid var(--ink)}
+html[data-theme=dark] .tnav{background:var(--bg2,#1a1c21);border-bottom:1px solid #373530}
+html[data-theme=dark] .tnav .site{border:1.5px solid #b1926c;background:#1a1c21}
+html[data-theme=dark] .tnav .site button{color:#d8b890;background:#1a1c21;border:none}
+html[data-theme=dark] .tnav .site button+button{border-left:1.5px solid #b1926c}
+html[data-theme=dark] .tnav .site button.on{background:#836640;color:#f4f6fb}
+html[data-theme=dark] .tnav .sc button{color:#c0beb6;border:none;border-bottom:2.5px solid transparent;background:none}
+html[data-theme=dark] .tnav .sc button.on{color:var(--ink,#ececea);border-bottom-color:#b1926c}
+html[data-theme=dark] .tnav .fade{background:linear-gradient(90deg,rgba(255,255,255,0),var(--bg2,#1a1c21))}
 html[data-theme=dark] :not(text)[fill="#111"]{fill:#e6e6e3}
 html[data-theme=dark] [stroke="#111"]{stroke:#d6d6d3}
 html[data-theme=dark] :not(text)[fill="#fff"]{fill:#1a1c21}
@@ -633,6 +655,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </defs></svg>
 <div class="wrap">
   <div class="hd" id="hd"></div>
+  <div class="tnav" id="tnav"><div class="site"><button type="button" data-site="c" class="">UMAMI 中央</button><button type="button" data-site="l" class="on">UMAMI 地方</button></div><div class="sc" id="tnavsc"></div><div class="fade"></div></div>
   <section id="s-races"></section>
   <section id="s-race"></section>
   <section id="s-record"></section>
@@ -650,7 +673,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </div></div>
 <script>
 const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
-const BUILT='2026-10-30T0946';
+const BUILT='2026-10-30T0949';
 const GATED=true;        /* 合い言葉あり（1日券） */
 const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
 const $=s=>document.querySelector(s);
@@ -917,6 +940,18 @@ async function main(){ if(!DAYS.length){ $('#hd').innerHTML='<div class="wm"><di
   setInterval(async()=>{ try{ const r=await fetch(`data/${DAY}.json?t=${Date.now()}`,{cache:'no-store'}); const j=await r.json(); if(j.built!==DATA.built){ CACHE[DAY]=j; if(GATED){ try{ const e=await fetch(`data/enc.json?t=${Date.now()}`,{cache:'no-store'}); if(e.ok){ ENC=await e.json(); OPEN={}; for(const pw of (ls.get(LSK,[])||[])){ try{ await openWith(pw); }catch(x){} } } }catch(x){} } await setDay(DAY); const y=window.scrollY; renderAll(); window.scrollTo(0,y); } }catch(e){} },300000);   /* 5分ごとに新しいデータがあれば描き直す */
 }
 main();
+</script>
+
+<script>
+/* 上部スライダー: 下のカプセル（.nav）の中身からタブを作り、押したらカプセルのボタンを押したことにする（2026-10-30） */
+(function(){ const nav=document.querySelector('.nav'), bar=document.getElementById('tnav'), sc=document.getElementById('tnavsc'); if(!nav||!bar||!sc) return;
+  bar.querySelector('[data-site="c"]').onclick=function(){ if(!this.classList.contains('on')) location.href='https://umami-lab-support.github.io/'; };
+  bar.querySelector('[data-site="l"]').onclick=function(){ if(!this.classList.contains('on')) location.href='https://sunao-keiba.github.io/'; };
+  const skip={up:1,list:1,chi:1};
+  function build(){ sc.innerHTML=''; nav.querySelectorAll('button[data-k]').forEach(b=>{ if(skip[b.dataset.k]) return; const cs=getComputedStyle(b); if(cs.display==='none') return; const t=document.createElement('button'); t.type='button'; t.dataset.k=b.dataset.k; t.textContent=b.textContent.trim(); t.onclick=()=>{ b.click(); sync(); }; sc.appendChild(t); }); }
+  function sync(){ const on=nav.querySelector('button.on'); sc.querySelectorAll('button[data-k]').forEach(t=>t.classList.toggle('on',!!on&&t.dataset.k===on.dataset.k)); const o=sc.querySelector('button.on'); if(o&&o.scrollIntoView) o.scrollIntoView({block:'nearest',inline:'center'}); }
+  build(); sync(); new MutationObserver(()=>{ if(sc.children.length!==[...nav.querySelectorAll('button[data-k]')].filter(b=>!skip[b.dataset.k]&&getComputedStyle(b).display!=='none').length) build(); sync(); }).observe(nav,{subtree:true,attributes:true,attributeFilter:['class','style']});
+})();
 </script>
 </body>
 </html>
