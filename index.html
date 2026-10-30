@@ -212,9 +212,6 @@ html[data-theme=dark] #rsel .rs-r button.ro{background:var(--ac);box-shadow:none
 html[data-theme=dark] #rsel .rs-r button .ck svg{stroke:#6d6f75}html[data-theme=dark] #rsel .rs-r button.ro .ck svg{stroke:#14161b}
 
 /* 記録（2026-10-30） */
-.rcs{display:flex;gap:8px;margin-top:10px}.rc{flex:1;border-radius:12px;padding:10px 10px 8px;background:var(--bg2)}.rc b{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 8px;border-radius:999px}.rc.g b{background:#f5e19e;color:#3a2a00}.rc.g2 b{background:#fff;color:#5a4000;box-shadow:inset 0 0 0 1px #d9b85a}
-.rc-n{display:flex;justify-content:space-between;margin-top:8px;font-size:10px;color:var(--mute)}.rc-n em{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:15px;color:var(--ink);margin-right:1px}
-html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{background:#1a1c21}
 
 /* 合い言葉（2026-10-30） */
 .lock{border:1.5px dashed var(--ac);border-radius:14px;padding:18px 14px;text-align:center;margin-top:12px;background:#fff}
@@ -636,6 +633,26 @@ html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{back
 /* 馬番の丸 A（中央と同じ: 塗り・黒輪なし・影・丸ゴ800。2026-10-30） */
 .cap,.nc b{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:800;border:none;box-shadow:0 1px 2px rgba(0,0,0,.13)}
 .cap[style*="background:#ffffff"],.nc b[style*="background:#ffffff"],.cap:not([style]){box-shadow:inset 0 0 0 1.5px #d2d1ca,0 1px 2px rgba(0,0,0,.07)}
+
+/* 記録（中央の記録タブの部品を写す。2026-10-30） */
+.stat{display:flex;gap:1.5px;background:var(--ink);border:1.5px solid var(--ink);border-radius:12px;overflow:hidden;margin-top:12px}
+.stat div{flex:1;background:#fff;padding:10px 8px;text-align:center}
+.stat label{display:block;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:8.5px;color:var(--mute);letter-spacing:.1em}
+.stat b{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:22px;font-weight:400}
+.rc{margin-top:8px}.rc .rcr{display:grid;grid-template-columns:62px 1fr 92px;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line)}
+.rc .rcl{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11px;color:var(--ink);white-space:nowrap}
+.rc .rcb{display:flex;flex-direction:column;gap:3px}.rc .rcb i,.rc .rcb em{display:block;height:7px;border-radius:2px;min-width:2px}.rc .rcb i{background:#c9a227}.rc .rcb em{background:var(--ac)}
+.rc .rcv{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:11px;text-align:right;line-height:1.35;white-space:nowrap}.rc .rcv b{display:block;font-weight:400;color:#a87400}.rc .rcv em{display:block;font-style:normal;color:var(--ac)}.rc .rcv small{display:block;font-size:9px;color:var(--soft)}
+.rc .lg{display:flex;gap:14px;font-size:10.5px;color:var(--mute);margin-top:8px;align-items:center}.rc .lg i{display:inline-block;width:12px;height:7px;border-radius:2px;margin-right:5px;vertical-align:middle;background:#c9a227}.rc .lg i.b{background:var(--ac)}
+.rc h3{font-size:13.5px;font-weight:700;margin:22px 0 2px;letter-spacing:.02em}.rc .sub{font-size:11px;color:var(--mute);line-height:1.7}
+.rc table.t{width:100%;margin-top:8px;font-size:11.5px;border-collapse:collapse}.rc table.t th{font-size:9.5px;color:var(--mute);font-weight:500;text-align:right;padding:4px 3px;border-bottom:1px solid #ecebe5}.rc table.t th:first-child,.rc table.t td:first-child{text-align:left}.rc table.t td{text-align:right;padding:5px 3px;border-bottom:1px solid #f0efea;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
+.empty{border:1.5px dashed #bbb;border-radius:12px;padding:18px;text-align:center;color:var(--mute);font-size:12px;font-weight:500;margin-top:10px}
+#s-record .hto{margin-top:6px}#s-record .hto .lead{margin-bottom:4px}
+#s-record .mtab{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}#s-record .mtab button{font-size:11px;font-weight:700;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:inherit;cursor:pointer}#s-record .mtab button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+#s-record .hi{color:#a87400;font-weight:500}
+#s-record .stat{background:#f0efea;border:none;border-radius:22px;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06);gap:1px;overflow:hidden}#s-record .stat>div{background:#fff}
+#s-record .empty{background:#fff;border:none;border-radius:22px;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06);color:#8a8a86}
+#s-record .note{letter-spacing:0;line-height:1.7}#s-record .lead{letter-spacing:0;line-height:1.8}
 </style>
 <style id="dk">
 html[data-theme=dark]{color-scheme:dark}html[data-theme=dark] body{background:#0f1013}
@@ -778,13 +795,6 @@ html[data-theme=dark][data-theme=dark] #rsel .rs-r button.ro b,html[data-theme=d
 html[data-theme=dark][data-theme=dark] #rsel .rs-r button.ro::after{background:#505259}
 html[data-theme=dark][data-theme=dark] #rsel .rs-r button .ck svg{stroke:#96989e}
 html[data-theme=dark][data-theme=dark] #rsel .rs-r button.ro .ck svg{stroke:#95989f}
-html[data-theme=dark] .rc{background:var(--bg2)}
-html[data-theme=dark] .rc.g b{background:#4a3d14;color:#cfbc91}
-html[data-theme=dark] .rc.g2 b{background:#1a1c21;color:#f2d27a;box-shadow:inset 0 0 0 1px #b0964a}
-html[data-theme=dark] .rc-n{color:var(--mute)}
-html[data-theme=dark] .rc-n em{color:var(--ink)}
-html[data-theme=dark][data-theme=dark] .rc{background:#525254}
-html[data-theme=dark][data-theme=dark] .rc.g2 b{background:#505258}
 html[data-theme=dark] .lock{border:1.5px dashed var(--ac);background:#1a1c21}
 html[data-theme=dark] .lock>i svg{stroke:var(--ac)}
 html[data-theme=dark] .lock p{color:var(--mute)}
@@ -1065,6 +1075,29 @@ html[data-theme=dark] .wmap .wt em{color:#ececea}
 html[data-theme=dark] .wmap .wt .wm-note{color:#bfbeb7}
 html[data-theme=dark] .cap,html[data-theme=dark] .nc b{border:none;box-shadow:0 1px 2px rgba(0,0,0,.13)}
 html[data-theme=dark] .cap[style*="background:#ffffff"],html[data-theme=dark] .nc b[style*="background:#ffffff"],html[data-theme=dark] .cap:not([style]){box-shadow:inset 0 0 0 1.5px #363531,0 1px 2px rgba(0,0,0,.07)}
+html[data-theme=dark] .stat{background:var(--ink);border:1.5px solid var(--ink)}
+html[data-theme=dark] .stat div{background:#1a1c21}
+html[data-theme=dark] .stat label{color:var(--mute)}
+html[data-theme=dark] .rc .rcr{border-bottom:1px solid var(--line)}
+html[data-theme=dark] .rc .rcl{color:var(--ink)}
+html[data-theme=dark] .rc .rcb i{background:#916b00}
+html[data-theme=dark] .rc .rcb em{background:var(--ac)}
+html[data-theme=dark] .rc .rcv b{color:#e5b568}
+html[data-theme=dark] .rc .rcv em{color:var(--ac)}
+html[data-theme=dark] .rc .rcv small{color:var(--soft)}
+html[data-theme=dark] .rc .lg{color:var(--mute)}
+html[data-theme=dark] .rc .lg i{background:#916b00}
+html[data-theme=dark] .rc .lg i.b{background:var(--ac)}
+html[data-theme=dark] .rc .sub{color:var(--mute)}
+html[data-theme=dark] .rc table.t th{color:var(--mute);border-bottom:1px solid #363532}
+html[data-theme=dark] .rc table.t td{border-bottom:1px solid #363532}
+html[data-theme=dark] .empty{border:1.5px dashed #4f525a;color:var(--mute)}
+html[data-theme=dark] #s-record .mtab button{border:1px solid var(--line);background:#1a1c21;color:var(--ink)}
+html[data-theme=dark] #s-record .mtab button.on{background:var(--ac);color:#16181c;border-color:var(--ac)}
+html[data-theme=dark] #s-record .hi{color:#e5b568}
+html[data-theme=dark] #s-record .stat{background:#20201d;border:none;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06)}
+html[data-theme=dark] #s-record .stat>div{background:#1a1c21}
+html[data-theme=dark] #s-record .empty{background:#1a1c21;border:none;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06);color:#bebeba}
 html[data-theme=dark] :not(text)[fill="#111"]{fill:#e6e6e3}
 html[data-theme=dark] [stroke="#111"]{stroke:#d6d6d3}
 html[data-theme=dark] :not(text)[fill="#fff"]{fill:#1a1c21}
@@ -1135,7 +1168,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </div></div>
 <script>
 const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
-const BUILT='2026-10-30T1406';
+const BUILT='2026-10-30T1407';
 const GATED=true;        /* 合い言葉あり（1日券） */
 const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
 const $=s=>document.querySelector(s);
@@ -1467,20 +1500,58 @@ function renderRacePage(r){ const el=$('#s-race'); const X=lxDay();
   try{ renderHeader(); }catch(e){}
 }
 /* ===== 記録・使い方・会員 ===== */
-async function renderRecord(){ const el=$('#s-record'); el.innerHTML=`<h2>${ico('chart')}記録</h2>`;
-  let R=null; try{ const r=await fetch(`data/record.json?v=${BUILT}`,{cache:'no-store'}); if(r.ok) R=await r.json(); }catch(e){}
-  if(!R||!R.days||!R.days.length){ el.innerHTML+=`<div class="box"><b>まだ記録がありません</b><p>最初の開催日から、出した勝率がどれだけ当たっていたか、期待値が金だった馬の成績を日ごとにここに積んでいきます。</p></div>`; return; }
-  const md=(d,l)=>`${+d.slice(4,6)}/${+d.slice(6)}${l?'（'+'日月火水木金土'[new Date(+d.slice(0,4),+d.slice(4,6)-1,+d.slice(6)).getDay()]+'）':''}`;
-  const roi=g=>g.n?Math.round(100*g.ret/(g.n*100)):null;
-  const gbox=(t,g,cls)=>`<div class="rc ${cls}"><b>${t}</b><div class="rc-n"><span><em>${g.n}</em>頭</span><span>的中<em>${g.hit}</em></span><span>回収<em>${roi(g)==null?'—':roi(g)+'%'}</em></span></div></div>`;
-  const T=R.total;
-  const bands=T.bands.filter(b=>b.n>0).map(b=>`<tr><td class="l">${Math.round(b.lo*100)}〜${Math.round(b.hi*100)>100?100:Math.round(b.hi*100)}%</td><td>${b.n}</td><td>${(100*b.exp/b.n).toFixed(1)}</td><td><b>${(100*b.act/b.n).toFixed(1)}</b></td></tr>`).join('');
-  const days=R.days.map(d=>`<tr><td class="l">${md(d.d,true)}</td><td>${d.races}</td><td>${d.gold.n}</td><td>${d.gold.hit}</td><td><b>${roi(d.gold)==null?'—':roi(d.gold)+'%'}</b></td><td>${d.pale.n}</td><td>${d.pale.hit}</td><td><b>${roi(d.pale)==null?'—':roi(d.pale)+'%'}</b></td></tr>`).join('');
-  el.innerHTML+=`<div class="box"><b>期待値が金だった馬を単勝100円ずつ買ったら</b><p>${md(R.days[R.days.length-1].d)}〜${md(R.days[0].d)}・${T.races}レース。判定は発走1分前までの最後の勝率とオッズ、払い戻しは確定の値。</p>
-    <div class="rcs">${gbox('1.00以上',T.gold,'g')}${gbox('0.90以上',T.pale,'g2')}</div></div>
-    <div class="box"><b>出した勝率は当たっていたか</b><p>勝率の帯ごとに、100頭あたりの見込みと実際の勝ち。近いほど正直。</p>
-    <table class="pt"><tr><th class="l">出した勝率</th><th>頭数</th><th>見込み</th><th>実際</th></tr>${bands}</table></div>
-    <div class="box"><b>日ごと</b><table class="pt"><tr><th class="l">日</th><th>R</th><th>金</th><th>的中</th><th>回収</th><th>淡金</th><th>的中</th><th>回収</th></tr>${days}</table></div>`; }
+let RECJ=null, EVM=null, CALM=null;   /* 記録の材料（record.json）と、日ごとの表で選んでいる月（中央と同じ）。2026-10-30 */
+const EV_G='<span class="k g">金</span>（期待値1.0以上）';
+const evMd=d=>`${+String(d).slice(4,6)}/${+String(d).slice(6,8)}`;
+function evShape(R){ /* record.json を中央の EVREC / CALIB と同じ形に直す */
+  const D=(R&&R.days||[]).slice().sort((a,b)=>String(a.d).localeCompare(String(b.d)));
+  const g=x=>({n:x.n||0,wins:x.hit||0,win:x.n?100*x.hit/x.n:null,top3:x.n?100*x.plc_hit/x.n:null,win_ret:x.n?x.ret/x.n:null,plc_ret:x.n?x.plc_ret/x.n:null});
+  const T=(R&&R.total)||{};
+  const E={start:D.length?D[0].d:ymd(new Date()),end:D.length?D[D.length-1].d:ymd(new Date()),days:D.filter(x=>x.races_counted).length,races_done:T.races_done||0,races_counted:T.races_counted||0,
+    gold:g(T.gold||{}),pale:g(T.pale||{}),daily:D.filter(x=>x.races_done).map(x=>({d:x.d,done:x.races_done,counted:x.races_counted,gold:g(x.gold||{}),pale:g(x.pale||{})}))};
+  const bands=(T.bands||[]).map(b=>({lo:b.lo,hi:b.hi,n:b.n,calc:b.n?100*b.exp/b.n:0,real:b.n?100*b.act/b.n:0,wins:b.act}));
+  const horses=bands.reduce((a,b)=>a+b.n,0);
+  const C=horses?{start:E.start,end:E.end,days:D.filter(x=>x.bands&&x.bands.some(b=>b.n)).length,races:T.races_done||0,horses,bands,
+    daily:D.filter(x=>x.bands&&x.bands.some(b=>b.n)).map(x=>({d:x.d,races:x.races_done,horses:x.bands.reduce((a,b)=>a+b.n,0),calc:x.bands.reduce((a,b)=>a+b.exp,0),wins:x.bands.reduce((a,b)=>a+b.act,0)}))}:null;
+  return {E,C}; }
+function evDayParts(E){ /* 直近の開催日の箱と、日ごとの表の行（中央の evDayParts と同じ形。速報は無し） */
+  const md=evMd; const pct=v=>(v==null?'—':(+v).toFixed(1)+'%'); const tile=(lab,b)=>`<div><label>${lab}</label><b>${b&&b.n?b.n:0}</b></div>`; const hi=v=>(v!=null&&+v>=100?' class="hi"':'');
+  const rates=b=>`<div class="stat"><div><label>単勝回収率</label><b${b.n?hi(b.win_ret):''}>${b.n?pct(b.win_ret):'—'}</b></div><div><label>複勝回収率</label><b${b.n?hi(b.plc_ret):''}>${b.n?pct(b.plc_ret):'—'}</b></div><div><label>3着内率</label><b>${b.n?pct(b.top3):'—'}</b></div></div>`;
+  const D=(E&&E.daily)||[]; const today=ymd(new Date()); const td=D.find(x=>x.d===today)||D[D.length-1]||null; const tg=(td&&td.gold)||{};
+  const card=td?`<div class="sub">${td.d===today?'今日':'直近の開催日'}の${EV_G}の成績（${md(td.d)}）</div>
+    <div class="stat"><div><label>RACES</label><b>${td.counted}<small style="font-size:12px;color:var(--mute)">/${td.done}</small></b></div>${tile('HORSES',tg)}${tile('WINS',{n:tg.wins||0})}</div>${rates(tg)}
+    <div class="note">${td.d===today?'結果が出たレースから順に入ります。':''}レース数は「集計したレース／結果の出たレース」。</div>`:'';
+  const months=[...new Set(D.map(x=>String(x.d).slice(0,6)))].sort(); if(!months.includes(EVM)) EVM=months[months.length-1];
+  const rows=D.filter(x=>String(x.d).slice(0,6)===EVM).slice().reverse();
+  const rowsHtml=rows.map(x=>`<tr><td>${md(x.d)}</td><td>${x.counted}/${x.done}</td><td>${x.gold.n||0}</td><td>${x.gold.wins||0}</td><td${x.gold.n?hi(x.gold.win_ret):''}>${x.gold.n?pct(x.gold.win_ret):'—'}</td><td${x.gold.n?hi(x.gold.plc_ret):''}>${x.gold.n?pct(x.gold.plc_ret):'—'}</td></tr>`).join('');
+  return {card, rowsHtml, months, tile, rates, pct}; }
+function evBlk(E,md){ /* 金（期待値1.0以上）だった馬の成績。判定は締切時のオッズ、払戻は確定（中央と同じ） */
+  if(!E||!E.races_counted) return `<div class="rc" style="margin-top:14px"><div class="sub">${EV_G}だった馬の成績</div><div class="empty">まだ記録がありません</div></div>`;
+  const P=evDayParts(E); const g=E.gold||{}; const tile=P.tile, rates=P.rates, pct=P.pct;
+  const tabs=P.months.length?`<div class="mtab">${P.months.slice().reverse().map(m=>`<button type="button" class="${m===EVM?'on':''}" onclick="EVM='${m}';renderRecord(true)">${+m.slice(4)}月</button>`).join('')}</div>`:'';
+  return `<div class="rc" style="margin-top:14px"><div id="evday">${P.card}</div><div class="sub" style="margin-top:${P.card?'18px':'0'}">通算（${md(E.start)}〜${md(E.end)}・全期間）</div>
+    <div class="stat">${tile('DAYS',{n:E.days})}${tile('RACES',{n:E.races_counted})}${tile('HORSES',g)}${tile('WINS',{n:g.wins||0})}</div>${rates(g)}
+    <div class="note">${g.n?`金の${g.n}頭を100円ずつ買うと、単勝は${pct(g.win_ret)}、複勝は${pct(g.plc_ret)}戻った計算です。`:''}単勝は大きい配当に寄るので、日ごとの差が大きくなります。</div>
+    <div class="sub" style="margin-top:18px">日ごと（${EVM?EVM.slice(0,4)+'年'+(+EVM.slice(4))+'月':''}）</div>${tabs}
+    <table class="t"><thead><tr><th>日付</th><th>レース</th><th>金の頭数</th><th>勝ち</th><th>単勝回収率</th><th>複勝回収率</th></tr></thead><tbody id="evrows">${P.rowsHtml}</tbody></table>
+    <div class="note">色は、発走1分前までに取った最後の勝率とオッズ（締切時のオッズ）で判定したもの。金は期待値（勝率×単勝オッズ）が1.0以上の馬。払戻は確定の払戻（100円あたり）です。レース欄は「集計したレース／結果の出たレース」。締切時のオッズが取れなかったレースは数えません（確定オッズでは判定しません）。</div></div>`; }
+async function renderRecord(useCache){ const el=$('#s-record'); if(!el) return;
+  if(!useCache||!RECJ){ try{ const r=await fetch(`data/record.json?v=${BUILT}`,{cache:'no-store'}); RECJ=r.ok?await r.json():null; }catch(e){ RECJ=null; } }
+  const {E,C:X}=evShape(RECJ); const md=evMd;
+  const chart=X=>{ const mx=Math.max(1,...X.bands.map(b=>Math.max(b.calc,b.real)));
+    return `<div class="rc"><div class="lg"><span><i></i>出した勝率</span><span><i class="b"></i>実際に勝った割合</span></div>${X.bands.map(b=>`<div class="rcr"><span class="rcl">${b.lo?b.lo+'〜':'〜'}${b.hi<100?b.hi+'%':''}</span><div class="rcb"><i style="width:${(b.calc/mx*100).toFixed(1)}%"></i><em style="width:${(b.real/mx*100).toFixed(1)}%"></em></div><span class="rcv"><b>${b.calc.toFixed(1)}%</b><em>${b.real.toFixed(1)}%</em><small>${b.n}頭</small></span></div>`).join('')}</div>`; };
+  const blk=(X,sub)=>{ if(!X||!X.races) return `<div class="sub">${sub}</div><div class="empty">まだ記録がありません</div>`;
+    return `<div class="sub">${sub}</div><div class="stat"><div><label>DAYS</label><b>${X.days}</b></div><div><label>RACES</label><b>${X.races}</b></div><div><label>HORSES</label><b>${X.horses}</b></div></div>
+      ${chart(X)}
+      ${(()=>{ const months=[...new Set((X.daily||[]).map(d=>String(d.d).slice(0,6)))].sort(); if(!months.includes(CALM)) CALM=months[months.length-1];
+        const tabs=months.length?`<div class="mtab">${months.slice().reverse().map(m=>`<button type="button" class="${m===CALM?'on':''}" onclick="CALM='${m}';renderRecord(true)">${+m.slice(4)}月</button>`).join('')}</div>`:'';
+        const rows=(X.daily||[]).filter(d=>String(d.d).slice(0,6)===CALM).slice().reverse();
+        return `<div class="sub" style="margin-top:14px">日ごと（${CALM?CALM.slice(0,4)+'年'+(+CALM.slice(4))+'月':''}）</div>${tabs}<table class="t"><thead><tr><th>日付</th><th>レース</th><th>頭数</th><th>出した勝率の合計</th><th>勝った馬</th></tr></thead><tbody>${rows.map(d=>`<tr><td>${md(d.d)}</td><td>${d.races}</td><td>${d.horses}</td><td>${d.calc.toFixed(1)}</td><td>${d.wins}</td></tr>`).join('')}</tbody></table>`; })()}`; };
+  el.innerHTML=`<div class="hto"><h2>${ico('chart')}記録</h2><div class="lead">期待値が<span class="k g">金</span>（1.0以上）だった馬の成績と、うまみの勝率が実際にどれだけ当たっているかを、そのまま載せています。</div>
+    ${evBlk(E,md)}
+    <div class="lead" style="margin-top:22px">うまみの勝率の実現度。勝率の帯ごとに、出した勝率の平均と、実際に勝った割合をくらべます。2つが近いほど、勝率が実際に合っています。</div>
+    <div class="rc">${blk(X,'うまみの勝率の帯ごと'+(X?'（'+md(X.start)+'〜'+md(X.end)+'）':''))}</div>
+    <div class="note" style="margin-top:18px">結果が出たレースだけ数えています。取消・除外の馬は除きます。勝率は、そのとき画面に出していたもの（発走1分前までに取った最後の勝率）です。頭数が少ない帯は、ばらつきが大きくなります。</div></div>`; }
 function renderMem(){ const el=$('#s-mem');
   if(!GATED){ el.innerHTML=`<h2>${ico('user')}会員</h2><div class="box"><b>1日券は準備中</b><p>いまは全部のレースをそのまま見られます。</p></div>`; return; }
   const od=Object.keys(OPEN).filter(d=>DAYS.includes(d)).sort();
@@ -1508,8 +1579,8 @@ function renderHowto(){ const H=(n,icon,title,point,more)=>`<div class="hs"><div
     `<li>何もしなくても5分ごとに新しい値に入れ替わります。ページの上に更新した時刻が出ます。</li><li>取消になった馬は薄く表示し、残りの馬で勝率を配り直します。</li>`)}
   ${H(8,'key','合い言葉（1日券）','勝率・期待値・人気裏切りアラートは、<b>開催日ごとの合い言葉</b>で開きます。一度入れればこの端末では開いたまま。終わった日は誰でも見られます。',
     `<li>出馬表・オッズ・近5走・結果・記録は、合い言葉なしで見られます。</li><li>合い言葉は「会員」のタブか、レースページの箱に入れます。</li>`)}
-  ${H(9,'chart','記録','出した勝率の帯ごとに「100頭中 見込み何頭→実際何頭」を、日ごとに積んでいます。期待値が金だった馬を単勝100円ずつ買った成績も。',
-    `<li>判定は発走1分前までの最後の勝率とオッズ、払い戻しは確定の値です。</li>`)}
+  ${H(9,'chart','記録','うまみの勝率と、金の馬の成績を公開。結果が出るたびに更新。',
+    `<li><span class="k g">金</span>（期待値1.00以上）だった馬の<b>単勝回収率・複勝回収率・3着内率</b>。直近の開催日の成績、通算、日ごと（月のタブ）</li><li>判定は締切時（発走1分前までに取った最後）の勝率とオッズ、払戻は確定。締切時のオッズが取れなかったレースは数えず、その数も出しています</li><li>勝率の帯ごとに、出した勝率の平均と実際に勝った割合をくらべた表</li>`)}
   <div class="note">うまみは予想を売るサービスではなく、判断の材料を出すサービスです。馬券の購入は自己責任でお願いします。</div>
 </div>`; }
 function renderAll(){ renderHeader(); renderRaces(); renderRecord(); renderMem(); renderHowto(); if(cur.race&&byRid[cur.race]) renderRacePage(byRid[cur.race]); }
