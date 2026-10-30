@@ -1167,7 +1167,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
   <button data-k="up" class="nup" type="button" aria-label="いちばん上へ"><i><svg class="ic"><use href="#i-up2"/></svg></i>上へ</button>
 </div></div>
 <script>
-const DAYS=["20261031", "20261030", "20261029"];            /* ある日付（新しい順） */
+const DAYS=["20261031"];            /* ある日付（新しい順） */
 const BUILT='2026-10-31T0220';
 const GATED=true;        /* 合い言葉あり（1日券） */
 const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
@@ -1594,7 +1594,7 @@ async function main(){ if(!DAYS.length){ $('#hd').innerHTML='<div class="wm"><i>
   const q=new URLSearchParams(location.search).get('r'); let k=ls.get('sunao_tab','races'); if(q&&byRid[q]){ openRace(q); } else { if(k==='race') k='races'; showTab(k); }
   document.querySelectorAll('.nav button[data-k]').forEach(b=>b.onclick=()=>{ const k=b.dataset.k; if(k==='up'){ window.scrollTo({top:0,behavior:'smooth'}); return; } if(k==='list'){ showTab('races'); return; } showTab(k); });
   let lastY=window.scrollY; window.addEventListener('scroll',()=>{ const y=window.scrollY; lastY=y; const rs=$('#rsel'); if(rs) rs.classList.toggle('stuck',y>40); },{passive:true});
-  setInterval(async()=>{ try{ const r=await fetch(`data/${DAY}.json?t=${Date.now()}`,{cache:'no-store'}); const j=await r.json(); if(j.built!==DATA.built){ CACHE[DAY]=j; if(GATED){ try{ const e=await fetch(`data/enc.json?t=${Date.now()}`,{cache:'no-store'}); if(e.ok){ ENC=await e.json(); OPEN={}; for(const pw of (ls.get(LSK,[])||[])){ try{ await openWith(pw); }catch(x){} } } }catch(x){} } await setDay(DAY); const y=window.scrollY; renderAll(); window.scrollTo(0,y); } }catch(e){} },300000);   /* 5分ごとに新しいデータがあれば描き直す */
+  setInterval(async()=>{ try{ const r=await fetch(`data/${DAY}.json?t=${Date.now()}`,{cache:'no-store'}); if(r.status===404){ location.reload(); return; } const j=await r.json(); if(j.built!==DATA.built){ CACHE[DAY]=j; if(GATED){ try{ const e=await fetch(`data/enc.json?t=${Date.now()}`,{cache:'no-store'}); if(e.ok){ ENC=await e.json(); OPEN={}; for(const pw of (ls.get(LSK,[])||[])){ try{ await openWith(pw); }catch(x){} } } }catch(x){} } await setDay(DAY); const y=window.scrollY; renderAll(); window.scrollTo(0,y); } }catch(e){} },300000);   /* 5分ごとに新しいデータがあれば描き直す */
 }
 main();
 </script>
