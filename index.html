@@ -734,7 +734,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </div></div>
 <script>
 const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
-const BUILT='2026-10-30T1201';
+const BUILT='2026-10-30T1202';
 const GATED=true;        /* 合い言葉あり（1日券） */
 const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
 const $=s=>document.querySelector(s);
@@ -799,7 +799,7 @@ const hhmm=()=>{ const n=new Date(); return `${String(n.getHours()).padStart(2,'
 function oddsBtn(r){ const left=Math.max(0,20000-(Date.now()-(OUPD[r.rid]||0))); const y=r.odds_status==='yoso';
   return `<button class="oupdg" id="oupd" type="button"${left>0?' disabled':''}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>オッズを更新<em>${r.odds_at?(y?'発売前の想定':esc(r.odds_at)+' 時点'):''}</em></button><div class="oupd-n" id="oupdn">${OUPD['n_'+r.rid]||''}</div>`; }
 function applyOdds(r,byHid,st,at){
-  (r.runners||[]).forEach(h=>{ const x=byHid[String(h.hid)]; if(x&&x.odds>0){ h.odds=x.odds; h.pop=x.pop; } });
+  (r.runners||[]).forEach(h=>{ const x=byHid[String(h.hid)]||byHid[String(h.uno).padStart(2,'0')]||byHid[String(h.uno)]; if(x&&x.odds>0){ h.odds=x.odds; h.pop=x.pop; } });   /* 発売後は馬番 "01" が鍵（2026-10-30） */
   if(st) r.odds_status=st; if(at) r.odds_at=at;
   const live=(r.runners||[]).filter(h=>!h.scr&&h.odds>0&&h.raw!=null);
   if(live.length>=2){                              /* 開いている日: 新しいオッズから勝率を出し直す（AIのずれ raw はそのまま） */
@@ -1001,7 +1001,7 @@ async function main(){ if(!DAYS.length){ $('#hd').innerHTML='<div class="wm"><i>
   await setDay(pickDay()); renderAll();
   const q=new URLSearchParams(location.search).get('r'); let k=ls.get('sunao_tab','races'); if(q&&byRid[q]){ openRace(q); } else { if(k==='race') k='races'; showTab(k); }
   document.querySelectorAll('.nav button[data-k]').forEach(b=>b.onclick=()=>{ const k=b.dataset.k; if(k==='up'){ window.scrollTo({top:0,behavior:'smooth'}); return; } if(k==='list'){ showTab('races'); return; } showTab(k); });
-  let lastY=window.scrollY; window.addEventListener('scroll',()=>{ const y=window.scrollY; const nv=$('.nav'); if(tab==='race'){ nv.classList.toggle('hid',y>lastY+6&&y>120); if(y<lastY-6) nv.classList.remove('hid'); } else nv.classList.remove('hid'); lastY=y; const rs=$('#rsel'); if(rs) rs.classList.toggle('stuck',y>40); },{passive:true});
+  let lastY=window.scrollY; window.addEventListener('scroll',()=>{ const y=window.scrollY; lastY=y; const rs=$('#rsel'); if(rs) rs.classList.toggle('stuck',y>40); },{passive:true});
   setInterval(async()=>{ try{ const r=await fetch(`data/${DAY}.json?t=${Date.now()}`,{cache:'no-store'}); const j=await r.json(); if(j.built!==DATA.built){ CACHE[DAY]=j; if(GATED){ try{ const e=await fetch(`data/enc.json?t=${Date.now()}`,{cache:'no-store'}); if(e.ok){ ENC=await e.json(); OPEN={}; for(const pw of (ls.get(LSK,[])||[])){ try{ await openWith(pw); }catch(x){} } } }catch(x){} } await setDay(DAY); const y=window.scrollY; renderAll(); window.scrollTo(0,y); } }catch(e){} },300000);   /* 5分ごとに新しいデータがあれば描き直す */
 }
 main();
@@ -1015,8 +1015,8 @@ main();
   const skip={up:1,list:1,chi:1};
   function vis(){ return [...nav.querySelectorAll('button[data-k]')].filter(b=>!skip[b.dataset.k]&&getComputedStyle(b).display!=='none'); }
   function build(){ sc.innerHTML=''; vis().forEach(b=>{ const t=document.createElement('button'); t.type='button'; t.dataset.k=b.dataset.k; t.textContent=b.textContent.trim(); t.onclick=()=>{ b.click(); sync(); }; sc.appendChild(t); }); }
-  function sync(){ const on=nav.querySelector('button.on'); sc.querySelectorAll('button[data-k]').forEach(t=>t.classList.toggle('on',!!on&&t.dataset.k===on.dataset.k)); const o=sc.querySelector('button.on'); if(o&&o.scrollIntoView) o.scrollIntoView({block:'nearest',inline:'center'}); }
-  build(); sync(); new MutationObserver(()=>{ if(sc.children.length!==vis().length) build(); sync(); }).observe(nav,{subtree:true,attributes:true,attributeFilter:['class','style']});
+  let LASTK=null; function sync(){ const on=nav.querySelector('button.on'); const k=on?on.dataset.k:null; if(k===LASTK&&sc.querySelector('button.on')) return; LASTK=k; sc.querySelectorAll('button[data-k]').forEach(t=>t.classList.toggle('on',t.dataset.k===k)); const o=sc.querySelector('button.on'); if(o){ const L=o.offsetLeft-(sc.clientWidth-o.offsetWidth)/2; if(Math.abs(sc.scrollLeft-L)>4) sc.scrollLeft=Math.max(0,L); } }
+  build(); sync(); new MutationObserver(()=>{ if(sc.children.length!==vis().length){ build(); LASTK=null; } sync(); }).observe(nav,{subtree:true,attributes:true,attributeFilter:['class','style']});
 })();
 </script>
 </body>
