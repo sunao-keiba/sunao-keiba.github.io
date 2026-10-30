@@ -609,7 +609,7 @@ html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{back
 #s-race .kres{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px;padding:10px 12px;border-radius:12px;background:#f7f6f2;font-size:12px;font-weight:700}#s-race .kres.win{background:#e1f5ee}#s-race .kres small{display:block;font-size:10px;color:var(--mute);font-weight:500}#s-race .kres b{font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-weight:500}
 
 /* 風のミニ図（2026-10-30） */
-.wmap{display:flex;align-items:center;gap:10px;margin-top:10px}
+.wmap{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:10px}   /* 図と説明は真ん中に（2026-10-30 ユーザー指摘） */
 .wmap svg{width:124px;height:112px;flex:none;overflow:visible}
 .wmap .wm-trk{fill:none;stroke:#c9c7c0;stroke-width:2.2}
 .wmap .wm-hs{fill:none;stroke:#6b4f2a;stroke-width:4;stroke-linecap:round}
@@ -1135,7 +1135,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </div></div>
 <script>
 const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
-const BUILT='2026-10-30T1356';
+const BUILT='2026-10-30T1359';
 const GATED=true;        /* 合い言葉あり（1日券） */
 const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
 const $=s=>document.querySelector(s);
