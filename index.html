@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>SUNAO すなお｜地方競馬の正直な勝率</title>
+<title>うまみ UMAMI 地方｜地方競馬の正直な勝率</title>
 <meta name="description" content="地方競馬の全レースに、正直な勝率と期待値。">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -352,19 +352,21 @@ html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{back
 .bt tr.tot td{border-bottom:none;border-top:1.5px solid var(--ink);font-weight:700;padding-top:7px}
 .bt tr.tot td.l{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif}
 
-/* 上部スライダーのメニュー（2026-10-30） */
+/* 上部（v05。2026-10-30）: 色帯・切替ピル・薄い背景のスライダー */
 .nav{display:none!important}
-.tnav{position:sticky;top:0;z-index:40;height:44px;background:var(--bg2,#fff);border-bottom:1px solid #e6e4dc;margin:0 -14px 10px;padding:0 0 0 10px;display:flex;align-items:stretch}
-.tnav .site{flex:none;display:flex;align-self:center;border:1.5px solid #6b4f2a;border-radius:999px;overflow:hidden;margin-right:6px;background:#fff}
-.tnav .site button{padding:5px 9px;font-size:11px;font-weight:700;color:#6b4f2a;background:#fff;border:none;white-space:nowrap;line-height:1.2;font-family:inherit;cursor:pointer}
-.tnav .site button+button{border-left:1.5px solid #6b4f2a}
-.tnav .site button.on{background:#6b4f2a;color:#fff}
+.topband{height:6px;background:#6b4f2a;margin:-12px -14px 8px}
+.sitesw{display:flex;height:48px;border:1.5px solid #6b4f2a;border-radius:999px;overflow:hidden;background:#fff;margin:10px 0 8px}
+.sitesw button{flex:1;font-size:14px;font-weight:800;color:#6b4f2a;background:#fff;border:none;letter-spacing:.04em;font-family:inherit;cursor:pointer;line-height:1}
+.sitesw button+button{border-left:1.5px solid #6b4f2a}
+.sitesw button.on{background:#6b4f2a;color:#fff}
+.tnav{position:sticky;top:0;z-index:40;height:44px;background:#f6f1e6;border-bottom:1px solid #e6e4dc;margin:0 -14px 10px;padding:0 6px;display:flex;align-items:stretch}
 .tnav .sc{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;min-width:0;flex:1}
 .tnav .sc::-webkit-scrollbar{display:none}
 .tnav .sc button{flex:none;padding:0 11px;height:43px;font-size:13.5px;font-weight:700;color:#8e8c85;border:none;border-bottom:2.5px solid transparent;background:none;white-space:nowrap;line-height:1;font-family:inherit;cursor:pointer}
 .tnav .sc button.on{color:var(--ink,#111);border-bottom-color:#6b4f2a}
-.tnav .fade{position:absolute;right:0;top:0;bottom:1px;width:26px;background:linear-gradient(90deg,rgba(255,255,255,0),var(--bg2,#fff));pointer-events:none}
+.tnav .fade{position:absolute;right:0;top:0;bottom:1px;width:26px;background:linear-gradient(90deg,rgba(255,255,255,0),#f6f1e6);pointer-events:none}
 #rsel{top:44px}.wrap{padding-bottom:28px}
+.hd .wm i{width:34px;height:34px;display:block;flex:none}.hd .wm i svg{width:100%;height:100%;stroke:#111}
 </style>
 <style id="dk">
 html[data-theme=dark]{color-scheme:dark}html[data-theme=dark] body{background:#0f1013}
@@ -597,14 +599,16 @@ html[data-theme=dark] .bt td{border-bottom:1px solid var(--line)}
 html[data-theme=dark] .bt tr.e2 td.ev{color:#cfbc91}
 html[data-theme=dark] .bt tr.e1 td.ev{color:#d5bc73}
 html[data-theme=dark] .bt tr.tot td{border-bottom:none;border-top:1.5px solid var(--ink)}
-html[data-theme=dark] .tnav{background:var(--bg2,#1a1c21);border-bottom:1px solid #373530}
-html[data-theme=dark] .tnav .site{border:1.5px solid #b1926c;background:#1a1c21}
-html[data-theme=dark] .tnav .site button{color:#d8b890;background:#1a1c21;border:none}
-html[data-theme=dark] .tnav .site button+button{border-left:1.5px solid #b1926c}
-html[data-theme=dark] .tnav .site button.on{background:#836640;color:#f4f6fb}
+html[data-theme=dark] .topband{background:#836640}
+html[data-theme=dark] .sitesw{border:1.5px solid #b1926c;background:#1a1c21}
+html[data-theme=dark] .sitesw button{color:#d8b890;background:#1a1c21;border:none}
+html[data-theme=dark] .sitesw button+button{border-left:1.5px solid #b1926c}
+html[data-theme=dark] .sitesw button.on{background:#836640;color:#f4f6fb}
+html[data-theme=dark] .tnav{background:#211e18;border-bottom:1px solid #373530}
 html[data-theme=dark] .tnav .sc button{color:#c0beb6;border:none;border-bottom:2.5px solid transparent;background:none}
 html[data-theme=dark] .tnav .sc button.on{color:var(--ink,#ececea);border-bottom-color:#b1926c}
-html[data-theme=dark] .tnav .fade{background:linear-gradient(90deg,rgba(255,255,255,0),var(--bg2,#1a1c21))}
+html[data-theme=dark] .tnav .fade{background:linear-gradient(90deg,rgba(255,255,255,0),#211e18)}
+html[data-theme=dark] .hd .wm i svg{stroke:#b9bcc2}
 html[data-theme=dark] :not(text)[fill="#111"]{fill:#e6e6e3}
 html[data-theme=dark] [stroke="#111"]{stroke:#d6d6d3}
 html[data-theme=dark] :not(text)[fill="#fff"]{fill:#1a1c21}
@@ -631,7 +635,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute"><defs>
-<symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0v9a5 5 0 0 1 -7 0a5 5 0 0 0 -7 0v-9" /><path d="M5 21v-7" /></symbol>
+<symbol id="i-face" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5c5.667 4.667 11.333 4.667 17 0"/><path d="M19 18.5l-2 -8.5l1 -2l2 1l1.5 -1.5l-2.5 -4.5c-5.052 .218 -5.99 3.133 -7 6h-6a3 3 0 0 0 -3 3"/><path d="M5 18.5l2 -9.5"/><path d="M8 20l2 -5h4l2 5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0v9a5 5 0 0 1 -7 0a5 5 0 0 0 -7 0v-9" /><path d="M5 21v-7" /></symbol>
 <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h7a2 2 0 0 1 2 2v14a1.5 1.5 0 0 0-1.5-1.5H4z"/><path d="M20 4h-7a2 2 0 0 0-2 2v14a1.5 1.5 0 0 1 1.5-1.5H20z"/></symbol>
 <symbol id="i-chart" viewBox="0 0 48 48"><path d="M8 40 L40 40"/><path d="M12 40 L12 28 M20 40 L20 20 M28 40 L28 30 M36 40 L36 14"/><path d="M12 24 L20 16 L28 26 L36 10"/></symbol>
 <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M5 20 Q12 13 19 20"/></symbol>
@@ -654,8 +658,10 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 <symbol id="i-lock" viewBox="0 0 14 14"><rect x="2.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M4.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></symbol>
 </defs></svg>
 <div class="wrap">
+  <div class="topband"></div>
   <div class="hd" id="hd"></div>
-  <div class="tnav" id="tnav"><div class="site"><button type="button" data-site="c" class="">UMAMI 中央</button><button type="button" data-site="l" class="on">UMAMI 地方</button></div><div class="sc" id="tnavsc"></div><div class="fade"></div></div>
+  <div class="sitesw" id="sw"><button type="button" data-site="c" class="">UMAMI 中央</button><button type="button" data-site="l" class="on">UMAMI 地方</button></div>
+  <div class="tnav" id="tnav"><div class="sc" id="tnavsc"></div><div class="fade"></div></div>
   <section id="s-races"></section>
   <section id="s-race"></section>
   <section id="s-record"></section>
@@ -673,7 +679,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </div></div>
 <script>
 const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
-const BUILT='2026-10-30T1006';
+const BUILT='2026-10-30T1008';
 const GATED=true;        /* 合い言葉あり（1日券） */
 const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
 const $=s=>document.querySelector(s);
@@ -696,7 +702,7 @@ async function setDay(d){ DAY=d; DATA=await loadDay(d); mergePaid(DATA,d); byRid
   VENUES=[...new Set((DATA.races||[]).map(r=>r.venue_name))]; }
 const PR=h=>h.scr?0:(h.p==null?null:h.p);
 function renderHeader(){ const d=DAY||'', ds=d?`${d.slice(0,4)}.${d.slice(4,6)}.${d.slice(6,8)}`:'';
-  $('#hd').innerHTML=`<div class="wm"><div><span class="kana">すなお</span><small class="en">SUNAO</small></div></div><div class="hdr"><div class="dt">${ds}<b>${DATA&&DATA.built?'更新 '+esc(DATA.built.slice(11)):''}</b></div>${thmBtn()}</div>`; }
+  $('#hd').innerHTML=`<div class="wm"><i><svg class="ic" style="stroke-width:1.5"><use href="#i-face"/></svg></i><div><span class="kana">うまみ</span><small class="en">UMAMI</small></div></div><div class="hdr"><div class="dt">${ds}<b>${DATA&&DATA.built?'更新 '+esc(DATA.built.slice(11)):''}</b></div>${thmBtn()}</div>`; }
 function showTab(k){ if(!document.getElementById('s-'+k)) k='races'; tab=k; document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id==='s-'+k));
   document.querySelectorAll('.nav button[data-k]').forEach(b=>b.classList.toggle('on',b.dataset.k===(k==='race'?'races':k))); $('.nav').classList.toggle('rc',k==='race'); if(k!=='race') ls.set('sunao_tab',k); window.scrollTo(0,0); }
 
@@ -855,8 +861,8 @@ function evSec(r,n,LK,fin){ const L=LK?null:raceLabel(r); const hasP=(r.runners|
 function alertSec(r,n,LK){ let body;
   if(LK) body='<div class="alc-none">合い言葉で開くと、人気馬の注意がここに出ます。</div>';
   else{ const A=(r.runners||[]).filter(h=>!h.scr&&h.alert>=1).sort((a,b)=>(b.alert-a.alert)||(a.odds-b.odds));
-    body=A.length?`<div class="alc">${A.map(h=>`<div class="a${h.alert>=2?' a2':''}"><div class="ah">${cap(h)}<b>${esc(h.name)}</b><span class="al${h.alert>=2?' a2':''}">${h.alert>=2?'人気の割に':'やや'}</span><span class="od">単勝 ${h.odds!=null?h.odds.toFixed(1):'—'}${h.pop?'・'+h.pop+'人気':''}</span></div><div class="ap">人気 ${pct(h.mkt)}% → すなお <em>${pct(h.p)}%</em><small>${esc(h.jockey||'')}／${esc(h.trainer||'')}</small></div>${favRows(h).replace('<h4>人気馬だったときの実績</h4>','')}</div>`).join('')}</div>
-      <div class="note">単勝5倍以下の人気馬のうち、すなおの勝率が人気を下回るか、騎手・厩舎・その組み合わせが人気馬だったときに見込みより来ていない馬。「100回中 見込み24→実際15」は、同じ人気の馬が普通どれだけ勝つかとの比べ。回数が少ないうちは幅があります。</div>`:'<div class="alc-none">今回は該当なし。</div>'; }
+    body=A.length?`<div class="alc">${A.map(h=>`<div class="a${h.alert>=2?' a2':''}"><div class="ah">${cap(h)}<b>${esc(h.name)}</b><span class="al${h.alert>=2?' a2':''}">${h.alert>=2?'人気の割に':'やや'}</span><span class="od">単勝 ${h.odds!=null?h.odds.toFixed(1):'—'}${h.pop?'・'+h.pop+'人気':''}</span></div><div class="ap">人気 ${pct(h.mkt)}% → うまみ <em>${pct(h.p)}%</em><small>${esc(h.jockey||'')}／${esc(h.trainer||'')}</small></div>${favRows(h).replace('<h4>人気馬だったときの実績</h4>','')}</div>`).join('')}</div>
+      <div class="note">単勝5倍以下の人気馬のうち、うまみの勝率が人気を下回るか、騎手・厩舎・その組み合わせが人気馬だったときに見込みより来ていない馬。「100回中 見込み24→実際15」は、同じ人気の馬が普通どれだけ勝つかとの比べ。回数が少ないうちは幅があります。</div>`:'<div class="alc-none">今回は該当なし。</div>'; }
   return `<div class="sec">${sh(n,'alert','人気馬の注意')}${body}</div>`; }
 function tableSec(r,n,LK,fin){ const order=fin?r.result.order:[]; const winU=fin?+order[0].uma:null;
   const hs=(r.runners||[]).slice().sort((a,b)=>SORT==='p'?((PR(b)||0)-(PR(a)||0)||a.uno-b.uno):a.uno-b.uno);
@@ -908,17 +914,17 @@ function renderMem(){ const el=$('#s-mem');
     ${NOTE_URL?`<div class="box"><b>1日券を買う</b><p>noteの記事から、その日の合い言葉を手に入れられます。</p><div class="lock" style="border:none;padding:0;margin-top:6px"><div class="buy"><a href="${esc(NOTE_URL)}" target="_blank" rel="noopener">1日券の記事一覧</a></div></div></div>`:`<div class="box"><b>1日券は準備中</b><p>買える場所が決まり次第ここに出します。</p></div>`}`; }
 function renderHowto(){ const H=(n,icon,title,point,more)=>`<div class="hs"><div><i class="num"><svg class="ic"><use href="#i-${icon}"/></svg><em>${n}</em></i><b>${title}</b></div><div class="pt-box">${point}</div>${more?`<details><summary>くわしく</summary><ul>${more}</ul></details>`:''}</div>`;
   $('#s-howto').innerHTML=`<h2>${ico('book')}使い方</h2><div class="hto">
-  <div class="lead">すなおは、地方競馬の全レースに「正直な勝率」と「期待値」を付けるサービスです。</div>
+  <div class="lead">うまみは、地方競馬の全レースに「正直な勝率」と「期待値」を付けるサービスです。</div>
   <div class="qs"><div><b>1</b><span>目次でレースを押す。色の丸はレースのラベル（<em>本線・相手・穴</em>）、小さな数字は人気馬の注意の数です。</span></div><div><b>2</b><span>「勝率と期待値」で<em>見立て</em>を見る。1.00以上は濃い金、0.90以上は淡い金。</span></div><div><b>3</b><span>気になる馬を出馬表で押すと、近5走と騎手・調教師のこれまでが開きます。</span></div></div>
-  ${H(1,'horse','勝率はどう決めている？','<b>人気を出発点に</b>、人気のわりに来る・来ないのずれだけを、過去の地方の全レースから学んだ勝率です。すなおが「50%」と出した馬は、100頭いれば50頭ほど勝ちます。',
+  ${H(1,'horse','勝率はどう決めている？','<b>人気を出発点に</b>、人気のわりに来る・来ないのずれだけを、過去の地方の全レースから学んだ勝率です。うまみが「50%」と出した馬は、100頭いれば50頭ほど勝ちます。',
     `<li>人気そのものとは少しだけ違います。人気より上がっている馬は「人気のわりに来る」、下がっている馬は「人気のわりに来ない」と見ています。</li><li>材料は、近走の速さ・着順・位置取り、騎手と厩舎のこれまで、乗り替わり、距離や場の変更、馬体重など。</li><li>出した勝率が本当にその通りだったかは、<b>記録</b>のタブで帯ごとに公開しています（例: 20〜30%の帯は、100頭中 見込み24頭→実際25頭）。</li>`)}
   ${H(2,'coin','期待値と金の2段','<b>期待値＝勝率×単勝オッズ</b>。100円の単勝を買ったとき、平均していくら戻るかの倍率です。<span class="k g">1.00以上</span> は買い続けると元が取れる見込みの馬、<span class="k g2">0.90以上</span> は惜しい馬。',
-    `<li>全部の馬を100円ずつ買うと、100円あたり70円ほどしか戻りません。期待値の高い馬だけに絞るのが、すなおの使い方です。</li><li>見立て＝期待値が0.90以上の馬を勝率順に並べたもの。いなければ勝率の上位3頭。全頭＝全馬を勝率順に。</li><li>期待値はオッズで動きます。発売前は「想定」のオッズなので目安。発走が近づくほど本当の値に近づきます。</li>`)}
+    `<li>全部の馬を100円ずつ買うと、100円あたり70円ほどしか戻りません。期待値の高い馬だけに絞るのが、うまみの使い方です。</li><li>見立て＝期待値が0.90以上の馬を勝率順に並べたもの。いなければ勝率の上位3頭。全頭＝全馬を勝率順に。</li><li>期待値はオッズで動きます。発売前は「想定」のオッズなので目安。発走が近づくほど本当の値に近づきます。</li>`)}
   ${H(3,'ticket','買い目','予算と配分を選ぶと、期待値0.90以上の馬の単勝に100円単位で配った表が出ます。該当する馬がいないレースは「見送り」。',
     `<li>「勝率に比例」は勝ちやすい馬に多く、「均等」は同じ額ずつ。予算と配分はこの端末に残ります。</li><li>「的中時」はその馬が勝ったときに戻る額（いまのオッズ）。オッズを更新すると配分も出し直します。</li><li>買い目は材料です。買うかどうか、いくら買うかはご自身で決めてください。</li>`)}
   ${H(4,'flag','レースのラベル','期待値が0.90以上の馬の勝率を足して、<b>本線</b>（100レース中25勝分以上）・<b>相手</b>（10勝分以上）・<b>穴</b>（それ未満）の3つに分けています。',
     `<li>本線は「金の馬が勝ちやすいレース」。穴は「金の馬はいるが勝率は低い」ので、当たれば大きい代わりに外れやすいレースです。</li><li>目次の色の丸と、レースページの「勝率と期待値」の札に出ます。</li>`)}
-  ${H(5,'alert','人気馬の注意','単勝5倍以下の人気馬で、<b>すなおの勝率が人気を下回る</b>か、<b>騎手・厩舎・その組み合わせ</b>が人気馬だったときに見込みより来ていない馬に札が付きます。',
+  ${H(5,'alert','人気馬の注意','単勝5倍以下の人気馬で、<b>うまみの勝率が人気を下回る</b>か、<b>騎手・厩舎・その組み合わせ</b>が人気馬だったときに見込みより来ていない馬に札が付きます。',
     `<li>「100回中 見込み24→実際15（65回）」は、同じ人気の馬が普通どれだけ勝つかと比べた数です。回数が少ないうちは偶然の幅があります。</li><li>「やや」と「人気の割に」の2段。人気馬を軸にするときの、念のための確認に。</li><li>レースページの「人気馬の注意」の章に、該当する馬だけをまとめています。</li>`)}
   ${H(6,'run','脚質と札','出馬表の馬名の横に <span class="k rn r1">逃げ</span><span class="k rn r2">先行</span><span class="k rn r3">差し</span><span class="k rn r4">追込</span> の脚質と、休み明け・乗り替わり・距離の変更などの要素の札が付きます。',
     `<li>脚質は近5走で最初のコーナーをどの位置で回ったかから。逃げ・先行が多いレースは前が苦しくなりやすい、といった見方に。</li><li>乗替↑は前の騎手より勝率の高い騎手に替わった馬、乗替↓はその逆。速さ1位は近5走のいちばん速い走りがレースで1位の馬。</li><li>馬を押すと近5走の表が開き、速さ（大きいほど速い）、上りの順位（1〜3位は札）、通過順も見られます。</li>`)}
@@ -928,10 +934,10 @@ function renderHowto(){ const H=(n,icon,title,point,more)=>`<div class="hs"><div
     `<li>出馬表・オッズ・近5走・結果・記録は、合い言葉なしで見られます。</li><li>合い言葉は「会員」のタブか、レースページの箱に入れます。</li>`)}
   ${H(9,'chart','記録','出した勝率の帯ごとに「100頭中 見込み何頭→実際何頭」を、日ごとに積んでいます。期待値が金だった馬を単勝100円ずつ買った成績も。',
     `<li>判定は発走1分前までの最後の勝率とオッズ、払い戻しは確定の値です。</li>`)}
-  <div class="note">すなおは予想を売るサービスではなく、判断の材料を出すサービスです。馬券の購入は自己責任でお願いします。</div>
+  <div class="note">うまみは予想を売るサービスではなく、判断の材料を出すサービスです。馬券の購入は自己責任でお願いします。</div>
 </div>`; }
 function renderAll(){ renderHeader(); renderRaces(); renderRecord(); renderMem(); renderHowto(); if(cur.race&&byRid[cur.race]) renderRacePage(byRid[cur.race]); }
-async function main(){ if(!DAYS.length){ $('#hd').innerHTML='<div class="wm"><div><span class="kana">すなお</span><small class="en">SUNAO</small></div></div>'; $('#s-races').innerHTML='<div class="pend">データがまだありません</div>'; showTab('races'); return; }
+async function main(){ if(!DAYS.length){ $('#hd').innerHTML='<div class="wm"><i><svg class="ic" style="stroke-width:1.5"><use href="#i-face"/></svg></i><div><span class="kana">うまみ</span><small class="en">UMAMI</small></div></div>'; $('#s-races').innerHTML='<div class="pend">データがまだありません</div>'; showTab('races'); return; }
   await loadEnc(); for(const pw of (ls.get(LSK,[])||[])){ try{ await openWith(pw); }catch(e){} }
   await setDay(pickDay()); renderAll();
   const q=new URLSearchParams(location.search).get('r'); let k=ls.get('sunao_tab','races'); if(q&&byRid[q]){ openRace(q); } else { if(k==='race') k='races'; showTab(k); }
@@ -944,13 +950,14 @@ main();
 
 <script>
 /* 上部スライダー: 下のカプセル（.nav）の中身からタブを作り、押したらカプセルのボタンを押したことにする（2026-10-30） */
-(function(){ const nav=document.querySelector('.nav'), bar=document.getElementById('tnav'), sc=document.getElementById('tnavsc'); if(!nav||!bar||!sc) return;
-  bar.querySelector('[data-site="c"]').onclick=function(){ if(!this.classList.contains('on')) location.href='https://umami-lab-support.github.io/'; };
-  bar.querySelector('[data-site="l"]').onclick=function(){ if(!this.classList.contains('on')) location.href='https://sunao-keiba.github.io/'; };
+(function(){ const nav=document.querySelector('.nav'), sw=document.getElementById('sw'), sc=document.getElementById('tnavsc'); if(!nav||!sw||!sc) return;
+  sw.querySelector('[data-site="c"]').onclick=function(){ if(!this.classList.contains('on')) location.href='https://umami-lab-support.github.io/'; };
+  sw.querySelector('[data-site="l"]').onclick=function(){ if(!this.classList.contains('on')) location.href='https://sunao-keiba.github.io/'; };
   const skip={up:1,list:1,chi:1};
-  function build(){ sc.innerHTML=''; nav.querySelectorAll('button[data-k]').forEach(b=>{ if(skip[b.dataset.k]) return; const cs=getComputedStyle(b); if(cs.display==='none') return; const t=document.createElement('button'); t.type='button'; t.dataset.k=b.dataset.k; t.textContent=b.textContent.trim(); t.onclick=()=>{ b.click(); sync(); }; sc.appendChild(t); }); }
+  function vis(){ return [...nav.querySelectorAll('button[data-k]')].filter(b=>!skip[b.dataset.k]&&getComputedStyle(b).display!=='none'); }
+  function build(){ sc.innerHTML=''; vis().forEach(b=>{ const t=document.createElement('button'); t.type='button'; t.dataset.k=b.dataset.k; t.textContent=b.textContent.trim(); t.onclick=()=>{ b.click(); sync(); }; sc.appendChild(t); }); }
   function sync(){ const on=nav.querySelector('button.on'); sc.querySelectorAll('button[data-k]').forEach(t=>t.classList.toggle('on',!!on&&t.dataset.k===on.dataset.k)); const o=sc.querySelector('button.on'); if(o&&o.scrollIntoView) o.scrollIntoView({block:'nearest',inline:'center'}); }
-  build(); sync(); new MutationObserver(()=>{ if(sc.children.length!==[...nav.querySelectorAll('button[data-k]')].filter(b=>!skip[b.dataset.k]&&getComputedStyle(b).display!=='none').length) build(); sync(); }).observe(nav,{subtree:true,attributes:true,attributeFilter:['class','style']});
+  build(); sync(); new MutationObserver(()=>{ if(sc.children.length!==vis().length) build(); sync(); }).observe(nav,{subtree:true,attributes:true,attributeFilter:['class','style']});
 })();
 </script>
 </body>
