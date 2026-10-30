@@ -368,6 +368,37 @@ html[data-theme=dark] .rc{background:#202022}html[data-theme=dark] .rc.g2 b{back
 .tnav .fade{position:absolute;right:0;top:0;bottom:1px;width:26px;background:linear-gradient(90deg,rgba(255,255,255,0),#f6f1e6);pointer-events:none}
 #rsel{top:36px}.wrap{padding-bottom:28px}
 .hd .wm i{width:34px;height:34px;display:block;flex:none}.hd .wm i svg{width:100%;height:100%;stroke:#111}
+
+/* ===== v3: 中央のレースページと同じ見た目（2026-10-30） ===== */
+#s-race .sec{border:none;background:#fff;border-radius:22px;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06);margin:14px -6px 0;padding:20px 16px 24px}
+#s-race .sec+.sec{margin-top:22px}
+#s-race .sec .sh{align-items:center;gap:10px;margin-bottom:10px}
+#s-race .sec .sh .shic{width:36px;height:36px;background:var(--ac2)}
+#s-race .sec .sh .shic svg{width:20px;height:20px;stroke:var(--ac);stroke-width:2}
+#s-race .sec .sh .shic em{right:-3px;top:-3px;width:16px;height:16px;background:#e2c46a;color:#3a2a00;font-size:9.5px;font-weight:800}
+#s-race .sec .sh b{font-size:18.5px;font-weight:800;letter-spacing:.02em}
+#s-race .sec .sh .shr small{font-size:10.5px}
+@media (max-width:360px){#s-race .sec .sh b{font-size:17px}#s-race .sec .sh{gap:8px}}
+#s-race .rcd{margin:12px -6px 0;border:none;border-radius:22px;background:#fff;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06);padding:14px 16px 14px}
+#s-race .rcd .rcd-h{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+#s-race .rcd .rcd-h b{font-size:12.5px;font-weight:800;letter-spacing:.04em}
+#s-race .rcd .rh-y{display:inline-block;font-size:10.5px;font-weight:700;color:#5a4000;background:#fff;box-shadow:inset 0 0 0 1px #d9b85a;border-radius:999px;padding:2px 9px;white-space:nowrap}
+#s-race .rcd .crs div{background:var(--bg2)}
+.steps{margin:14px 0 0;padding:0 0 2px}
+.steps .in{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;background:#fff}
+.steps button{flex:1;padding:8px 0;font-size:11.5px;font-weight:700;color:var(--mute);display:flex;align-items:center;justify-content:center;gap:4px;border:none;background:none;font-family:inherit;white-space:nowrap}
+.steps button+button{border-left:1px solid var(--line)}
+.steps button i{font-style:normal;font-family:'DM Mono','M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;font-size:10px;color:var(--soft)}
+.steps button.on{color:var(--ac);background:var(--ac2)}.steps button.on i{color:var(--ac)}
+/* 色を減らす: 札は灰の輪郭、金は前走勝ち・速さ1位だけ */
+.ch{color:var(--ink);background:#fff;border-color:#cfcfca}
+.ch.sp{color:#5a4000;border-color:#c9a227;background:#fff}
+.al{background:#fff;color:var(--ac);box-shadow:inset 0 0 0 1px var(--ac)}.al.a2{background:var(--ac);color:#fff;box-shadow:none}
+.alc .a{border-left-color:var(--ac);background:var(--bg2)}.alc .a.a2{border-left-color:var(--ac);background:#f6f1e6}.alc .ap em{color:var(--ac)}
+.alin{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.alin h4{font-size:13px;font-weight:800;margin:0 0 8px;display:flex;align-items:center;gap:6px}
+.alin h4 svg{width:15px;height:15px;stroke:var(--ac);stroke-width:2}
+.rh2 .rh-m span.sf{background:var(--ac2);color:var(--ac)}
 </style>
 <style id="dk">
 html[data-theme=dark]{color-scheme:dark}html[data-theme=dark] body{background:#0f1013}
@@ -610,6 +641,29 @@ html[data-theme=dark] .tnav .sc button{color:#c0beb6;border:none;border-bottom:2
 html[data-theme=dark] .tnav .sc button.on{color:var(--ink,#ececea);border-bottom-color:#b1926c}
 html[data-theme=dark] .tnav .fade{background:linear-gradient(90deg,rgba(255,255,255,0),#211e18)}
 html[data-theme=dark] .hd .wm i svg{stroke:#b9bcc2}
+html[data-theme=dark] #s-race .sec{border:none;background:#1a1c21;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06)}
+html[data-theme=dark] #s-race .sec .sh .shic{background:var(--ac2)}
+html[data-theme=dark] #s-race .sec .sh .shic svg{stroke:var(--ac)}
+html[data-theme=dark] #s-race .sec .sh .shic em{background:#392f14;color:#cfbc91}
+html[data-theme=dark] #s-race .rcd{border:none;background:#1a1c21;box-shadow:0 1px 2px rgba(60,45,20,.04),0 6px 20px rgba(60,45,20,.06)}
+html[data-theme=dark] #s-race .rcd .rh-y{color:#f2d27a;background:#1a1c21;box-shadow:inset 0 0 0 1px #b0964a}
+html[data-theme=dark] #s-race .rcd .crs div{background:var(--bg2)}
+html[data-theme=dark] .steps .in{border:1.5px solid var(--ink);background:#1a1c21}
+html[data-theme=dark] .steps button{color:var(--mute);border:none;background:none}
+html[data-theme=dark] .steps button+button{border-left:1px solid var(--line)}
+html[data-theme=dark] .steps button i{color:var(--soft)}
+html[data-theme=dark] .steps button.on{color:var(--ac);background:var(--ac2)}
+html[data-theme=dark] .steps button.on i{color:var(--ac)}
+html[data-theme=dark] .ch{color:var(--ink);background:#1a1c21;border-color:#363632}
+html[data-theme=dark] .ch.sp{color:#f2d27a;border-color:#b0954a;background:#1a1c21}
+html[data-theme=dark] .al{background:#1a1c21;color:var(--ac);box-shadow:inset 0 0 0 1px var(--ac)}
+html[data-theme=dark] .al.a2{background:var(--ac);color:#16181c;box-shadow:none}
+html[data-theme=dark] .alc .a{border-left-color:var(--ac);background:var(--bg2)}
+html[data-theme=dark] .alc .a.a2{border-left-color:var(--ac);background:#211e18}
+html[data-theme=dark] .alc .ap em{color:var(--ac)}
+html[data-theme=dark] .alin{border-top:1px solid var(--line)}
+html[data-theme=dark] .alin h4 svg{stroke:var(--ac)}
+html[data-theme=dark] .rh2 .rh-m span.sf{background:var(--ac2);color:var(--ac)}
 html[data-theme=dark] :not(text)[fill="#111"]{fill:#e6e6e3}
 html[data-theme=dark] [stroke="#111"]{stroke:#d6d6d3}
 html[data-theme=dark] :not(text)[fill="#fff"]{fill:#1a1c21}
@@ -680,7 +734,7 @@ html[data-theme=dark] svg text:not([fill]):not([class]){fill:#ececea}
 </div></div>
 <script>
 const DAYS=["20261030", "20261029"];            /* ある日付（新しい順） */
-const BUILT='2026-10-30T1116';
+const BUILT='2026-10-30T1118';
 const GATED=true;        /* 合い言葉あり（1日券） */
 const NOTE_URL="";      /* noteの1日券の記事一覧（空なら案内だけ） */
 const $=s=>document.querySelector(s);
@@ -805,7 +859,7 @@ function favRows(h){ const f=h.fav||{}; const L={j:'騎手',t:'厩舎',c:'組み
   if(!rows.length) return ''; return `<h4>人気馬だったときの実績</h4><div class="fv">${rows.join('')}<p>単勝5倍以下で乗ったときに、同じ人気の馬が普通どれだけ勝つかと比べたもの。回数が少ないうちは幅があります。</p></div>`; }
 const RUNC={'逃げ':'r1','先行':'r2','差し':'r3','追込':'r4'};
 const runChip=h=>h.run&&RUNC[h.run]?`<span class="rn ${RUNC[h.run]}">${h.run}</span>`:'';
-const CHC=c=>/↑|前走勝ち|速さ/.test(c)?(/速さ/.test(c)?'sp':'up'):/↓|降級|大幅減|休み明け/.test(c)?'dn':'';
+const CHC=c=>/前走勝ち|速さ1位/.test(c)?'sp':'';
 function chips(h,max){ const C=(h.chips||[]).filter(Boolean); if(!C.length) return ''; const m=max||C.length; const vis=C.slice(0,m), rest=C.length-vis.length;
   return `<div class="chs">${vis.map(c=>`<span class="ch ${CHC(c)}">${esc(c)}</span>`).join('')}${rest>0?`<span class="ch">+${rest}</span>`:''}</div>`; }
 function jtRows(h){ const j=h.jt||{}; const f=(a,lab)=>a&&a[2]?`<div><b>${lab}</b><span>勝率${a[0]==null?'—':a[0].toFixed(0)}% 3着内${a[1]==null?'—':a[1].toFixed(0)}%<small>（${(a[2]||0).toLocaleString()}回）</small></span></div>`:'';
@@ -831,7 +885,7 @@ function courseSec(r,n){ const live=(r.runners||[]).filter(h=>!h.scr).length; co
     ['頭数',`<b class="mono">${live}頭${(r.runners||[]).length>live?'<small style="font-size:9px;color:var(--mute)">（取消'+((r.runners||[]).length-live)+'）</small>':''}</b>`],['クラス',`<b>${esc(r.cond||'—')}</b>`],['1着賞金',r.prize1?`<b class="mono">${r.prize1}万円</b>`:'<b class="na">—</b>'],
     ['天候',r.weather?`<b>${esc(r.weather)}</b>`:na],['馬場',r.going?`<b>${esc(r.going)}</b>`:na],['発走',`<b class="mono">${esc(r.time||'—')}</b>`]];
   const w=r.wind; const wl=w&&w.spd!=null?`<div class="wnd">${ico('wind')}<span>風 ${esc(w.dir||'')} <span class="mono">${w.spd} m/s</span><small>（発走時刻の予報）</small></span>${w.now&&w.now.spd!=null?`<span>いま ${esc(w.now.dir||'')} <span class="mono">${w.now.spd} m/s</span>${w.now.at?`<small>（${esc(w.now.at)}）</small>`:''}</span>`:''}</div>`:'';
-  return `<div class="sec">${sh(n,'track','コースと馬場')}<div class="crs">${it.map(([k,v])=>`<div><i>${k}</i>${v}</div>`).join('')}</div>${wl}</div>`; }
+  return `<div class="rcd"><div class="rcd-h"><b>コースと馬場</b>${r.odds_status==='yoso'?'<span class="rh-y">発売前の想定</span>':''}</div><div class="crs">${it.map(([k,v])=>`<div><i>${k}</i>${v}</div>`).join('')}</div>${wl}</div>`; }
 /* 買い目（UMAMI の買い目リストの形）: 期待値0.90以上の馬の単勝に、予算を100円単位で配分 */
 let BET=Object.assign({budget:10000,mode:'prob'},ls.get('sunao_bet',{})||{});
 function betAlloc(hs,budget,mode){ const w=hs.map(h=>mode==='even'?1:h.p); const S=w.reduce((a,b)=>a+b,0)||1; const units=Math.round(budget/100);
@@ -845,7 +899,7 @@ function betSec(r,n){ const hs=(r.runners||[]).filter(h=>!h.scr&&h.p>0&&h.odds>0
   else{ const am=betAlloc(hs,BET.budget,BET.mode); const tot=am.reduce((a,b)=>a+b,0);
     body=`<table class="bt"><tr><th></th><th class="l">馬</th><th>単勝</th><th>勝率</th><th>期待値</th><th>金額</th><th>的中時</th></tr>${hs.map((h,i)=>`<tr class="${evCls(h)}"><td class="c">${cap(h)}</td><td class="nm">${esc(h.name)}</td><td>${h.odds.toFixed(1)}</td><td>${pct(h.p)}%</td><td class="ev">${h.ev.toFixed(2)}</td><td class="yen">${am[i].toLocaleString()}</td><td>${Math.floor(am[i]*h.odds).toLocaleString()}</td></tr>`).join('')}<tr class="tot"><td></td><td class="l">合計</td><td colspan="3"></td><td class="yen">${tot.toLocaleString()}</td><td></td></tr></table>
       <div class="note">単勝100円単位。「的中時」はその馬が勝ったときに戻る額（いまのオッズで）。オッズを更新すると配分も出し直します。</div>`; }
-  return `<div class="sec">${sh(n,'ticket','買い目')}${ctl}${body}</div>`; }
+  return `<div class="sec" id="sec-bet">${sh(n,'coin','買い方')}${ctl}${body}</div>`; }
 function evSec(r,n,LK,fin){ const L=LK?null:raceLabel(r); const hasP=(r.runners||[]).some(h=>h.p!=null);
   const lab=L?`<span class="rlab u-${L.k}">${ULAB[L.k]}</span>`:'';
   let body='';
@@ -858,13 +912,13 @@ function evSec(r,n,LK,fin){ const L=LK?null:raceLabel(r); const hasP=(r.runners|
       ${VIEW!=='all'&&!pick.length?'<div class="note" style="margin-top:6px">期待値が0.90以上の馬がいないので、勝率の上位3頭を出しています。</div>':''}
       <div class="note">勝率はオッズに合わせて動きます。期待値＝勝率×単勝オッズ。<span style="background:#f5e19e;color:#3a2a00;padding:0 6px;border-radius:999px;font-weight:700">1.00以上</span> と <span style="color:#b39a52;font-weight:700">0.90以上</span> の2段。</div>`; }
   const right=LK?'':`${lab}<div class="seg sm vw"><button data-v="mitate" class="${VIEW==='mitate'?'on':''}">見立て</button><button data-v="all" class="${VIEW==='all'?'on':''}">全頭</button></div>`;
-  return `<div class="sec" id="sec-ev">${sh(n,'coin','勝率と期待値',right)}${body}${oddsBtn(r)}</div>`; }
-function alertSec(r,n,LK){ let body;
+  return `<div class="sec" id="sec-win">${sh(n,'chart','勝率・期待値',right)}${body}${oddsBtn(r)}${alertBox(r,LK)}</div>`; }
+function alertBox(r,LK){ let body;
   if(LK) body='<div class="alc-none">合い言葉で開くと、人気馬の注意がここに出ます。</div>';
   else{ const A=(r.runners||[]).filter(h=>!h.scr&&h.alert>=1).sort((a,b)=>(b.alert-a.alert)||(a.odds-b.odds));
     body=A.length?`<div class="alc">${A.map(h=>`<div class="a${h.alert>=2?' a2':''}"><div class="ah">${cap(h)}<b>${esc(h.name)}</b><span class="al${h.alert>=2?' a2':''}">${h.alert>=2?'人気の割に':'やや'}</span><span class="od">単勝 ${h.odds!=null?h.odds.toFixed(1):'—'}${h.pop?'・'+h.pop+'人気':''}</span></div><div class="ap">人気 ${pct(h.mkt)}% → うまみ <em>${pct(h.p)}%</em><small>${esc(h.jockey||'')}／${esc(h.trainer||'')}</small></div>${favRows(h).replace('<h4>人気馬だったときの実績</h4>','')}</div>`).join('')}</div>
       <div class="note">単勝5倍以下の人気馬のうち、うまみの勝率が人気を下回るか、騎手・厩舎・その組み合わせが人気馬だったときに見込みより来ていない馬。「100回中 見込み24→実際15」は、同じ人気の馬が普通どれだけ勝つかとの比べ。回数が少ないうちは幅があります。</div>`:'<div class="alc-none">今回は該当なし。</div>'; }
-  return `<div class="sec">${sh(n,'alert','人気馬の注意')}${body}</div>`; }
+  return `<div class="alin"><h4><svg class="ic"><use href="#i-alert"/></svg>人気馬の注意</h4>${body}</div>`; }
 function tableSec(r,n,LK,fin){ const order=fin?r.result.order:[]; const winU=fin?+order[0].uma:null;
   const hs=(r.runners||[]).slice().sort((a,b)=>SORT==='p'?((PR(b)||0)-(PR(a)||0)||a.uno-b.uno):a.uno-b.uno);
   const rows=hs.map(h=>{ const c=[evCls(h),h.scr?'scr':'',fin&&!h.scr&&h.uno===winU&&evCls(h)?'hit':''].filter(Boolean).join(' ');
@@ -872,18 +926,22 @@ function tableSec(r,n,LK,fin){ const order=fin?r.result.order:[]; const winU=fin
     return `<tr data-h="${h.uno}" class="${c}"><td class="c">${cap(h)}</td><td class="nm l"><div class="hn"><span>${esc(h.name)}</span>${runChip(h)}${al}</div><small><b>${esc(h.jockey||'')}</b> ${h.kinryo||''}${fmtWt(h)?' '+fmtWt(h):''}</small>${chips(h,3)}</td><td class="od">${h.scr?'取消':(h.odds==null?'—':h.odds.toFixed(1))}</td><td class="pp">${h.scr?'':(h.pop==null?'—':h.pop)}</td>${LK&&!h.scr?`<td class="lk">${ico('lock')}</td><td class="lk">${ico('lock')}</td>`:`<td class="p">${h.scr?'':pct(PR(h))}</td><td class="ev">${h.scr||h.ev==null?'':h.ev.toFixed(2)}</td>`}</tr>
       <tr class="hcard" data-hc="${h.uno}"><td colspan="6">${horseCard(h)}</td></tr>`; }).join('');
   const right=LK?'':`<div class="seg sm srt"><button data-s="uno" class="${SORT==='uno'?'on':''}">馬番</button><button data-s="p" class="${SORT==='p'?'on':''}">勝率</button></div>`;
-  return `<div class="sec">${sh(n,'list','出馬表',right)}<table class="t" style="margin-top:0"><tr><th></th><th class="l">馬</th><th>単勝</th><th>人気</th><th>勝率%</th><th>期待値</th></tr>${rows}</table>
+  return `<div class="sec" id="sec-horses">${sh(n,'horse','うまたち',right)}<table class="t" style="margin-top:0"><tr><th></th><th class="l">馬</th><th>単勝</th><th>人気</th><th>勝率%</th><th>期待値</th></tr>${rows}</table>
     <div class="note">馬を押すと、近5走・騎手と調教師のこれまで・人気馬だったときの実績が開きます。札は <span class="rn r1">逃げ</span><span class="rn r2">先行</span><span class="rn r3">差し</span><span class="rn r4">追込</span> の脚質と、休み明け・乗り替わり・距離の変更などの要素。</div></div>`; }
 function resSec(r,n){ const order=r.result.order; const winU=+order[0].uma; const PAYS=['単勝','複勝','馬連','馬単','3連複','3連単'];
-  return `<div class="sec">${sh(n,'trophy','結果')}<div class="res" style="margin-top:0;border:none;padding:0"><div class="ro">${order.slice(0,3).map(o=>{ const h=(r.runners||[]).find(x=>+x.uno===+o.uma)||{uno:o.uma,waku:0,name:''}; return `<div><i>${o.fin}着</i>${cap(h)}${esc(h.name)}<small>${o.pop?o.pop+'人気':''}</small></div>`; }).join('')}</div>
+  return `<div class="sec" id="sec-res">${sh(n,'trophy','結果')}<div class="res" style="margin-top:0;border:none;padding:0"><div class="ro">${order.slice(0,3).map(o=>{ const h=(r.runners||[]).find(x=>+x.uno===+o.uma)||{uno:o.uma,waku:0,name:''}; return `<div><i>${o.fin}着</i>${cap(h)}${esc(h.name)}<small>${o.pop?o.pop+'人気':''}</small></div>`; }).join('')}</div>
     <table class="pay">${PAYS.filter(k=>r.result.pays&&r.result.pays[k]).map(k=>{ const p=r.result.pays[k]; const gold=k==='単勝'&&(r.runners||[]).some(h=>+h.uno===winU&&evCls(h)); return `<tr class="${gold?'g':''}"><td>${k}</td><td>${p.uma.map(u=>esc(u).replace(/\s+/g,'-')).join('／')}</td><td>${p.yen.map(y=>y.toLocaleString()+'円').join(' / ')}${gold?'<small>金の的中</small>':''}</td></tr>`; }).join('')}</table></div></div>`; }
 function renderRacePage(r){ const el=$('#s-race'); const X=lxDay();
   const sel=`<div id="rsel">${rselBody(r,r.venue_name)}</div>`;
   const yoso=r.odds_status==='yoso';
-  const head=`<div class="rh2"><div class="rh-n"><em>${esc(r.venue_name)} ${r.R}R</em>${esc(r.name)}</div><div class="rh-m"><span>${esc(r.time||'')} 発走</span><span class="sf">${esc(r.surface||'')}${r.dist||''}m${r.turn?'・'+esc(r.turn):''}</span>${r.going?`<span>馬場 ${esc(r.going)}</span>`:''}${r.odds_at?`<span class="${yoso?'yoso':''}">${yoso?'発売前の想定':'オッズ '+esc(r.odds_at)}</span>`:''}</div></div>`;
+  const head=`<div class="rh2"><div class="rh-n"><em>${esc(r.venue_name)} ${r.R}R</em>${esc(r.name)}</div><div class="rh-m"><span>${esc(r.time||'')} 発走</span><span class="sf">${esc(r.surface||'')}${r.dist||''}m${r.turn?'・'+esc(r.turn):''}</span>${r.going?`<span>馬場 ${esc(r.going)}</span>`:''}${r.odds_at&&!yoso?`<span>オッズ ${esc(r.odds_at)}</span>`:''}</div></div>`;
   const fin=lxFin(r); const LK=locked(DAY); if(LK) SORT='uno';
-  let n=0; const secs=[courseSec(r,++n), evSec(r,++n,LK,fin)]; if(!LK) secs.push(betSec(r,++n)); secs.push(alertSec(r,++n,LK), tableSec(r,++n,LK,fin)); if(fin) secs.push(resSec(r,++n));
-  el.innerHTML=sel+head+secs.join('');
+  let n=0; const secs=[courseSec(r,0), tableSec(r,++n,LK,fin), evSec(r,++n,LK,fin)]; if(!LK) secs.push(betSec(r,++n)); if(fin) secs.push(resSec(r,++n));
+  const steps=[['horses','うまたち'],['win','勝率・期待値']]; if(!LK) steps.push(['bet','買い方']); if(fin) steps.push(['res','結果']);
+  const stepBar=`<div class="steps"><div class="in">${steps.map(([k,l],i)=>`<button type="button" data-k="${k}"><i>${i+1}</i>${l}</button>`).join('')}</div></div>`;
+  el.innerHTML=sel+head+secs[0]+stepBar+secs.slice(1).join('');
+  el.querySelectorAll('.steps button').forEach(b=>b.onclick=()=>{ const t=document.getElementById('sec-'+b.dataset.k); if(t){ const y=t.getBoundingClientRect().top+window.scrollY-96; window.scrollTo({top:y,behavior:'smooth'}); } });
+  if(window.IntersectionObserver){ const obs=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ const k=e.target.id.replace('sec-',''); el.querySelectorAll('.steps button').forEach(b=>b.classList.toggle('on',b.dataset.k===k)); } }); },{rootMargin:'-40% 0px -55% 0px'}); el.querySelectorAll('.sec[id]').forEach(x=>obs.observe(x)); }
   bindRsel(el, r); const ob=el.querySelector('#oupd'); if(ob) ob.onclick=()=>updOdds(r);
   const bb=el.querySelector('#bbud'), bm=el.querySelector('#bmode'); const reb=()=>{ BET.budget=Math.max(1000,Math.round((+bb.value||10000)/1000)*1000); BET.mode=bm.value; ls.set('sunao_bet',BET); const y=window.scrollY; renderRacePage(r); window.scrollTo(0,y); };
   if(bb) bb.onchange=reb; if(bm) bm.onchange=reb;
@@ -921,7 +979,7 @@ function renderHowto(){ const H=(n,icon,title,point,more)=>`<div class="hs"><div
     `<li>人気そのものとは少しだけ違います。人気より上がっている馬は「人気のわりに来る」、下がっている馬は「人気のわりに来ない」と見ています。</li><li>材料は、近走の速さ・着順・位置取り、騎手と厩舎のこれまで、乗り替わり、距離や場の変更、馬体重など。</li><li>出した勝率が本当にその通りだったかは、<b>記録</b>のタブで帯ごとに公開しています（例: 20〜30%の帯は、100頭中 見込み24頭→実際25頭）。</li>`)}
   ${H(2,'coin','期待値と金の2段','<b>期待値＝勝率×単勝オッズ</b>。100円の単勝を買ったとき、平均していくら戻るかの倍率です。<span class="k g">1.00以上</span> は買い続けると元が取れる見込みの馬、<span class="k g2">0.90以上</span> は惜しい馬。',
     `<li>全部の馬を100円ずつ買うと、100円あたり70円ほどしか戻りません。期待値の高い馬だけに絞るのが、うまみの使い方です。</li><li>見立て＝期待値が0.90以上の馬を勝率順に並べたもの。いなければ勝率の上位3頭。全頭＝全馬を勝率順に。</li><li>期待値はオッズで動きます。発売前は「想定」のオッズなので目安。発走が近づくほど本当の値に近づきます。</li>`)}
-  ${H(3,'ticket','買い目','予算と配分を選ぶと、期待値0.90以上の馬の単勝に100円単位で配った表が出ます。該当する馬がいないレースは「見送り」。',
+  ${H(3,'coin','買い方','予算と配分を選ぶと、期待値0.90以上の馬の単勝に100円単位で配った表が出ます。該当する馬がいないレースは「見送り」。',
     `<li>「勝率に比例」は勝ちやすい馬に多く、「均等」は同じ額ずつ。予算と配分はこの端末に残ります。</li><li>「的中時」はその馬が勝ったときに戻る額（いまのオッズ）。オッズを更新すると配分も出し直します。</li><li>買い目は材料です。買うかどうか、いくら買うかはご自身で決めてください。</li>`)}
   ${H(4,'flag','レースのラベル','期待値が0.90以上の馬の勝率を足して、<b>本線</b>（100レース中25勝分以上）・<b>相手</b>（10勝分以上）・<b>穴</b>（それ未満）の3つに分けています。',
     `<li>本線は「金の馬が勝ちやすいレース」。穴は「金の馬はいるが勝率は低い」ので、当たれば大きい代わりに外れやすいレースです。</li><li>目次の色の丸と、レースページの「勝率と期待値」の札に出ます。</li>`)}
